@@ -1,0 +1,38 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * File: Global.var
+ * Author: jorkes
+ * Created: July 07, 2014
+ ********************************************************************
+ * Global variables of project The_Magnifica
+ ********************************************************************)
+VAR
+	testEnableBU : BOOL;
+	ErrorState : enumError := OK;
+	bGblRun : BOOL := FALSE; (*Boolean die aangeeft of de machine in bedrijf is*)
+	bGblSimulation : BOOL := FALSE; (*Boolean die aangeeft of de machine in simulation staat*)
+	usBunchUnitIdx : USINT := 0;
+END_VAR
+(*IO declarations*)
+VAR
+	in_bModule1 : ARRAY[0..11] OF BOOL;
+	out_bModule1 : ARRAY[0..11] OF BOOL;
+END_VAR
+VAR CONSTANT
+	BUCount : USINT := 10; (*NrOff BosUnuts*)
+	Pi : REAL := 3.14;
+END_VAR
+(*Type declarations*)
+VAR
+	SHFTREG : Shiftregister;
+	RU : BunchUnit; (*Reject unit*)
+	MBU : MainbeltUnit; (*Mainbelt Unit (Bosbandkast)*)
+	BU : ARRAY[0..9] OF BunchUnit; (*Bosunit*)
+	MCU : MainControlUnit; (*Main Control Unit (Hoofdkast)*)
+	systemTime : DINT;
+END_VAR
+(*Settings data from PC leading*)
+VAR RETAIN
+	Settings : SettingsType := (Mode:=0);
+END_VAR

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Library" Language="IEC" Description="Freq. Inverter Library">Inverter</Object>
+    <Object Type="Library" Language="IEC" Description="Bunch Unit library">BULib</Object>
+    <Object Type="Library" Language="IEC" Description="Pulsegenerator (variable High/Low pulse)">PulsGen</Object>
+    <Object Type="Library" Language="IEC" Description="Servo Drive (Festo Library)">Servo</Object>
+    <Object Type="Library" Language="IEC" Description="CAN SDO Read/Write Library">SDO</Object>
+    <Object Type="Library" Language="IEC" Description="Lichtkrant functies">Lichtkrant</Object>
+    <Object Type="Library" Language="IEC" Description="Chain Indicator">Chain</Object>
+    <Object Type="Library" Language="IEC">hex2dec</Object>
+    <Object Type="Library" Language="IEC" Description="Library for RS232 communication">Serial</Object>
+    <Object Type="Library" Language="IEC" Description="Sensor control library">SensContr</Object>
+    <Object Type="Library" Language="IEC" Description="Main Belt Unit library">MBU_lib</Object>
+    <Object Type="Library" Language="IEC" Description="A new source library">Hardware</Object>
+  </Objects>
+</Package>

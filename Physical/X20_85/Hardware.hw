@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="BuMotor1" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" Disabled="true" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="X20IF1041_1" TargetConnector="IF1" NodeNumber="2" />
+    <Parameter ID="DtmId" Value="520f109c-8a04-46dd-8e76-7a447e5455b3" />
+    <Group ID="ChannelBlocks_4245d60c-4025-4738-9a65-21987dd3707d" Description="Receive PDO1 parameter" />
+    <Group ID="IO_4f34897b-0599-4afc-bc07-33628c013aff" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_0335e6f3-888f-4d7d-829a-9898c37542a9" Description="Receive PDO6 parameter" />
+    <Group ID="IO_50b5ca40-4e68-4664-be22-8b76906fab27" Description="2 Byte(s)" />
+    <Group ID="IO_10550878-8dc2-41ba-811a-c05c81e89d01" Description="2 Byte(s)" />
+    <Group ID="IO_25fd8346-f4aa-4418-a5d6-7068a6b526e1" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_7c414cbb-0829-4fd4-864b-4032604ecd8e" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_83b516ec-72a3-446e-8429-0ad1377fdfee" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_9f9acb42-f5d2-4e8a-8344-f38ad1a7f190" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_92f15d74-1e81-46d7-829f-24ce734b661e" Description="2 Byte(s)" />
+    <Group ID="IO_d337187c-c96f-49e7-8373-6b2e635ca200" Description="2 Byte(s)" />
+    <Group ID="IO_2d8a46fa-e3de-4536-a3d0-b02273b535ea" Description="2 Byte(s)" />
+    <Group ID="IO_2687edec-612a-4449-9368-973e24b08730" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit1" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" Disabled="true" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor1" TargetConnector="CAN2" NodeNumber="3" />
+    <Parameter ID="DtmId" Value="290e3f56-8804-408a-819e-215e2a6fc5b9" />
+    <Group ID="ChannelBlocks_4f44d0a0-7e33-4b44-bcef-51cba8d2b404" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_dbcc41a7-80b1-4b69-beec-51c04bd492fa" Description="1 Byte(s)" />
+    <Group ID="IO_bf22bdb8-6ebe-49a8-9a86-d11de4076c69" Description="1 Byte(s)" />
+    <Group ID="IO_aa17c508-039e-415d-96d2-19732218c126" Description="1 Byte(s)" />
+    <Group ID="IO_09f76f3a-8376-4558-b0e0-92e3e64328f6" Description="1 Byte(s)" />
+    <Group ID="IO_a1aa309e-859d-47ed-b57a-60e340d58615" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_5200326a-4d38-4545-b874-8c4e8a22abba" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_4bbe3f78-c0dd-4715-b158-ab57a88c820a" Description="1 Byte(s)" />
+    <Group ID="IO_88cea9be-7673-4fb7-b159-a4da5400030d" Description="1 Byte(s)" />
+    <Group ID="IO_fdb88a13-579a-46e1-bff0-5b689027fbbf" Description="2 Byte(s)" />
+    <Group ID="IO_6a651699-bb20-43ab-82e1-f3a21ac36695" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_8f01dda6-605c-44a0-848e-8d91e3a01139" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_86ef7406-0d00-4555-8673-a27d6f573e05" Description="1 Byte(s)" />
+    <Group ID="IO_429be286-32cc-47f6-9fd6-f9dcf4e5c9cd" Description="1 Byte(s)" />
+    <Group ID="IO_c044d5fb-d6d1-4e7e-bdb7-3600cdc77a40" Description="1 Byte(s)" />
+    <Group ID="IO_24252208-8ac1-48ed-9f4e-331b3da5bbab" Description="1 Byte(s)" />
+    <Group ID="IO_2c640d8e-bd0f-46a9-9b5c-535adbabdbf2" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_760431be-4bac-4ae2-8acb-7bd365a52128" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_6f64932a-a5d3-4116-971a-e159412b624e" Description="1 Byte(s)" />
+    <Group ID="IO_6efe3d3b-f204-43fd-99be-45c0a2d162e0" Description="1 Byte(s)" />
+    <Group ID="IO_97e982db-02f7-499d-997e-e363b64c2f11" Description="2 Byte(s)" />
+    <Group ID="IO_1d900de9-9c68-4dcb-9b35-1b1226599975" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="X20BB80" Type="X20BB80" Version="1.0.0.2" Disabled="true">
+    <Connector Name="IF1" Disabled="true">
+      <Parameter ID="BusLength" Value="100" />
+    </Connector>
+  </Module>
+  <Module Name="X20BC0083" Type="X20BC0083" Version="2.1.0.0" Disabled="true">
+    <Connection Connector="PLK1" TargetModule="X20CP1583" TargetConnector="IF3" NodeNumber="1" />
+    <Connection Connector="SL" TargetModule="X20BB80" TargetConnector="SL1" />
+  </Module>
+  <Module Name="X20BM11a" Type="X20BM11" Version="1.0.0.0" Disabled="true">
+    <Connection Connector="X2X1" TargetModule="X20BB80" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11b" Type="X20BM11" Version="1.0.0.0" Disabled="true">
+    <Connection Connector="X2X1" TargetModule="X20BM11a" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11c" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11g" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11e" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11c" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11f" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20CP1583" TargetConnector="IF6" />
+  </Module>
+  <Module Name="X20BM11g" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11f" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20CP1583" Type="X20CP1583" Version="1.0.4.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="EthInterfaceRedundant" Value="0" />
+      <Parameter ID="HostName" Value="x1585" />
+      <Parameter ID="Mode" Value="DHCP Server" />
+      <Parameter ID="InternetAddress" Value="10.0.1.156" />
+      <Group ID="Lease1" />
+      <Parameter ID="LeaseName1" Value="NOP" />
+      <Parameter ID="LeaseStartAddress1" Value="10.0.1.100" />
+      <Parameter ID="LeaseStopAddress1" Value="10.0.1.120" />
+      <Parameter ID="LeaseTimeout1" Value="-1" />
+      <Group ID="Vnc1" />
+      <Parameter ID="VncVcObjectName1" Value="BU_Gui" />
+      <Parameter ID="VncKeyMappingFile1" Value="VC\PS2-Keyboard.dis" />
+      <Group ID="Vnc2" />
+      <Parameter ID="VncVcObjectName2" Value="Mobile" />
+      <Parameter ID="VncKeyMappingFile2" Value="VC\PS2-Keyboard1.dis" />
+      <Parameter ID="VncPortNumber2" Value="5901" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="EplInterfaceRedundant" Value="0" />
+      <Parameter ID="EplEthInterfaceRedundant" Value="0" />
+    </Connector>
+    <Connector Name="IF6">
+      <Parameter ID="ActivateX2X" Value="0" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="The_Magnifica_v0158_X20_85" />
+    <Parameter ID="TimerDeviceType" Value="SWIOTIMER" />
+    <Parameter ID="Cyclic1Duration" Value="10000" />
+    <Parameter ID="Cyclic1Tolerance" Value="10000" />
+    <Parameter ID="Cyclic2Duration" Value="20000" />
+    <Parameter ID="Cyclic2Tolerance" Value="20000" />
+    <Parameter ID="Cyclic3Duration" Value="50000" />
+    <Parameter ID="Cyclic3Tolerance" Value="50000" />
+    <Parameter ID="Cyclic4Duration" Value="100000" />
+    <Parameter ID="Cyclic4Tolerance" Value="100000" />
+    <Parameter ID="Cyclic5Duration" Value="200000" />
+    <Parameter ID="Cyclic5Tolerance" Value="200000" />
+    <Parameter ID="Cyclic6Duration" Value="500000" />
+    <Parameter ID="Cyclic6Tolerance" Value="500000" />
+    <Parameter ID="Cyclic7Duration" Value="1000000" />
+    <Parameter ID="Cyclic7Tolerance" Value="1000000" />
+    <Parameter ID="Cyclic8Duration" Value="10000" />
+    <Parameter ID="Cyclic8Tolerance" Value="30000000" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUaAnonymous" Value="1" />
+  </Module>
+  <Module Name="X20DI9371" Type="X20DI9371" Version="1.0.1.2" Disabled="true">
+    <Connection Connector="SS1" TargetModule="X20TB12b" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11a" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DI9371a" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12g" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11f" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DI9371b" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12h" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11g" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DO9322" Type="X20DO9322" Version="1.0.2.2" Disabled="true">
+    <Connection Connector="SS1" TargetModule="X20TB12c" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11b" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DO9322a" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12d" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11c" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20DO9322b" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12f" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11e" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20IF1041_1" Type="X20IF1041-1" Version="1.1.1.1" Disabled="true">
+    <Connection Connector="SS" TargetModule="X20CP1583" TargetConnector="SS1" />
+    <Connector Name="IF1" Disabled="true">
+      <Parameter ID="DtmRef" Value="FBDIF.Hilscher.COMDtmNX.NETX 100 CO/COM" />
+      <Parameter ID="DtmId" Value="d03e33dc-0cc2-4952-a399-e832e4fc0471" />
+    </Connector>
+    <Parameter ID="ConfigFile" Value="X20IF1041_1.dtm" />
+    <Parameter ID="ConfigModule" Value="asnxdb1" />
+  </Module>
+  <Module Name="X20PS9400" Type="X20PS9400" Version="1.0.2.1" Disabled="true">
+    <Connection Connector="SS1" TargetModule="X20TB12a" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="X20BB80" TargetConnector="PS1" />
+  </Module>
+  <Module Name="X20TB12a" Type="X20TB12" Version="1.0.0.0" Disabled="true" />
+  <Module Name="X20TB12b" Type="X20TB12" Version="1.0.0.0" Disabled="true" />
+  <Module Name="X20TB12c" Type="X20TB12" Version="1.0.0.0" Disabled="true" />
+  <Module Name="X20TB12d" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12f" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12g" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12h" Type="X20TB12" Version="1.0.0.0" />
+</Hardware>

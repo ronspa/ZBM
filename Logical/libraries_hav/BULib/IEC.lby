@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Library xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported functions and function blocks">BULib.fun</File>
+    <File Description="Exported data types">BU.typ</File>
+    <File Description="Operate Elevator">BU.st</File>
+  </Files>
+</Library>

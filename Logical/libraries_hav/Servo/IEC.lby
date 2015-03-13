@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Library xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported functions and function blocks">Servo.fun</File>
+    <File Description="Exported data types">Servo.typ</File>
+    <File>ServoHome.st</File>
+    <File>ServoReset.st</File>
+    <File>ServoMovePosition.st</File>
+  </Files>
+</Library>

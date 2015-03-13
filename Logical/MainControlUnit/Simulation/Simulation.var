@@ -1,0 +1,28 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: Init
+ * File: Init.var
+ * Author: jorkes
+ * Created: July 08, 2014
+ ********************************************************************
+ * Local variables of program Init
+ ********************************************************************)
+VAR
+	typEncPuls2 : PulsGenerator;
+	typEncPuls1 : PulsGenerator;
+	tiEncPulsLong : TIME := T#100ms;
+	tiEncPulsShort : TIME := T#50ms;
+END_VAR
+(*Camtriggers*)
+VAR
+	tiDelayCam_0 : TIME := T#200ms;
+	tiDelayCam_1 : TIME := T#400ms;
+	tiDelayCam_2 : TIME := T#450ms;
+	tiDelayCam_3 : TIME := T#100ms;
+	tiPulsCam : TIME := T#20ms;
+	Sensor_0 : fbTriggerBuf;
+	Sensor_1 : fbTriggerBuf;
+	Sensor_2 : fbTriggerBuf;
+	Sensor_3 : fbTriggerBuf;
+END_VAR

@@ -1,0 +1,11 @@
+<html>
+<head>
+   <title>My Window Title</title>
+</head>
+<body>
+   <h1>My Title</h1>
+   <p>My text passage.</p>
+</body>
+</html> 
+
+                                                                                             

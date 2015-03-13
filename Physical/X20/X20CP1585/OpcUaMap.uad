@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource Date="27-2-2015 16:29:18" Version="4.1.4.402" FileVersion="1">
+  <DefaultView>
+    <Module>
+      <Variable Name="bGblRun" Enable="True" />
+      <Variable Name="bGblSimulation" Enable="True" />
+      <Variable Name="BU" Enable="True" EnableArrayElements="True" />
+      <Variable Name="ErrorState" Enable="True" />
+      <Variable Name="in_bModule1" Enable="True" />
+      <Variable Name="MBU" Enable="True" AutomaticEnable="True" />
+      <Variable Name="MCU" Enable="True" AutomaticEnable="True" />
+      <Variable Name="out_bModule1" Enable="True" />
+      <Variable Name="RU" Enable="True" AutomaticEnable="True" />
+      <Variable Name="Settings" Enable="True" AutomaticEnable="True" />
+      <Variable Name="SHFTREG" Enable="True" AutomaticEnable="True" />
+      <Variable Name="SHFTREG.typGripper" EnableArrayElements="True" />
+      <Task Name="BU_1">
+        <Variable Name="i" Enable="True" />
+        <Variable Name="tonDropDelay" Enable="True" />
+        <Variable Name="tonDropReadyDelay" Enable="True" />
+        <Variable Name="tonLift" Enable="True" />
+        <Variable Name="tpBunchBelts" Enable="True" />
+        <Variable Name="tpResetInv" Enable="True" />
+      </Task>
+      <Task Name="SC_1">
+        <Variable Name="ControllerState" Enable="True" />
+        <Variable Name="i" Enable="True" />
+        <Variable Name="NewServoPos" Enable="True" />
+        <Variable Name="ServoState" Enable="True" />
+        <Variable Name="SetServo" Enable="True" />
+        <Variable Name="tiMusecDiff" Enable="True" />
+        <Variable Name="tiMusecStart" Enable="True" />
+        <Variable Name="tiMusecStop" Enable="True" />
+      </Task>
+      <Task Name="ErrorHandl">
+        <Variable Name="bHeartBeat" Enable="True" />
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

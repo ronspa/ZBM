@@ -1,0 +1,3421 @@
+[FileInfo]
+FileName=ACOPOSinverter_X64.eds
+FileVersion=1
+FileRevision=5
+Description=ACOPOSinverter X64
+CreationTime=12:16PM
+CreationDate=07-30-2004
+CreatedBy=S.T.I.E.
+ModificationTime=01:00PM
+ModificationDate=01-24-2011
+ModifiedBy=B&R
+EDSVersion=5.1
+
+[DeviceInfo]
+VendorName=B&R Industrie-Elektronik
+ProductName=ACOPOSinverter X64
+BaudRate_10=1
+BaudRate_20=1
+BaudRate_50=1
+BaudRate_100=0
+BaudRate_125=1
+BaudRate_250=1
+BaudRate_500=1
+BaudRate_800=0
+BaudRate_1000=1
+Granularity=0x8
+VendorNumber=0x0200005A
+ProductNumber=0
+SimpleBootUpMaster=0
+SimpleBootUpSlave=1
+DynamicChannelsSupported=0
+GroupMessaging=0
+NrOfRXPDO=2
+NrOfTXPDO=2
+LSS_Supported=0
+RevisionNumber=0x00010007
+OrderCode=0
+
+[DummyUsage]
+Dummy0001=0
+Dummy0002=0
+Dummy0003=1
+Dummy0004=0
+Dummy0005=0
+Dummy0006=1
+Dummy0007=0
+
+[Comments]
+Lines=1
+Line1=EDS file for ACOPOSinverter X64 CANopen slave
+
+[MandatoryObjects]
+SupportedObjects=3
+1=0x1000
+2=0x1001
+3=0x1018
+
+[1000]
+ParameterName=Device Type
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x00010192
+
+[1001]
+ParameterName=Error Register
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x0
+
+[1018]
+SubNumber=4
+ParameterName=Identity Object
+ObjectType=9
+
+[1018sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+LowLimit=3
+HighLimit=3
+DefaultValue=3
+
+[1018sub1]
+ParameterName=Vendor ID
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x0200005A
+
+[1018sub2]
+ParameterName=Product code
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+
+[1018sub3]
+ParameterName=Revision number
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+
+[OptionalObjects]
+SupportedObjects=29
+1=0x1003
+2=0x1005
+3=0x1008
+4=0x100b
+5=0x100c
+6=0x100d
+7=0x100f
+8=0x1014
+9=0x1016
+10=0x1017
+11=0x1400
+12=0x1405
+13=0x1600
+14=0x1605
+15=0x1800
+16=0x1805
+17=0x1a00
+18=0x1a05
+19=0x6041
+20=0x6040
+21=0x6042
+22=0x6044
+23=0x6043
+24=0x603F
+25=0x6046
+26=0x6048
+27=0x6049
+28=0x6060
+29=0x6061
+
+[1003]
+SubNumber=2
+ParameterName=Pre-defined Error Field
+ObjectType=8
+
+[1003sub0]
+ParameterName=Number of error
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x0000
+
+[1003sub1]
+ParameterName=Standard Error Field
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x0000
+
+[1005]
+ParameterName=COB-ID SYNC message
+ObjectType=7
+DataType=0x0007
+AccessType=RW
+PDOMapping=0
+DefaultValue=0x80
+ObjFlags=1
+
+[1008]
+ParameterName=Device Name
+ObjectType=7
+DataType=0x0009
+AccessType=Const
+PDOMapping=0
+DefaultValue=ATV312
+ObjFlags=1
+
+[100b]
+ParameterName=NodeID
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+DefaultValue=$NodeID
+
+[100c]
+ParameterName=Guard Time
+ObjectType=7
+DataType=0x0006
+AccessType=RW
+PDOMapping=0
+DefaultValue=0
+
+[100d]
+ParameterName=Life Time Factor
+ObjectType=7
+DataType=0x0005
+AccessType=RW
+PDOMapping=0
+DefaultValue=0
+
+[100f]
+ParameterName=Number of SDO supported
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x00000001
+
+[1014]
+ParameterName=COB-ID Emergency message
+ObjectType=7
+DataType=0x0007
+AccessType=RO
+PDOMapping=0
+DefaultValue=$NODEID+0x080
+
+[1016]
+SubNumber=2
+ParameterName=Consumer Heartbeat Time
+ObjectType=8
+
+[1016sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=1
+
+[1016sub1]
+ParameterName=Consumer Heartbeat Time
+ObjectType=7
+DataType=0x0007
+AccessType=RW
+PDOMapping=0
+DefaultValue=0
+
+[1017]
+ParameterName=Producer Heartbeat Time
+ObjectType=7
+DataType=0x0006
+AccessType=RW
+PDOMapping=0
+DefaultValue=0
+
+[1400]
+SubNumber=4
+ParameterName=Receive PDO1 parameter
+ObjectType=9
+
+[1400sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=3
+
+[1400sub1]
+ParameterName=COB-ID
+ObjectType=7
+DataType=0x0007
+AccessType=RW
+PDOMapping=0
+DefaultValue=$NodeID + 0x200
+
+[1400sub2]
+ParameterName=Transmission type
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=255
+
+[1400sub3]
+ParameterName=Inhibit timer
+ObjectType=7
+DataType=0x0006
+AccessType=RO
+PDOMapping=0
+DefaultValue=
+
+[1405]
+SubNumber=4
+ParameterName=Receive PDO6 parameter
+ObjectType=9
+
+[1405sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=3
+
+[1405sub1]
+ParameterName=COB-ID
+ObjectType=7
+DataType=0x0007
+AccessType=RW
+PDOMapping=0
+DefaultValue=$NodeID + 0x300
+
+[1405sub2]
+ParameterName=Transmission type
+ObjectType=7
+DataType=0x0005
+AccessType=RW
+PDOMapping=0
+DefaultValue=255
+
+[1405sub3]
+ParameterName=Inhibit timer
+ObjectType=7
+DataType=0x0006
+AccessType=RO
+PDOMapping=0
+DefaultValue=
+
+[1600]
+SubNumber=2
+ParameterName=Receive PDO1 mapping
+ObjectType=9
+
+[1600sub0]
+ParameterName=Number of mapped objects
+ObjectType=7
+DataType=0x0005
+AccessType=ro
+PDOMapping=0
+LowLimit=0
+HighLimit=1
+DefaultValue=0x1
+
+[1600sub1]
+ParameterName=1.mapped object
+ObjectType=7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x60400010
+AccessType=ro
+
+[1605]
+SubNumber=8
+ParameterName=Receive PDO6 mapping
+ObjectType=9
+
+[1605sub0]
+ParameterName=Number of mapped objects
+ObjectType=7
+DataType=0x0005
+AccessType=rw
+PDOMapping=0
+LowLimit=0
+HighLimit=8
+DefaultValue=0x3
+
+[1605sub1]
+ParameterName=1.mapped object
+ObjectType=7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x60420010
+AccessType=rw
+
+[1605sub2]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x20370510
+AccessType=rw
+
+[1605sub3]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x20162910
+AccessType=rw
+
+[1605sub4]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[1605sub5]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[1605sub6]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[1605sub7]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[1800]
+SubNumber=5
+ParameterName=Transmit PDO1 parameter
+ObjectType=9
+
+[1800sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x5
+
+[1800sub1]
+ParameterName=COB-ID
+ObjectType=7
+DataType=0x0007
+AccessType=RW
+PDOMapping=0
+DefaultValue=$NodeID + 0x180
+
+[1800sub2]
+ParameterName=Transmission type
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=255
+
+[1800sub3]
+ParameterName=Inhibit timer
+ObjectType=7
+DataType=0x0006
+AccessType=RW
+PDOMapping=0
+DefaultValue=50
+
+[1800sub5]
+ParameterName=Event Timer
+ObjectType=7
+DataType=0x0006
+AccessType=RW
+PDOMapping=0
+DefaultValue=100
+
+[1805]
+SubNumber=5
+ParameterName=Transmit PDO6 parameter
+ObjectType=9
+
+[1805sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x5
+
+[1805sub1]
+ParameterName=COB-ID
+ObjectType=7
+DataType=0x0007
+AccessType=RW
+PDOMapping=0
+DefaultValue=$NodeID + 0x280
+
+[1805sub2]
+ParameterName=Transmission type
+ObjectType=7
+DataType=0x0005
+AccessType=RW
+PDOMapping=0
+DefaultValue=255
+
+[1805sub3]
+ParameterName=Inhibit timer
+ObjectType=7
+DataType=0x0006
+AccessType=RW
+PDOMapping=0
+DefaultValue=50
+
+[1805sub5]
+ParameterName=Event Timer
+ObjectType=7
+DataType=0x0006
+AccessType=RW
+PDOMapping=0
+DefaultValue=100
+
+[1a00]
+SubNumber=2
+ParameterName=Transmit PDO1 mapping
+ObjectType=9
+
+[1a00sub0]
+ParameterName=Number of mapped objects
+ObjectType=7
+DataType=0x0005
+AccessType=ro
+PDOMapping=0
+LowLimit=0
+HighLimit=1
+DefaultValue=0x1
+
+[1a00sub1]
+ParameterName=1.mapped object
+ObjectType=7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x60410010
+AccessType=ro
+
+[1a05]
+SubNumber=9
+ParameterName=Transmit PDO6 mapping
+ObjectType=9
+
+[1a05sub0]
+ParameterName=Number of mapped objects
+ObjectType=7
+DataType=0x0005
+AccessType=rw
+PDOMapping=0
+LowLimit=0
+HighLimit=8
+DefaultValue=0x4
+
+[1a05sub1]
+ParameterName=1.mapped object
+ObjectType=7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x60440010
+AccessType=rw
+
+[1a05sub2]
+ParameterName=2.mapped object
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x20020710
+AccessType=rw
+
+[1a05sub3]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x20020610
+AccessType=rw
+
+[1a05sub4]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x20020510
+AccessType=rw
+
+[1a05sub5]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[1a05sub6]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[1a05sub7]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[1a05sub8]
+ParameterName=PDO Mapping Entry
+ObjectType=0x7
+DataType=0x0007
+LowLimit=0x00000000
+HighLimit=0xFFFFFFFF
+DefaultValue=0x00000000
+AccessType=rw
+
+[6041]
+ParameterName=ETAD - Status word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[6040]
+ParameterName=CMDD - Control word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=rww
+PDOMapping=1
+
+[6042]
+ParameterName=LFRD - Speed setpoint [rpm]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x8000 
+HighLimit=0x7fff
+AccessType=rww
+DefaultValue=
+PDOMapping=1
+
+[6044]
+ParameterName=RFRD - Output speed [rpm]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x8000
+HighLimit=0x7fff
+AccessType=ro
+PDOMapping=1
+
+[6043]
+ParameterName=FRHD - Frequency reference before ramp
+ObjectType=7
+DataType=0x0006
+LowLimit=0x8000
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[603F]
+ParameterName=ERRD - CiA402 fault code
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[6046]
+SubNumber=3
+ParameterName=Velocity Min Max Amount
+ObjectType=8
+
+[6046sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=2
+
+[6046sub1]
+ParameterName=SMIL - Velocity Min Amount [rpm]
+ObjectType=7
+DataType=0x0007
+LowLimit=0x0
+HighLimit=0xffffffff
+AccessType=RW
+DefaultValue=0x0
+PDOMapping=0
+ObjFlags=1
+
+[6046sub2]
+ParameterName=SMAL - Velocity Max Amount [rpm]
+ObjectType=7
+DataType=0x0007
+LowLimit=0x0
+HighLimit=0xffffffff
+AccessType=RW
+DefaultValue=1500
+PDOMapping=0
+ObjFlags=1
+
+[6048]
+SubNumber=3
+ParameterName=Velocity Acceleration
+ObjectType=9
+
+[6048sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=2
+
+[6048sub1]
+ParameterName=SPAL - Acceleration delta speed
+ObjectType=7
+DataType=0x0007
+LowLimit=0x0
+HighLimit=0xffffffff
+AccessType=RW
+DefaultValue=
+PDOMapping=0
+ObjFlags=1
+
+[6048sub2]
+ParameterName=SPAT - Acceleration delta time
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=RW
+DefaultValue=
+PDOMapping=0
+ObjFlags=1
+
+[6049]
+SubNumber=3
+ParameterName=Velocity Deceleration
+ObjectType=9
+
+[6049sub0]
+ParameterName=Number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=2
+
+[6049sub1]
+ParameterName=SPDL - Deceleration delta speed
+ObjectType=7
+DataType=0x0007
+LowLimit=0x0
+HighLimit=0xffffffff
+AccessType=RW
+DefaultValue=15000
+PDOMapping=0
+ObjFlags=1
+
+[6049sub2]
+ParameterName=SPDT - Deceleration delta time
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=RW
+DefaultValue=30
+PDOMapping=0
+ObjFlags=1
+
+[6060]
+ParameterName=Mode Of Operation
+ObjectType=7
+DataType=0x0002
+AccessType=WO
+PDOMapping=0
+DefaultValue=0x2
+ObjFlags=1
+
+[6061]
+ParameterName=Mode Of Operation Display
+ObjectType=7
+DataType=0x0002
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2
+
+[ManufacturerObjects]
+SupportedObjects=35
+1=0x2000
+2=0x2001
+3=0x2002
+4=0x2003
+5=0x2004
+6=0x200e
+7=0x2010
+8=0x2014
+9=0x2016
+10=0x201e
+11=0x2028
+12=0x2029
+13=0x202a
+14=0x2032
+15=0x2036
+16=0x2037
+17=0x203c
+18=0x203d
+19=0x203e
+20=0x2042
+21=0x2043
+22=0x2046
+23=0x204a
+24=0x2050
+25=0x2051
+26=0x2052
+27=0x2053
+28=0x2054
+29=0x2055
+30=0x2056
+31=0x2057
+32=0x2058
+33=0x2059
+34=0x205a
+35=0x2262
+
+
+[2000]
+SubNumber=8
+ParameterName=Base_interne
+ObjectType=9
+
+[2000sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x35
+
+[2000sub4]
+ParameterName=COD - Display terminal locking code
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x270f
+AccessType=rw
+DefaultValue=64
+PDOMapping=1
+
+[2000sub7]
+ParameterName=LAC - Function access level
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=2
+PDOMapping=1
+
+[2000subc]
+ParameterName=NCV - Drive rating
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xd
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[2000subd]
+ParameterName=VCAL - Drive voltage
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x4
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[2000sub10]
+ParameterName=BFR - Standard motor frequency
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=0
+PDOMapping=1
+
+[2000sub12]
+ParameterName=INV - Nominal drive current [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2000sub35]
+ParameterName=CFG - Source configuration
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2001]
+SubNumber=8
+ParameterName=Base
+ObjectType=9
+
+[2001sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x15
+
+[2001sub3]
+ParameterName=SFR - Switching frequency [0.1 kHz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x14
+HighLimit=0xa0
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2001sub4]
+ParameterName=TFR - Maximum output frequency [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x64
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2001sub5]
+ParameterName=HSP - High speed [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2001sub6]
+ParameterName=LSP - Low Speed [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2001sub8]
+ParameterName=NRD - Motor noise reduction
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2001subb]
+ParameterName=FLR - Catch on the fly
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2001sub15]
+ParameterName=RPR - Operating time reset to zero
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2002]
+SubNumber=14
+ParameterName=Base_monitoring
+ObjectType=9
+
+[2002sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x35
+
+[2002sub2]
+ParameterName=ETA - Status word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[2002sub3]
+ParameterName=RFR - Output frequency [0.1 Hz]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x8000
+HighLimit=0x7fff
+AccessType=ro
+PDOMapping=1
+
+[2002sub4]
+ParameterName=FRH - Frequency reference before ramp [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x8000
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2002sub5]
+ParameterName=LCR - Motor current [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2002sub6]
+ParameterName=OTR - Motor torque [1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2002sub7]
+ParameterName=ETI - Extended status word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[2002sub8]
+ParameterName=ULN - Rated motor voltage [0.1 V]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2002suba]
+ParameterName=THD - Drive thermal state [1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2002subb]
+ParameterName=TDM - Max. drive thermal state [1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=rw
+PDOMapping=1
+
+[2002subc]
+ParameterName=OPR - Motor power [1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2002sub20]
+ParameterName=RTH - Motor run time [1 Hour]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2002sub33]
+ParameterName=LRS1 - Extended status word 1
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[2002sub35]
+ParameterName=LRS3 - Extended status word 3
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[2003]
+SubNumber=2
+ParameterName=Product_version
+ObjectType=9
+
+[2003sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x3
+
+[2003sub3]
+ParameterName=UDP - Drive software version
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2004]
+SubNumber=2
+ParameterName=Internal_cards_version
+ObjectType=9
+
+[2004sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2
+
+[2004sub2]
+ParameterName=TSP - Drive software type
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[200e]
+SubNumber=3
+ParameterName=Analog_inputs_configuration
+ObjectType=9
+
+[200esub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2d
+
+[200esub23]
+ParameterName=CRL3 - Value for low speed (LSP) on input AI3 [0.1 mA]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xc8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[200esub2d]
+ParameterName=CRH3 - Value for high speed (HSP) on input AI3 [0.1 mA]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x28
+HighLimit=0xc8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2010]
+SubNumber=2
+ParameterName=Analog_outputs_configuration
+ObjectType=9
+
+[2010sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2
+
+[2010sub2]
+ParameterName=AO1T - Configuration of the analog output
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x3
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2014]
+SubNumber=4
+ParameterName=Outputs_affectations
+ObjectType=9
+
+[2014sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x20
+
+[2014sub2]
+ParameterName=R1 - Relay R1
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2014sub3]
+ParameterName=R2 - Relay R2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2014sub20]
+ParameterName=DO - Analog./logic output
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x8b
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2016]
+SubNumber=7
+ParameterName=IO_values
+ObjectType=9
+
+[2016sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x52
+
+[2016sub29]
+ParameterName=IOLR - Value of logic I/O
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=rw
+PDOMapping=1
+
+[2016sub2b]
+ParameterName=AI1C - Value of analog input AI1 [1 mV]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2016sub2c]
+ParameterName=AI2C - Value of analog input AI2 [1 mV]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x8000
+HighLimit=0x7fff
+AccessType=ro
+PDOMapping=1
+
+[2016sub2d]
+ParameterName=AI3C - Value of analog input AI3  [1 µA]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2016sub3e]
+ParameterName=AO1R - Value of the analog output
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2710
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2016sub52]
+ParameterName=AIV1 - Image input AIV1
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[201e]
+SubNumber=8
+ParameterName=Product_communication
+ObjectType=9
+
+[201esub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x39
+
+[201esub2]
+ParameterName=ADD - Drive Modbus Address
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0xf7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[201esub4]
+ParameterName=TBR - Modbus Baud rate
+ObjectType=7
+DataType=0x0006
+LowLimit=0x18
+HighLimit=0x20
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[201esub5]
+ParameterName=TFO - Modbus communication format
+ObjectType=7
+DataType=0x0006
+LowLimit=0x2
+HighLimit=0x5
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[201esub6]
+ParameterName=TTO - Modbus time out [0.1 s]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[201esub34]
+ParameterName=ADCO - CANopen drive address
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7f
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[201esub36]
+ParameterName=BDCO - CANopen transmission speed
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1e
+HighLimit=0x4c
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[201esub39]
+ParameterName=ERCO - CANopen error code
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2028]
+SubNumber=13
+ParameterName=Fault_behaviour
+ObjectType=9
+
+[2028sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x5b
+
+[2028sub3]
+ParameterName=IPL - Input phase loss
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028sub4]
+ParameterName=LFL - Stop mode in the event of a loss of 4 - 20 mA 
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028sub5]
+ParameterName=STP - Controlled stop on mains power break
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028sub7]
+ParameterName=EPL - Stop mode in the event of an external fault EPF
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028sub8]
+ParameterName=DRN - Derated operation in the event of an overvoltage
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028sub9]
+ParameterName=OHL - Stop mode in the event of the drive overheating OHF
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028suba]
+ParameterName=OLL - Stop mode in the event of a motor overload OLF
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028subb]
+ParameterName=SLL - Stop mode in the event of a Modbus serial link interuption SLF
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028subc]
+ParameterName=COL - Stop mode in the event of a CANopen serial link interuption COF
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028subd]
+ParameterName=TNL - Configuration of auto-tuning status tnF
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028sub51]
+ParameterName=LFF - Fallback speed [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2028sub5b]
+ParameterName=LET - External fault configuration
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2029]
+SubNumber=7
+ParameterName=Fault_management
+ObjectType=9
+
+[2029sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x20
+
+[2029sub16]
+ParameterName=LFT - Last detected fault
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x37
+AccessType=ro
+PDOMapping=1
+
+[2029sub17]
+ParameterName=ATR - Automatic restart
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2029sub18]
+ParameterName=TAR - Max. duration of restart
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x6
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2029sub19]
+ParameterName=RSF - Fault reset
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2029sub1a]
+ParameterName=INH - Fault inhibit assignment
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2029sub20]
+ParameterName=ETF - External fault
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xAF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[202a]
+SubNumber=9
+ParameterName=Last_fault_records
+ObjectType=9
+
+[202asub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0xf
+
+[202asub2]
+ParameterName=DP1 - Fault history no.1
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x37
+AccessType=ro
+PDOMapping=1
+
+[202asub3]
+ParameterName=DP2 - Fault history no. 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x37
+AccessType=ro
+PDOMapping=1
+
+[202asub4]
+ParameterName=DP3 - Fault history no.3
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x37
+AccessType=ro
+PDOMapping=1
+
+[202asub5]
+ParameterName=DP4 - Fault history no.4
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x37
+AccessType=ro
+PDOMapping=1
+
+[202asubc]
+ParameterName=EP1 - Status of fault History 1
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[202asubd]
+ParameterName=EP2 - Status of fault History 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[202asube]
+ParameterName=EP3 - Status of fault History 3
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[202asubf]
+ParameterName=EP4 - Status of fault History 4
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[2032]
+SubNumber=4
+ParameterName=Configuration_management
+ObjectType=9
+
+[2032sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0xc
+
+[2032sub2]
+ParameterName=SCS - Save configuration
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2032sub3]
+ParameterName=FCS - Restore the configuration
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x40
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2032subc]
+ParameterName=CHP - Switching, motor 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xAF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2036]
+SubNumber=11
+ParameterName=Channel_management
+ObjectType=9
+
+[2036sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x21
+
+[2036sub2]
+ParameterName=CHCF - Mixed mode configuration
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x2
+AccessType=rw
+DefaultValue=1
+PDOMapping=1
+
+[2036sub3]
+ParameterName=COP - Copy Channel1 to Channel 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2036subc]
+ParameterName=RFC - Reference switching
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xCF
+AccessType=rw
+DefaultValue=96
+PDOMapping=1
+
+[2036sube]
+ParameterName=FR1 - Configuration reference 1
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0xA7
+AccessType=rw
+DefaultValue=167
+PDOMapping=1
+
+[2036subf]
+ParameterName=FR2 - Configuration reference 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xA7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2036sub16]
+ParameterName=CCS - Control channel switch
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xCF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2036sub18]
+ParameterName=CD1 - Configuration of control channel 1
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x14
+AccessType=rw
+DefaultValue=20
+PDOMapping=1
+
+[2036sub19]
+ParameterName=CD2 - Configuration of control channel 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x14
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2036sub20]
+ParameterName=FLO - Forced local mode
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2036sub21]
+ParameterName=FLOC - Forced local reference
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xA3
+AccessType=rw
+DefaultValue=16
+PDOMapping=1
+
+[2037]
+SubNumber=11
+ParameterName=Command
+ObjectType=9
+
+[2037sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2b
+
+[2037sub2]
+ParameterName=CMD - Control word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=rw
+PDOMapping=1
+
+[2037sub3]
+ParameterName=LFR - Frequency reference via the bus [0.1 Hz]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x8000
+HighLimit=0x7FFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2037sub4]
+ParameterName=PISP - PI regulator reference via the bus [0.1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2037sub5]
+ParameterName=CMI - Extended control word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=rw
+PDOMapping=1
+
+[2037sub16]
+ParameterName=LFR1 - Image of Modbus frequency reference [0.1 Hz]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x8000
+HighLimit=0x7fff
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[2037sub17]
+ParameterName=LFR2 - CANopen frequency reference [0.1 Hz]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x8000
+HighLimit=0x7fff
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[2037sub20]
+ParameterName=PIR1 - PI Set Point Modbus [0.1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[2037sub21]
+ParameterName=PIR2 - PI Set Point CANopen [0.1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=ro
+DefaultValue=
+PDOMapping=1
+
+[2037sub2a]
+ParameterName=CMI1 - Modbus extended control word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[2037sub2b]
+ParameterName=CMI2 - CANopen extended control word
+ObjectType=7
+DataType=0x0006
+LowLimit=0
+HighLimit=0xFFFF
+AccessType=ro
+PDOMapping=1
+
+[203c]
+SubNumber=14
+ParameterName=Ramps
+ObjectType=9
+
+[203csub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x15
+
+[203csub2]
+ParameterName=ACC - Acceleration ramp time
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x7ff8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub3]
+ParameterName=DEC - Deceleration ramp time
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x7ff8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub4]
+ParameterName=BRA - Deceleration ramp adaptation
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub5]
+ParameterName=RPT - Type of Ramp
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub6]
+ParameterName=TA1 - Start acceleration ramp rounding [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub7]
+ParameterName=TA2 - End acceleration ramp rounding [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub8]
+ParameterName=TA3 - Start deceleration ramp rounding [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub9]
+ParameterName=TA4 - End deceleration rounding coefficient [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csubb]
+ParameterName=RPS - Ramp switching
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xAF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csubc]
+ParameterName=FRT - Ramp switching threshold [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csubd]
+ParameterName=AC2 - 2nd acceleration ramp time
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x7ff8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csube]
+ParameterName=DE2 - 2nd deceleration ramp time
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x7ff8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203csub15]
+ParameterName=INR - Ramp increment
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203d]
+SubNumber=2
+ParameterName=Speed_loop
+ObjectType=9
+
+[203dsub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2
+
+[203dsub2]
+ParameterName=SRF - Speed loop filter
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203e]
+SubNumber=4
+ParameterName=Torque_current_management
+ObjectType=9
+
+[203esub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x4
+
+[203esub2]
+ParameterName=CLI - Current Limitation [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203esub3]
+ParameterName=LC2 - Current limit 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xAF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[203esub4]
+ParameterName=CL2 - 2nd current limit [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042]
+SubNumber=17
+ParameterName=Motor_1
+ObjectType=9
+
+[2042sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2c
+
+[2042sub2]
+ParameterName=UNS - Nominal motor voltage [V]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x64
+HighLimit=0x1F4
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub3]
+ParameterName=FRS - Nominal motor frequency [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x64
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub4]
+ParameterName=NCR - Nominal motor current [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub5]
+ParameterName=NSP - Nominal motor speed [rpm]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7fff
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub7]
+ParameterName=COS - Motor cosinus phi [0.01]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x32
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub8]
+ParameterName=UFT - Select type of U/F ratio
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3
+AccessType=rw
+DefaultValue=2
+PDOMapping=1
+
+[2042sub9]
+ParameterName=TUN - Automatic tuning
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x79
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042suba]
+ParameterName=TUS - Auto-tuning status
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x5
+AccessType=ro
+PDOMapping=1
+
+[2042subc]
+ParameterName=OPL - Output Phase Loss
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub15]
+ParameterName=FLG - Frequency loop gain [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub16]
+ParameterName=STA - Frequency loop stability [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub17]
+ParameterName=ITH - Motor thermal current [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub18]
+ParameterName=UFR - IR compensation/Voltage boost [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub1a]
+ParameterName=SLP - Slip Compensation [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x96
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2042sub1f]
+ParameterName=THR - Motor thermal state
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2042sub2c]
+ParameterName=RSC - Cold stator resistance [mO]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043]
+SubNumber=11
+ParameterName=Motor_2
+ObjectType=9
+
+[2043sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x1a
+
+[2043sub2]
+ParameterName=UNS2 - Nominal motor voltage (motor 2) [V]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x64
+HighLimit=0x1F4
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub3]
+ParameterName=FRS2 - Nominal motor frequency (motor 2) [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x64
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub4]
+ParameterName=NCR2 - Nominal motor current (motor 2) [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub5]
+ParameterName=NSP2 - Nominal motor speed (motor 2) [rpm]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x7fff
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub7]
+ParameterName=COS2 - Motor Cos Phi (motor 2) [0.01]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x32
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub8]
+ParameterName=UFT2 - Select type of U/F ratio M2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub15]
+ParameterName=FLG2 - Frequency loop gain, motor 2 [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub16]
+ParameterName=STA2 - Frequency loop stability, motor 2 [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub18]
+ParameterName=UFR2 - IR compensation/Voltage boost, motor 2 [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2043sub1a]
+ParameterName=SLP2 - Slip compensation, motor 2 [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x96
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2046]
+SubNumber=8
+ParameterName=Brake_sequence
+ObjectType=9
+
+[2046sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x8
+
+[2046sub2]
+ParameterName=BLC - Brake control configuration
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x40
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2046sub3]
+ParameterName=BRL - Brake release frequency [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2046sub4]
+ParameterName=BEN - Brake engage frequency [0.1 Hz]
+ObjectType=7
+DataType=0x0003
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2046sub5]
+ParameterName=BRT - Brake release time [0.01 s]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1f4
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2046sub6]
+ParameterName=BET - Brake engage time [0.01 s]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1f4
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2046sub7]
+ParameterName=IBR - Brake Release current [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2046sub8]
+ParameterName=BIP - Brake release pulse
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[204a]
+SubNumber=6
+ParameterName=Brake__sequence
+ObjectType=9
+
+[204asub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x6
+
+[204asub2]
+ParameterName=ADC - Automatic standstill DC injection
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[204asub3]
+ParameterName=TDC1 - Automatic standstill DC injection time [0.1 s]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x12c
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[204asub4]
+ParameterName=SDC1 - DC current at standstill [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[204asub5]
+ParameterName=TDC2 - 2nd automatic standstill DC injection time [0.1 s]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x12c
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[204asub6]
+ParameterName=SDC2 - DC current at standstill 2 [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2050]
+SubNumber=4
+ParameterName=Threshold
+ObjectType=9
+
+[2050sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x4
+
+[2050sub2]
+ParameterName=CTD - Motor current threshold [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2050sub3]
+ParameterName=TTD - Motor thermal state threshold [%]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x76
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2050sub4]
+ParameterName=FTD - Motor frequency threshold [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2051]
+SubNumber=6
+ParameterName=Terminal_block_control
+ObjectType=9
+
+[2051sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0xc
+
+[2051sub2]
+ParameterName=TCC - 2 wire or 3 wire control
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2051sub3]
+ParameterName=TCT - Type of 2 wire control
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2051sub6]
+ParameterName=RRS - Reverse operation via logic input
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2051subb]
+ParameterName=JOG - Jog operation
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2051subc]
+ParameterName=JGF - Jog operation reference [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x64
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2052]
+SubNumber=8
+ParameterName=Stop_settings
+ObjectType=9
+
+[2052sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x1f
+
+[2052sub2]
+ParameterName=STT - Normal stop mode
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2052sub3]
+ParameterName=NST - Freewheel stop assignment
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2052sub4]
+ParameterName=DCI - DC injection assignment
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2052sub5]
+ParameterName=FST - Fast stop assignment
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2052subb]
+ParameterName=IDC - DC injection Current [0.1 A]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xFFFF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2052subc]
+ParameterName=TDC - DC injection time [0.1 s]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x12c
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2052sub1f]
+ParameterName=DCF - Deceleration ramp reduction coefficient
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xa
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2053]
+SubNumber=3
+ParameterName=Jump_frequency
+ObjectType=9
+
+[2053sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x3
+
+[2053sub2]
+ParameterName=JPF - Skip frequency [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2053sub3]
+ParameterName=JF2 - 2nd skip frequency [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054]
+SubNumber=20
+ParameterName=Preset_speeds
+ObjectType=9
+
+[2054sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x19
+
+[2054sub2]
+ParameterName=PS2 - 2 preset speeds
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=0
+PDOMapping=1
+
+[2054sub3]
+ParameterName=PS4 - 4 preset speeds
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=0
+PDOMapping=1
+
+[2054sub4]
+ParameterName=PS8 - 8 preset speeds
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub5]
+ParameterName=PS16 - 16 preset speeds
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054subb]
+ParameterName=SP2 - Preset speed 2 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054subc]
+ParameterName=SP3 - Preset speed 3 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054subd]
+ParameterName=SP4 - Preset speed 4 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sube]
+ParameterName=SP5 - Preset speed 5 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054subf]
+ParameterName=SP6 - Preset speed 6 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub10]
+ParameterName=SP7 - Preset speed 7 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub11]
+ParameterName=SP8 - Preset speed 8 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub12]
+ParameterName=SP9 - Preset speed 9 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub13]
+ParameterName=SP10 - Preset speed 10 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub14]
+ParameterName=SP11 - Preset speed 11 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub15]
+ParameterName=SP12 - Preset speed 12 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub16]
+ParameterName=SP13 - Preset speed 13 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub17]
+ParameterName=SP14 - Preset speed 14 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub18]
+ParameterName=SP15 - Preset speed 15 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2054sub19]
+ParameterName=SP16 - Preset speed 16 [0.1 Hz]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1388
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2055]
+SubNumber=4
+ParameterName=Upper_and_lower_speed
+ObjectType=9
+
+[2055sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x4
+
+[2055sub2]
+ParameterName=USP - + speed (motorized potentiometer) 
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2055sub3]
+ParameterName=DSP - - speed (motorized potentiometer)
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2055sub4]
+ParameterName=STR - Save reference
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2056]
+SubNumber=4
+ParameterName=Limit_switch_management
+ObjectType=9
+
+[2056sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x4
+
+[2056sub2]
+ParameterName=LAF - Forward limit switch
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2056sub3]
+ParameterName=LAR - Reverse limit switch
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x86
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2056sub4]
+ParameterName=LAS - Type of limit switch stop
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2057]
+SubNumber=2
+ParameterName=Stop_on_prolonged_speed
+ObjectType=9
+
+[2057sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x2
+
+[2057sub2]
+ParameterName=TLS - Low speed operating time [0.1 s]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x270f
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2058]
+SubNumber=3
+ParameterName=Summing_reference_function
+ObjectType=9
+
+[2058sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x3
+
+[2058sub2]
+ParameterName=SA2 - Summing input 2
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xA7
+AccessType=rw
+DefaultValue=0
+PDOMapping=1
+
+[2058sub3]
+ParameterName=SA3 - Summing input 3
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xA7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059]
+SubNumber=14
+ParameterName=PI_regulator
+ObjectType=9
+
+[2059sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x3d
+
+[2059sub2]
+ParameterName=PIF - PI regulator feedback
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xA7
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub4]
+ParameterName=FBS - PI feedback multiplication coefficient [0.1]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x3e8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub9]
+ParameterName=PII - Internal PI reference enabled
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059suba]
+ParameterName=PR2 - 2 preset PI references
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xCF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059subb]
+ParameterName=PR4 - 4 preset PI references
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xCF
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub15]
+ParameterName=RPI - Internal PI reference [0.1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub16]
+ParameterName=RP2 - 2nd PI preset reference [0.1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub17]
+ParameterName=RP3 - 3rd PI preset reference [0.1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub18]
+ParameterName=RP4 - 4th PI preset reference [0.1 %]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub29]
+ParameterName=PIC - Reversal of the direction of correction of the PI regulator
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub2a]
+ParameterName=RPG - PI regulator proportional gain [0.01]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x2710
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub2b]
+ParameterName=RIG - PI regulator integral gain [0.01]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x2710
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2059sub3d]
+ParameterName=RSL - Restart error threshold ("wake-up" threshold) [0.1]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x3e8
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[205a]
+SubNumber=4
+ParameterName=Customer_unit
+ObjectType=9
+
+[205asub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x4
+
+[205asub2]
+ParameterName=SDS - USPL/USPH scale factor [0.1]
+ObjectType=7
+DataType=0x0006
+LowLimit=0x1
+HighLimit=0x7d0
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[205asub3]
+ParameterName=USPL - Motor speed in customer units - Low order
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[205asub4]
+ParameterName=USPH - Motor speed in customer units - High order
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0xffff
+AccessType=ro
+PDOMapping=1
+
+[2262]
+SubNumber=4
+ParameterName=Keypad_management
+ObjectType=9
+
+[2262sub0]
+ParameterName=number of entries
+ObjectType=7
+DataType=0x0005
+AccessType=RO
+PDOMapping=0
+DefaultValue=0x4
+
+[2262sub2]
+ParameterName=ROT - Direction of operation authorized
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x2
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2262sub3]
+ParameterName=PST - STOP Key Priority
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1
+
+[2262sub4]
+ParameterName=LCC - Remote terminal control
+ObjectType=7
+DataType=0x0006
+LowLimit=0x0
+HighLimit=0x1
+AccessType=rw
+DefaultValue=
+PDOMapping=1

@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>B&amp;R Example Pages</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<link media="screen" href="styles.css" type="text/css" rel="stylesheet"/>
+	
+	<script language="javascript" type="text/javascript">
+
+function OnClickMenu(tag, catTag, subCatTag) { var parameters = new Array(); var values = new Array(); if (catTag != null) { document.getElementById('topic_content').innerHTML = document.getElementById(catTag).innerHTML; } if (tag != null) { document.getElementById('SPAN_TOPICHEADLINE').innerHTML = tag.innerText || tag.textContent; var spans = document.getElementById('menu').getElementsByTagName('span'); for (var i=0; i < spans.length; i++) { spans[i].style.fontWeight = 'normal'; } tag.style.fontWeight = 'bold'; } if (subCatTag != null) { if (document.getElementById(subCatTag).style.display == 'none') { document.getElementById(subCatTag).style.display = 'inline'; } else { document.getElementById(subCatTag).style.display = 'none'; } } }
+function SetColor(element, color) { element.style.backgroundColor = color; }</script>
+
+</head>
+
+<body>
+  
+<div id="header">
+	<img id="header_logo" src="logo.gif"  align="right"/>
+	<div id="header_text">
+	    <span>B&amp;R Webserver Examples</span>
+	    <span>&nbsp;</span>
+	    <span></span>
+	</div>
+</div>
+
+<div id="header_split_bar"></div>
+
+<div id="menu">
+
+<a href="javascript:void(0)" id="MENU_WEB" onclick="OnClickMenu(this.children[0], 'DIV_WEB', null)">
+	<span class="menu_level_1" onmouseover="SetColor(this, '#ff8800')" onmouseout="SetColor(this, '#dcdcdc')">Simple Web Site</span>
+</a>
+
+<a href="javascript:void(0)" id="MENU_ASP" onclick="OnClickMenu(this.children[0], 'DIV_ASP', null)">
+	<span class="menu_level_1" onmouseover="SetColor(this, '#ff8800')" onmouseout="SetColor(this, '#dcdcdc')">ASP Examples</span>
+</a>
+
+<a href="javascript:void(0)" id="MENU_GOFORM" onclick="OnClickMenu(this.children[0], 'DIV_GOFORM', null)">
+	<span class="menu_level_1" onmouseover="SetColor(this, '#ff8800')" onmouseout="SetColor(this, '#dcdcdc')">ASP Goform Examples</span>
+</a>
+
+<a href="javascript:void(0)" id="MENU_GOFORM_ASP" onclick="OnClickMenu(this.children[0], 'DIV_GOFORM_ASP', null)">
+	<span class="menu_level_1" onmouseover="SetColor(this, '#ff8800')" onmouseout="SetColor(this, '#dcdcdc')">ASP and ASP Goform</span>
+</a>
+
+<a href="javascript:void(0)" id="MENU_ASP_USER" onclick="OnClickMenu(this.children[0], 'DIV_ASP_USER', null)">
+	<span class="menu_level_1" onmouseover="SetColor(this, '#ff8800')" onmouseout="SetColor(this, '#dcdcdc')">ASP User</span>
+</a>
+           
+<a href="javascript:void(0)" id="MENU_MAGNIFICA" onclick="OnClickMenu(this.children[0], 'DIV_MAGNIFICA', null)">
+	<span class="menu_level_1" onmouseover="SetColor(this, '#ff8800')" onmouseout="SetColor(this, '#dcdcdc')">Magnifica</span>
+</a>
+           
+
+
+<div id="topic_block">
+  <div id="topic_headline">
+    <span id="SPAN_TOPICHEADLINE">B&amp;R Example Pages</span>
+    <hr id="topic_headline_split_bar"/>
+  </div>
+
+  <!-- Content filled dynamically -->
+	<div id="topic_content"><p>This are the example pages for the B&amp;R Web Server. Some pages are accessing PVs from the B&R Coffee Machine Demo. They may used on the ARsim of this project.</p><p> Notice: If you have open this page from the explorer, configure the web root directory of the ARsim to point directly to this directory and access this page via <a href="http://127.0.0.1">http://127.0.0.1</a> to see the working ASP Demos.</p></div>
+</div>
+
+
+<div id="footer">© B&amp;R</div>
+
+<div id="DIV_WEB" style="display: none">
+<div class="content_headline">Simple Web Site</div>
+  <div id="divRecentProjectList" class="content_text">
+        <table>
+      <tr>
+        <td><a target="_blank" href="/HTML/">First Page</a></td>
+		<td><a target="_blank" href="/HTML/index.html.txt">text version</a></td>
+        <td>Simple web site without any ASP commands.</td>
+      </tr>
+
+    </table>
+  </div>                        
+</div>
+
+<div id="DIV_ASP" style="display: none">
+<div class="content_headline">Active Pages with ASP</div>
+  <div id="divRecentProjectList" class="content_text">
+        <table>
+      <tr>
+        <td><a target="_blank" href="/ASP/pv.asp">Accessing PVs</a></td>
+        <td><a target="_blank" href="/ASP/pv.asp.txt">text version</a></td>
+        <td>Use ReadPLC and WritePLC to switch on the coffee machine</td>
+      </tr>
+
+      <tr>
+        <td><a target="_blank" href="/ASP/Temperature.svg.asp">Automatic Reload (Javascript)</a></td>
+        <td><a target="_blank" href="/ASP/Temperature.svg.asp.txt">text version</a></td>
+        <td>Use ReadPLC in different document positions to return the actual temperature</td>
+      </tr>
+	   <tr>
+        <td><a target="_blank" href="/ASP/Temperature.asp">Automatic Reload (HTML Tag)</a></td>
+        <td><a target="_blank" href="/ASP/Temperature.asp.txt">text version</a></td>
+        <td>Use ReadPLC to return the actual temperature without any Javascript</td>
+      </tr>
+      <tr>
+        <td><a target="_blank" href="asp/env.asp">Enviroment Variables</a></td>
+        <td><a target="_blank" href="asp/env.asp.txt">text version</a></td>
+        <td>Use EnvPrint to print enviroment variables</td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="asp/webprint.asp?param=/index.html">Webprint And Links</a></td>
+        <td><a target="_blank" href="asp/webprint.asp.txt">text version</a></td>
+        <td>Use WebPrint to print URL parameters inside document.</td>
+      </tr>
+    </table>
+  </div>                        
+</div>
+
+
+<div id="DIV_GOFORM" style="display: none">
+  <div class="content_headline">Interactive Pages with ASP Goform - Accessing PVs</div>
+  <div class="content_text">
+  <p>Please note: ASP User are mentioned seperatly.</p>
+    <table>
+      <tr>
+        <td><a target="_blank" href="/aspgoform/goform.asp">HTML Form</a></td>
+        <td><a target="_blank" href="/aspgoform/goform.asp.txt">text version</a></td>
+        <td>Use web service Goform/ReadWrite to switch on the coffee machine</td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="/aspgoform/multi.asp">HTML Form (Multiform)</a></td>
+        <td><a target="_blank" href="/aspgoform/multi.asp.txt">text version</a></td>
+        <td>Use web service Goform/ReadWrite to get the change for the coffee</td>
+      </tr>
+	
+      <tr>
+        <td><a target="_blank" href="/NET/ASP-Access.exe">.NET Application (Download Demo)</a></td>
+        <td><a target="_blank" href="/NET/br_ASPGoform.cs">source file (br_ASPGoform.cs)</a></td>
+        <td>Use web service Goform/ReadWrite in a .NET application (internal usage:  BR_ASP_Request.PV_Access.ReadPV("IP","PVName"); )</td>
+      </tr>
+      <tr>
+        <td><a target="_blank" href="/Java/ASP_Access.jar">Java Application (Download Demo)</a></td>
+        <td><a target="_blank" href="/Java/BR_ASP_Request.java">source file (br_ASPGoform.java)</a></td>
+        <td>Encapuslated usage of the web service Goform/ReadWrite in an Java application. <b>Downloaded demo have to be started from command line (java -jar ASP_Access.jar)</b></td>
+      </tr>
+	    <tr>
+        <td><a target="_blank" href="/Javascript/JS_Demo.htm">Javascript (HTML)</a></td>
+        <td><a target="_blank" href="/Javascript/JS_Demo.htm.txt">text version</a></td>
+        <td>Encapuslated usage of the web service Goform/ReadWrite in HTML with Javascript </td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="/Javascript/coffee_extract.svg">Javascript (SVG)</a></td>
+        <td><a target="_blank" href="/Javascript/coffee_extract.svg.txt">text version</a></td>
+        <td>Encapuslated usage of the web service Goform/ReadWrite in SVG with Javascript</td>
+      </tr>
+	  	  <tr>
+        <td>source file (PV_Access.js)</td>
+        <td><a target="_blank" href="/Javascript/PV_Access.js">text version</a></td>
+        <td>Javascript functions for encapuslated usage of Goform/ReadWrite</td>
+      </tr>
+	    <tr>
+        <td>Helper File For .NET, Java And Javascript Demos</td>
+        <td><a target="_blank" href="/response.asp.txt">text version</a></td>
+        <td>Returns the value of the requested PV as a document</td>
+      </tr>
+    </table> 
+  </div>                        
+</div>
+
+
+<div id="DIV_GOFORM_ASP" style="display: none">
+  <div class="content_headline">Active and interactive pages elements combined</div>
+  <div class="content_text">
+    <table>
+      <tr>
+        <td><a target="_blank" href="/aspgoform_asp/start.asp">Accessing PVs</a></td>
+        <td><a target="_blank" href="/aspgoform_asp/start.asp.txt">text version</a></td>
+        <td>Use ASP commands and a HTML form inside one document</td>
+      </tr>
+
+    </table> 
+  </div>                        
+</div>
+
+<div id="DIV_ASP_USER" style="display: none">
+  <div class="content_headline">ASP User: Login And Usage</div>
+  <div class="content_text">
+    <table>
+      <tr>
+        <td><a target="_blank" href="/asp_user/login.html">Login</a></td>
+        <td><a target="_blank" href="/asp_user/login.html.txt">text version</a></td>
+        <td>Form one shows an example form. Form two is prefilled with a valid login for direct use.</td>
+      </tr>
+      <tr>
+        <td><a target="_blank" href="/asp_user/logout.html">Logout</a></td>
+        <td><a target="_blank" href="/asp_user/logout.html.txt">text version</a></td>
+        <td>Logout of the ASP User</td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="asp/env.asp">Enviroment Variables</a></td>
+        <td><a target="_blank" href="asp/env.asp.txt">text version</a></td>
+        <td>Use EnvPrint to print enviroment variables</td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="asp_user/userrights.txt.asp">ASP User Specific page content (Target Page For Login And Logout)</a></td>
+        <td><a target="_blank" href="asp_user/userrights.txt.asp.txt">text version</a></td>
+        <td>Use ErrorMsg and UserGroup to control the processing of the ASP file. As ASP User "asp1:pw1" (group 1) the coffee machine can be switched on. As ASP User "asp2:pw2" (group 2) the coffee machine can be switched off. </td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="/asp_user/error.txt.asp">Target Page For Failed Login</a></td>
+        <td><a target="_blank" href="/asp_user/error.txt.asp.txt">text version</a></td>
+        <td>User will be redirected to this page, if login of ASP User failed. This target page is configured as hidden field in the login form.</td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="/brWebSvr.cfg">BrWebSvr.cfg - Configuration Of ASP Users</a></td>
+        <td><a >-</a></td>
+        <td>Configuration file for ASP Users used for this examples.</td>
+      </tr>
+    </table> 
+  </div>                        
+</div>
+
+<div id="DIV_MAGNIFICA" style="display: none">
+  <div class="content_headline">Maginifica test page</div>
+  <div class="content_text">
+  <p>Alleen voor geautoriseerd personeel.</p>
+    <table>
+	  <tr>
+        <td><a target="_blank" href="/Javascript/enable.svg">Enable</a></td>
+        <td><a target="_blank" href="/Javascript/coffee_extract.svg.txt"> </a></td>
+        <td>Enable control</td>
+      </tr>
+	  <tr>
+        <td><a target="_blank" href="/Javascript/manual.svg">Manual</a></td>
+        <td><a target="_blank" href="/Javascript/coffee_extract.svg.txt"> </a></td>
+        <td>Manual control</td>
+      </tr>
+	
+	  <tr>
+        <td><a target="_blank" href="/Javascript/coffee_extract.svg">Gripper control</a></td>
+        <td><a target="_blank" href="/Javascript/coffee_extract.svg.txt"> </a></td>
+        <td>Manual gripper control</td>
+      </tr>
+    </table> 
+  </div>                        
+</div>
+
+
+</body>
+
+</html>

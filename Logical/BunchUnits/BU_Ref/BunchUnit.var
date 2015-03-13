@@ -1,0 +1,29 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: BU
+ * File: BU.var
+ * Author: ronspa
+ * Created: September 25, 2014
+ ********************************************************************
+ * Local variables of program BU
+ ********************************************************************)
+VAR
+	testPosition : UINT := 400;
+	i : INT; (*Bos Unit index*)
+	tonLift : TON;
+	tonDropReadyDelay : TON; (*Delay when released*)
+	tonDropDelay : TON; (*Delay of gripper afther drop*)
+	tpBunchBelts : TP;
+	tpResetInv : TP;
+	_BunchBeltControl : fbSensControl;
+	_GripperControl : fbSensControl;
+	usGripperIndex : USINT;
+END_VAR
+(*FreqInverter control*)
+VAR
+	bRun : BOOL;
+	bRunReverse : BOOL := FALSE;
+	bResetFault : BOOL;
+	PulsGenerator_0 : PulsGenerator;
+END_VAR

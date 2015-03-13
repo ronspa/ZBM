@@ -1,0 +1,18 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: can_diag
+ * File: can_diag.var
+ * Author: fleischerm
+ * Created: February 02, 2015
+ ********************************************************************
+ * Local variables of program can_diag
+ ********************************************************************)
+VAR
+	getDiagInfo : BOOL;
+	step : USINT;
+	x20if1041map : local_if1041_map;
+	emcyTelegram : nxcomEmcyTelegrams_t;
+	nxcomGetDiag_0 : nxcomGetDiag;
+	nxcomRecvEmcyDev_0 : nxcomRecvEmcyDev;
+END_VAR

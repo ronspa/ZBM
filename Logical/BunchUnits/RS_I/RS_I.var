@@ -1,0 +1,15 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: RS
+ * File: RS.var
+ * Author: ronspa
+ * Created: December 23, 2014
+ ********************************************************************
+ * Local variables of program RS
+ ********************************************************************)
+VAR
+	New_Variable : USINT;
+	GripperControl : fbSensControl;
+	usGripperIndex : USINT;
+END_VAR

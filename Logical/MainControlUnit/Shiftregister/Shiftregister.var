@@ -1,0 +1,92 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: Shiftregister
+ * File: Shiftregister.var
+ * Author: jorkes
+ * Created: July 08, 2014
+ ********************************************************************
+ * Local variables of program Shiftregister
+ ********************************************************************)
+(*Log*)
+VAR
+	AsArLogWrite_EmptyCmd : AsArLogWrite := (0);
+	tiLastPuls : TIME;
+END_VAR
+(*Zonder kettingplaatjes*)
+VAR
+	bSubCounter : BOOL := FALSE;
+	bEncPuls2 : BOOL;
+	bEncPuls1 : BOOL;
+	tpPulsEnc2 : TP;
+	tpPulsEnc1 : TP;
+	bEncActive1 : BOOL;
+	bEncActive2 : BOOL;
+	idxCntr : USINT := 0;
+	idx : USINT := 0;
+	idx_Diff1 : USINT := 0;
+	idx_Diff3 : USINT := 0;
+	tiActual2 : TIME;
+	tiActual1 : TIME;
+	tiCheck1 : ARRAY[0..74] OF TIME;
+	tiDiff1 : TIME;
+	tiStop1 : TIME;
+	tiStart1 : TIME;
+	tiCheck2 : TIME;
+	tiDiff2 : TIME;
+	tiStop2 : TIME;
+	tiStart2 : TIME;
+	tiCheck3 : TIME;
+	tiDiff3Total : TIME;
+	tiDiff3 : ARRAY[0..9] OF TIME;
+	tiStop3 : TIME;
+	tiStart3 : TIME;
+END_VAR
+(*Kettingteller*)
+VAR
+	bFall_1 : BOOL := FALSE;
+	bFall_2 : BOOL := FALSE;
+	tiMusecDiff2 : TIME;
+	tiMusecDiff1 : TIME;
+	tiMusecStart2 : TIME;
+	tiMusecStart1 : TIME;
+	tiMusecStop2 : TIME;
+	tiMusecStop1 : TIME;
+END_VAR
+(*Kettingrek*)
+VAR
+	usCntr : USINT := 0;
+	tiMusecBetweenEncDiff : ARRAY[0..100] OF TIME;
+	tiMusecBetweenEncStop : TIME;
+	tiMusecBetweenEncStart : TIME;
+	AverageSens_1 : fbAverage;
+	AverageSens_0 : fbAverage;
+END_VAR
+(*Grijper*)
+VAR
+	tiMusecSub : TIME := T#600ms;
+	tiMusecDiff3 : TIME;
+	tiMusecStop3 : TIME;
+	toggle : BOOL;
+END_VAR
+(*Subcounter*)
+VAR
+	bStartCnt : BOOL;
+	tiMusecDiff4 : TIME;
+	tiMusecActual4 : TIME;
+	PulsGenerator_0 : PulsGenerator;
+	tiMusecStart4 : TIME;
+	CamTrig_0 : fbTriggerBuf;
+	CamTrig_1 : fbTriggerBuf;
+	CamTrig_2 : fbTriggerBuf;
+	CamTrig_3 : fbTriggerBuf;
+END_VAR
+(*Ligths*)
+VAR
+	tpBlink : TP;
+END_VAR
+(*BunchUnits*)
+VAR
+	i : USINT;
+	usGripperIndex : USINT;
+END_VAR

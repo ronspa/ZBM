@@ -1,0 +1,83 @@
+(********************************************************************
+ * COPYRIGHT -- Microsoft
+ ********************************************************************
+ * Program: BeltControl
+ * File: BeltControl.var
+ * Author: jorkes
+ * Created: November 28, 2014
+ ********************************************************************
+ * Local variables of program BeltControl
+ ********************************************************************)
+(*check time between belt positions*)
+VAR
+	idx_Diff2 : USINT;
+	idx_Diff1 : USINT;
+	tiActual : TIME;
+	tiDiff2 : ARRAY[0..9] OF TIME;
+	tiStop2 : TIME;
+	tiStart2 : TIME;
+	tiDiff1 : ARRAY[0..9] OF TIME;
+	tiStop1 : TIME;
+	tiStart1 : TIME;
+END_VAR
+(*State machine beltcontrol*)
+VAR
+	bSensCheck1 : BOOL;
+	bSensCheck0 : BOOL;
+	ST_BELT : USINT := 0;
+END_VAR
+VAR CONSTANT
+	CMD_WAIT : USINT := 0;
+	CMD_STOP : USINT := 2;
+	CMD_MOVE : USINT := 1;
+END_VAR
+VAR
+	BeltSize : USINT := 0;
+	idxBeltPos : USINT := 0;
+	bTest : BOOL;
+	idx : USINT := 0;
+END_VAR
+(*Inverters*)
+VAR
+	InverterCommand : enumINV_CMD;
+	InverterState : enumINV_ST;
+END_VAR
+(*Beltmotor1 - Vakkenband*)
+VAR
+	bRun1 : BOOL;
+	bRunReverse1 : BOOL;
+	bResetFault1 : BOOL;
+	iSpeed1 : INT := 690; (*23Hz*)
+END_VAR
+(*Beltmotor2 - Sponsband*)
+VAR
+	bRun2 : BOOL;
+	bRunReverse2 : BOOL;
+	bResetFault2 : BOOL;
+	iSpeed2 : INT := 670; (*22.3Hz*)
+END_VAR
+(*Knifemotor*)
+VAR
+	bRun3 : BOOL;
+	bRunReverse3 : BOOL;
+	bResetFault3 : BOOL;
+	iSpeed3 : INT := 20; (*20Hz*)
+END_VAR
+(*Buffermotor*)
+VAR
+	bRun4 : BOOL;
+	bRunReverse4 : BOOL;
+	bResetFault4 : BOOL;
+	iSpeed4 : INT := 20; (*20Hz*)
+END_VAR
+(*Sensor checks*)
+VAR
+	KnifeControl : fbSensDelay;
+	BufferControl : fbSensDelay;
+	BindControl_1 : fbSensDelay;
+	BindControl_0 : fbSensDelay;
+	SensControl_1 : fbSensDelay;
+	SensControl_0 : fbSensDelay;
+	AsArLogWrite_1 : AsArLogWrite := (0);
+	AsArLogWrite_0 : AsArLogWrite := (0);
+END_VAR

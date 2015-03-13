@@ -1,0 +1,10 @@
+VAR
+	i : USINT;
+	Down_SR : SR;
+	Mid_SR : SR;
+	Up_SR : SR;
+	bDown : BOOL;
+	bMid : BOOL;
+	bUp : BOOL;
+	EnumInput : enum_Input;
+END_VAR

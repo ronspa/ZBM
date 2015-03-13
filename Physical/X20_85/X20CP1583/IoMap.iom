@@ -1,0 +1,59 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * File: IoMap.iom
+ * Author: ronspa
+ * Created: January 19, 2015
+ ********************************************************************
+ * IO mapping file
+ ********************************************************************)
+VAR_CONFIG
+	BU[0].typeInterface.bReset AT %IX."X20DI9371".DigitalInput02;
+	BU[0].typIN.bElevatorUp AT %IX."X20DI9371".DigitalInput03;
+	BU[0].typIN.bElevatorMid AT %IX."X20DI9371".DigitalInput04;
+	BU[0].typIN.bElevatorDown AT %IX."X20DI9371".DigitalInput05;
+	in_bModule1[0] AT %IX."X20DI9371".DigitalInput06;
+	in_bModule1[1] AT %IX."X20DI9371".DigitalInput07;
+	in_bModule1[3] AT %IX."X20DI9371".DigitalInput09;
+	in_bModule1[4] AT %IX."X20DI9371".DigitalInput10;
+	in_bModule1[5] AT %IX."X20DI9371".DigitalInput11;
+	in_bModule1[6] AT %IX."X20DI9371".DigitalInput12;
+	in_bModule1[2] AT %IX."X20DI9371".DigitalInput08;
+	BU[0].typOUT.bActivateGripper AT %QX."X20DO9322".DigitalOutput01;
+	BU[0].typOUT.bBunchGripper AT %QX."X20DO9322".DigitalOutput02;
+	BU[0].typOUT.bElevator AT %QX."X20DO9322".DigitalOutput03;
+	BU[0].typOUT.bReleaseGripper AT %QX."X20DO9322".DigitalOutput04;
+	BU[1].typOUT.bActivateGripper AT %QX."X20DO9322".DigitalOutput07;
+	BU[1].typOUT.bBunchGripper AT %QX."X20DO9322".DigitalOutput08;
+	BU[1].typOUT.bElevator AT %QX."X20DO9322".DigitalOutput09;
+	BU[1].typOUT.bReleaseGripper AT %QX."X20DO9322".DigitalOutput10;
+	MBU.out_bBinder1 AT %QX."X20DO9322".DigitalOutput11;
+	MBU.out_bBinder2 AT %QX."X20DO9322".DigitalOutput12;
+	out_bModule1[0] AT %QX."X20DO9322".DigitalOutput05;
+	out_bModule1[1] AT %QX."X20DO9322".DigitalOutput06;
+	MCU.typOUT.bCamTrigger1 AT %QX."X20DO9322a".DigitalOutput01;
+	MCU.typOUT.bLightTrigger1 AT %QX."X20DO9322a".DigitalOutput02;
+	MCU.typOUT.bCamTrigger2 AT %QX."X20DO9322a".DigitalOutput03;
+	MCU.typOUT.bCamTrigger3 AT %QX."X20DO9322a".DigitalOutput05;
+	MCU.typOUT.bCamTrigger4 AT %QX."X20DO9322a".DigitalOutput07;
+	MCU.typOUT.bLightTrigger2 AT %QX."X20DO9322a".DigitalOutput04;
+	MCU.typOUT.bLightTrigger3 AT %QX."X20DO9322a".DigitalOutput06;
+	MCU.typOUT.bLightTrigger4 AT %QX."X20DO9322a".DigitalOutput08;
+	BU[0].typBunchBelts.packed.LCR AT %IW."BuMotor1".2002sub05_TPDO06_LCR_Motor_current_0_1_A;
+	BU[0].typBunchBelts.packed.CMDD AT %QW."BuMotor1".6040sub00_RPDO01_CMDD_Control_word;
+	BU[0].typBunchBelts.packed.ETAD AT %IW."BuMotor1".6041sub00_TPDO01_ETAD_Status_word;
+	BU[0].typBunchBelts.packed.LFR AT %QW."BuMotor1".6042sub00_RPDO06_LFRD_Speed_setpoint_rpm;
+	BU[0].typBunchBelts.packed.ModuleOk AT %IX."BuMotor1".ModuleOk;
+	BU[0].typBunchBelts.packed.ERRD AT %IW."BuMotor1".2029sub16_TPDO06_LFT_Last_detected_fault;
+	BU[0].typServo.packed.CCON AT %QB."ServoUnit1".3000sub00_RPDO01_CCON;
+	BU[0].typServo.packed.CPOS AT %QB."ServoUnit1".3001sub00_RPDO01_CPOS;
+	BU[0].typServo.packed.PARA1 AT %QB."ServoUnit1".3003sub00_RPDO01_RES_DEM_VAL1_PARA1;
+	BU[0].typServo.packed.PARA2 AT %QD."ServoUnit1".3004sub00_RPDO01_RES_DEM_VAL2_PARA2;
+	BU[0].typServo.packed.SCON AT %IB."ServoUnit1".3020sub00_TPDO01_SCON;
+	BU[0].typServo.packed.SPOS AT %IB."ServoUnit1".3021sub00_TPDO01_SPOS;
+	BU[0].typServo.packed.VAL1 AT %IB."ServoUnit1".3023sub00_TPDO01_RSB_ACT_VAL1_SUCC_CNT;
+	BU[0].typServo.packed.VAL2 AT %ID."ServoUnit1".3024sub00_TPDO01_ACT_POS_ACT_VAL2_ACT_POS;
+	BU[0].typServo.bOnLine AT %IX."ServoUnit1".ModuleOk;
+	Cyclic#1.systemTime AT %ID."X20CP1585".SystemTime;
+	::systemTime AT %ID."X20CP1583".SystemTime;
+END_VAR

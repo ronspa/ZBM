@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Physical xmlns="http://br-automation.co.at/AS/Physical">
+  <Objects>
+    <Object Type="Configuration">X20</Object>
+    <Object Type="Configuration">Config1</Object>
+    <Object Type="Configuration">X20_85</Object>
+  </Objects>
+</Physical>

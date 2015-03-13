@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- font-size=13.3333 entspricht etwa einer TexthÃ¶he von 10 -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg font-size="13.3333" font-family="Arial Unicode MS, Sans-serif" preserveAspectRatio="XMidYMid meet"
+	width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" text-rendering="geometricPrecision">
+	<script xlink:href="/PV_Access.js" type="text/javascript"/>
+	
+	
+	<style type="text/css" >
+		<![CDATA[
+		
+			.txGroupTitle{ fill:rgb( 77, 77, 77 ); font-weight:bold  }
+			.clBackGradientOwer{ fill:rgb( 26, 26, 26 ); }
+			.clOutline{ stroke:rgb(89,89,89); }
+			.clHeaderBar{ fill:rgb( 204, 204, 204 ); }
+			.clGroupBackground{ fill:rgb( 242, 242, 242 ); }
+			.gdBackGradientUpper{ stop-color:rgb( 217, 217, 217 ); }
+			.gdBackGradientOwer{ stop-color:rgb( 26, 26, 26 ); }
+			.gdControlActiveArea{ stop-color:rgb( 230, 230, 230 ); }
+		
+		]]>
+	</style>
+	
+	
+	<script><![CDATA[
+		var list = new Array();
+		var actIndex= 0;
+		var that = this;
+		
+		// Example cyclic update request for registered PVs in list. 
+		// one PV value requested per call
+		refreshPV = function()
+		{
+			if(list[0] == null) return;  
+
+			actIndex++;        
+			if(actIndex >= list.length) 
+			{
+				actIndex = 0;
+			}
+			var tmp = list[actIndex];
+			 
+			pvAccess.ReadPV( tmp[0].getAttribute(tmp[1]), tmp);
+
+		}
+		
+		// make the changes visible in the document
+		refreshPVupdate = function()
+		{
+			if(list[0] == null) return;  
+			
+			for(i = 0 ; i <= list.length-1; i++ )
+			{
+			var temp = list[i];
+			temp[0].setAttribute(temp[2], temp[3] );
+			temp[0][temp[2]] = temp[3];
+			}
+
+		}
+		
+
+		
+		// registration example
+		registerRefreshPV = function(node,nameAttrib,valueAttrib) 
+		{
+			tmp = new Array();
+			tmp.push(node);
+			tmp.push(nameAttrib);
+			tmp.push(valueAttrib);
+			tmp.push(null);
+			list.push(tmp);
+		}
+	]]></script>
+
+	
+	<defs>
+		<linearGradient id="buttonArea" x1="0.5" y1="0" x2="0.5" y2="1" >
+			<stop offset="0" class="gdBackGradientUpper" />
+			<stop offset="0.2" class="gdControlActiveArea" />
+			<stop offset="0.8" class="gdControlActiveArea" />
+			<stop offset="1" class="gdBackGradientOwer" />
+		</linearGradient>
+	</defs>
+	
+	<g transform="translate(100,20)" font-size="13.3333">
+		<rect x="0" y="0" width="200" height="113" rx="2" ry="2" class="clGroupBackground" />
+		<rect x="2" y="2" width="198" height="23" class="clHeaderBar" />
+		<text x="10" y="18" class="txGroupTitle" font-size="12" >Control</text>
+		<line x1="0" x2="200" y1="25" y2="25" class="clOutline" />
+		<rect x="0" y="0" width="200" height="113" rx="2" ry="2" fill="none" class="clOutline" />
+		<g transform="translate(0,25)">
+<!-- ***********************************************************************************************************************
+         A click on the element calls the goform web services and sends the command in to the sps
+ *********************************************************************************************************************** --> 		
+			<g onclick="pvAccess.WritePV('BU[0].typeInterface.bManualCmd','1');" transform="translate(10,10)" >
+				<rect x="1" y="1" width="91" height="31" class="clBackGradientOwer" rx="2" ry="2" />
+				<g >
+					<rect x="0.5" y="0.5" width="90" height="30" fill="url(#buttonArea)" class="clOutline" rx="2" ry="2" />
+					<text x="45" y="21" text-anchor="middle" class="txGroupTitle" >On</text>
+				</g>
+			</g>
+<!-- ***********************************************************************************************************************
+         A click on the element calls the goform web services and sends the command in to the sps
+ *********************************************************************************************************************** --> 
+			<g onclick="pvAccess.WritePV('BU[0].typeInterface.bManualCmd','0');" transform="translate(10,46)" >
+				<rect x="1" y="1" width="91" height="31" class="clBackGradientOwer" rx="2" ry="2" />
+				<g >
+					<rect x="0.5" y="0.5" width="90" height="30" fill="url(#buttonArea)" class="clOutline" rx="2" ry="2" />
+					<text x="45" y="21" text-anchor="middle" class="txGroupTitle" >Off</text>
+				</g>
+			</g>
+<!-- ***********************************************************************************************************************
+         Next element is will be linked with PV named in the attribute "name"    see line 138 - 140
+ *********************************************************************************************************************** --> 
+			<circle id="machineStatus" name="BU[0].typeInterface.bManualCmd" cx="160" cy="43" r="10" fill="red"/>
+		</g>
+	</g>
+	
+	<text x="100" y="180">gBrewing.status.brewingStepText:</text>
+<!-- ***********************************************************************************************************************
+         Next element is will be linked with PV named in the attribute "name"   see line 138 - 140
+ *********************************************************************************************************************** --> 	
+	<text x="100" y="200" id="szTemp" name="BU[0].typBunchBelts.status.strHmiInfo"> - </text>
+	<text x="100" y="240" fill="grey">Each second one update for a PV Value is requested. </text>
+	<text x="100" y="260" fill="grey">Here are two PV's in a cylic update list, so an </text>
+	<text x="100" y="280" fill="grey">update may need two seconds to become visible.</text>
+	<script>
+		
+			// change color of  status led 
+			statusNode = document.getElementById("machineStatus"); 
+			function update() { 
+				if(statusNode.value ==1) { statusNode.setAttribute("fill", "green"); } 
+				else { statusNode.setAttribute("fill", "red"); }; 
+			} 	
+			
+
+			// register PVs attached to an Element (See line 116 and 124 )
+			registerRefreshPV(document.getElementById('machineStatus'), "name","value");
+			registerRefreshPV(document.getElementById('szTemp'), "name","textContent");
+			
+			// periodically called functions (time in ms)
+			var refreshInterval  = setInterval("refreshPV();" ,1000);
+			var refreshInterval2 = setInterval("refreshPVupdate();", 100);			
+			var updateInterval   = setInterval("update();",10);
+
+	</script>
+</svg>

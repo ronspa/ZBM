@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<DDMeta>
+  <Tags>
+    <Tag Name="FileName" Value="ACOPOSinverter_X64.eds" />
+    <Tag Name="ProductName" Value="ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" />
+    <Tag Name="VendorName" Value="B&amp;R Industrie-Elektronik" />
+    <Tag Name="Version" Value="0.0x00010007" />
+    <Tag Name="Date" Value="2000-01-01" />
+    <Tag Name="ProtocolId" Value="417B1B08-CCB8-4445-B642-F9CA05C663CD" />
+  </Tags>
+</DDMeta>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.1.4.402"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="MBUState">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="3"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="95650" Value="INIT"/>
+    <Text ID="95651" Value="RUN"/>
+    <Text ID="95652" Value="STOP"/>
+    <Text ID="95653" Value="MANUAL"/>
+    <Text ID="95654" Value="HOLD"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="95650" Value=""/>
+    <Text ID="95651" Value=""/>
+    <Text ID="95652" Value=""/>
+    <Text ID="95653" Value=""/>
+    <Text ID="95654" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="95650" Value="0"/>
+    <Index ID="95651" Value="1"/>
+    <Index ID="95652" Value="2"/>
+    <Index ID="95653" Value="3"/>
+    <Index ID="95654" Value="4"/>
+  </IndexMap>
+</TextGroup>

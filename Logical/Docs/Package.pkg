@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">CAN_byte_description.pdf</Object>
+    <Object Type="File">communication protocol GUI.JPG</Object>
+    <Object Type="File">DIPswitch.pdf</Object>
+    <Object Type="File">X1_pinalloc.pdf</Object>
+    <Object Type="File">CAN_config_ATV312.JPG</Object>
+    <Object Type="File">CAN_signal_ATV312.JPG</Object>
+    <Object Type="File">CAN_SDO_ATV312.JPG</Object>
+    <Object Type="File">ShiftRegPuls.JPG</Object>
+    <Object Type="File">ToDo.txt</Object>
+  </Objects>
+</Package>

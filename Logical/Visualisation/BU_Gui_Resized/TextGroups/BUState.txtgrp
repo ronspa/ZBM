@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.1.4.402"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="BUState">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="2"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="95392" Value="Disabled"/>
+    <Text ID="95393" Value="Init"/>
+    <Text ID="95394" Value="Home"/>
+    <Text ID="95395" Value="Receive"/>
+    <Text ID="95396" Value="Full"/>
+    <Text ID="95397" Value="Dropped"/>
+    <Text ID="95398" Value="Return"/>
+    <Text ID="95399" Value="Failure"/>
+    <Text ID="95400" Value="Timeout lift"/>
+    <Text ID="95401" Value="Timeout position"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="95392" Value=""/>
+    <Text ID="95393" Value=""/>
+    <Text ID="95394" Value=""/>
+    <Text ID="95395" Value=""/>
+    <Text ID="95396" Value=""/>
+    <Text ID="95397" Value=""/>
+    <Text ID="95398" Value=""/>
+    <Text ID="95399" Value=""/>
+    <Text ID="95400" Value=""/>
+    <Text ID="95401" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="95392" Value="0"/>
+    <Index ID="95393" Value="1"/>
+    <Index ID="95394" Value="2"/>
+    <Index ID="95395" Value="3"/>
+    <Index ID="95396" Value="4"/>
+    <Index ID="95397" Value="5"/>
+    <Index ID="95398" Value="6"/>
+    <Index ID="95399" Value="7"/>
+    <Index ID="95400" Value="8"/>
+    <Index ID="95401" Value="9"/>
+  </IndexMap>
+</TextGroup>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC" Description="Bunch Unit Ref (BU)">BU_Ref</Object>
+    <Object Type="Program" Language="IEC" Description="Servo Control Ref (SC)">SC_Ref</Object>
+    <Object Type="Program" Language="IEC" Description="Init setting for Bunch units">Init</Object>
+    <Object Type="Program" Language="IEC" Description="Reject Station">RS_I</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 1">BU_1</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 1">SC_1</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 2">BU_2</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 2">SC_2</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 3">BU_3</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 3">SC_3</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 4">BU_4</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 4">SC_4</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 5">BU_5</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 5">SC_5</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 6">BU_6</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 6">SC_6</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 7">BU_7</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 7">SC_7</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 8">BU_8</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 8">SC_8</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 3">BU_9</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 3">SC_9</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Bunch Unit 10">BU_10</Object>
+    <Object Type="Program" Language="IEC" Description="Program for Servo 10">SC_10</Object>
+  </Objects>
+</Package>

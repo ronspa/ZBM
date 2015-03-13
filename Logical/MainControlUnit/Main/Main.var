@@ -1,0 +1,39 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: Main
+ * File: Main.var
+ * Author: jorkes
+ * Created: August 14, 2014
+ ********************************************************************
+ * Local variables of program Main
+ ********************************************************************)
+VAR
+	tonStart : TON;
+	tonJogDelay : TON;
+	tonBuzzerReset : TON;
+	bRunRequest : BOOL := FALSE;
+	srJogDelay : SR;
+	TestPuls : PulsGenerator;
+	iSpeed : INT := 1500; (*/30 = Hz (50)*)
+	Var1 : USINT := 0;
+	write : BOOL := FALSE;
+	read : BOOL := FALSE;
+	iBUEnabledMask : INT := -1;
+	iMask : INT;
+	iOut : INT;
+	i : USINT; (*Loop*)
+END_VAR
+(*Variables for manual Camtrigger*)
+VAR
+	tiCamPuls : TIME := T#10ms;
+	tiLightPuls : TIME := T#30ms;
+	tpCamTrig1 : TP;
+	tpCamTrig2 : TP;
+	tpCamTrig3 : TP;
+	tpCamTrig4 : TP;
+	tpLightTrig1 : TP;
+	tpLightTrig2 : TP;
+	tpLightTrig3 : TP;
+	tpLightTrig4 : TP;
+END_VAR

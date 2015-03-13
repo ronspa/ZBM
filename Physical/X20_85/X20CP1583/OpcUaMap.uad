@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource Date="3-3-2015 12:18:55" Version="4.1.4.402" FileVersion="1">
+  <DefaultView>
+    <Module>
+      <Variable Name="bGblRun" Enable="True" />
+      <Variable Name="bGblSimulation" Enable="True" />
+      <Variable Name="BU" Enable="True" EnableArrayElements="True" />
+      <Variable Name="ErrorState" Enable="True" />
+      <Variable Name="MBU" Enable="True" AutomaticEnable="True" />
+      <Variable Name="MCU" Enable="True" AutomaticEnable="True" />
+      <Variable Name="RU" Enable="True" AutomaticEnable="True" />
+      <Variable Name="Settings" Enable="True" AutomaticEnable="True" />
+      <Variable Name="SHFTREG" Enable="True" AutomaticEnable="True" />
+      <Variable Name="SHFTREG.typGripper" EnableArrayElements="True" />
+      <Variable Name="systemTime" Enable="True" />
+      <Task Name="ErrorHandl">
+        <Variable Name="bHeartBeat" Enable="True" />
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

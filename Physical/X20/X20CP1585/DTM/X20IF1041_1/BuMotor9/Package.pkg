@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Private="true">BuMotor9.dtmdri</Object>
+    <Object Type="File" Private="true">BuMotor9.dtmdre</Object>
+    <Object Type="File" Private="true">BuMotor9.dtmtre</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<DDMeta>
+  <Tags>
+    <Tag Name="FileName" Value="TEATV3151E_01501E.eds" />
+    <Tag Name="ProductName" Value="ATV31_V5.1 (TEATV3151E_01501E.eds)" />
+    <Tag Name="VendorName" Value="Telemecanique" />
+    <Tag Name="Version" Value="0.0x00010501" />
+    <Tag Name="Date" Value="2000-01-01" />
+    <Tag Name="ProtocolId" Value="417B1B08-CCB8-4445-B642-F9CA05C663CD" />
+  </Tags>
+</DDMeta>

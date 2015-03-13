@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Package Version="1.00.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Global.typ</Object>
+    <Object Type="File">Global.var</Object>
+    <Object Type="Package" Description="Global libraries">Libraries</Object>
+    <Object Type="Package" Description="Package">MainControlUnit</Object>
+    <Object Type="Package" Description="Package">MainBeltUnit</Object>
+    <Object Type="Package" Description="Package">BunchUnits</Object>
+    <Object Type="Package" Description="All error codes and exceptions">Exceptionhandling</Object>
+    <Object Type="Package" Description="Visualisation dir">Visualisation</Object>
+    <Object Type="Package" Description="Package">Docs</Object>
+    <Object Type="Package" Description="Package">IOHandling</Object>
+    <Object Type="Package" Description="Read and write serial Frames">Lichtkrant</Object>
+    <Object Type="Package" Description="Havatec libraries">libraries_hav</Object>
+  </Objects>
+</Package>

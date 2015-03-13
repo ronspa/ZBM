@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<DDMeta>
+  <Tags>
+    <Tag Name="FileName" Value="CMMS-ST_CAN.eds" />
+    <Tag Name="ProductName" Value="CMMS-ST (CMMS-ST_CAN.eds)" />
+    <Tag Name="VendorName" Value="Festo AG &amp; Co. KG" />
+    <Tag Name="Version" Value="0x00001116.0x00000001" />
+    <Tag Name="Date" Value="2000-01-01" />
+    <Tag Name="ProtocolId" Value="417B1B08-CCB8-4445-B642-F9CA05C663CD" />
+  </Tags>
+</DDMeta>

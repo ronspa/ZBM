@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="BeltMotor1" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BeltMotor2" TargetConnector="CAN2" NodeNumber="4" />
+    <Parameter ID="DtmId" Value="0e41fe58-9b29-4e80-aa17-b3b9a602be41" />
+    <Group ID="ChannelBlocks_54c748ae-a862-45bf-bd05-307df38cf45a" Description="Receive PDO1 parameter" />
+    <Group ID="IO_aca35ca7-9daa-4f2c-a263-cb1312a79025" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_6fc9c6dd-ef6a-4241-a49b-47093041261e" Description="Receive PDO6 parameter" />
+    <Group ID="IO_a09422e8-9296-4dde-995f-c21dba077c83" Description="2 Byte(s)" />
+    <Group ID="IO_c6b60006-1097-4b2b-99a2-873ae92355e9" Description="2 Byte(s)" />
+    <Group ID="IO_be17ac07-0c86-4ed7-8a83-77242752eabc" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_0de3404d-a2ba-475d-9759-ce1c75ca456f" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_d4d6ac5b-6312-46c0-bea3-1feb3fe2ff1b" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_35f5ad43-0655-49b5-a722-94d15f201f4c" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_54646803-abb9-4e9d-b295-57a01534b6c3" Description="2 Byte(s)" />
+    <Group ID="IO_ae920d2b-a2b1-4de3-a1c4-e574386f93fb" Description="2 Byte(s)" />
+    <Group ID="IO_47f71d08-67d5-4a29-b608-1e0426a373c3" Description="2 Byte(s)" />
+    <Group ID="IO_76edcae2-a5b3-42ff-aea4-90ff8a7df386" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BeltMotor2" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="ChainMotor" TargetConnector="CAN2" NodeNumber="5" />
+    <Parameter ID="DtmId" Value="5224c894-1ef8-4fa5-9f2e-7023e8237f50" />
+    <Group ID="ChannelBlocks_54ef21bf-51ac-4b79-9d7d-aaf36440fde1" Description="Receive PDO1 parameter" />
+    <Group ID="IO_08901fce-ce4a-45a7-8fa1-4352fddaeca0" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_5fdfdc2d-6504-40c7-b6e9-5c26043bbabb" Description="Receive PDO6 parameter" />
+    <Group ID="IO_7efb87b6-7525-4814-82a4-a00de786267e" Description="2 Byte(s)" />
+    <Group ID="IO_1c5a6fdf-985c-41b4-867c-db4a3086964a" Description="2 Byte(s)" />
+    <Group ID="IO_89f973fb-223e-4f5d-b0cf-d7557db3c308" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_ff6de664-0730-4c0c-a004-c59824083d59" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_6a6c6cea-e364-4156-9bd8-734b31d4d8b2" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_b2f2cbd0-76eb-4694-9316-88ecd34e890c" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_27630f78-04b9-4817-a004-ac8ed4a34943" Description="2 Byte(s)" />
+    <Group ID="IO_a532a8b0-ae79-4199-8f10-aceb97e86d8c" Description="2 Byte(s)" />
+    <Group ID="IO_80c1adba-b4c6-4671-a8d4-c5debac3ab04" Description="2 Byte(s)" />
+    <Group ID="IO_db551fcc-40d8-4d75-964b-d0c34238111c" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BU_0-1" Type="X20BB80" Version="1.0.0.2">
+    <Connector Name="IF1">
+      <Parameter ID="BusLength" Value="100" />
+    </Connector>
+  </Module>
+  <Module Name="BU_2-3" Type="X20BB80" Version="1.0.0.2" />
+  <Module Name="BU_4-5" Type="X20BB80" Version="1.0.0.2" />
+  <Module Name="BU_6-7" Type="X20BB80" Version="1.0.0.2" />
+  <Module Name="BU_8-9" Type="X20BB80" Version="1.0.0.2" />
+  <Module Name="BuMotor1" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="X20IF1041_1" TargetConnector="IF1" NodeNumber="10" />
+    <Parameter ID="DtmId" Value="41eacdba-3555-4f40-ac61-2c8428ea58b2" />
+    <Group ID="ChannelBlocks_b9ddc844-9481-4af5-a747-25b3e2109658" Description="Receive PDO1 parameter" />
+    <Group ID="IO_7b4bc88c-5ce5-4aaa-a58d-90f33b48a65c" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_8b5f3c6e-1732-4951-a210-c4de25588974" Description="Receive PDO6 parameter" />
+    <Group ID="IO_39a2cd53-b850-4b06-8776-b6d11eb43720" Description="2 Byte(s)" />
+    <Group ID="IO_30629477-0436-4440-ba53-af916bfbef45" Description="2 Byte(s)" />
+    <Group ID="IO_eda63b9e-3d56-4a36-8c45-b6b1969d639a" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_f1365d26-9917-401f-a453-e6262fccb88e" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_8b996910-5de3-45a7-9e18-c98469aeffd6" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_48485091-4447-4b08-b8f7-2a8039d8dcd2" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_be2a3e1f-8d08-4dea-a2d2-a29b4de4c830" Description="2 Byte(s)" />
+    <Group ID="IO_55fef0e3-e778-4333-8784-725b71533f49" Description="2 Byte(s)" />
+    <Group ID="IO_626eea93-30a0-479c-9321-2dd4622e8684" Description="2 Byte(s)" />
+    <Group ID="IO_53a93a48-f76d-4478-8b66-bfaf7ee8cb03" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor10" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor9" TargetConnector="CAN2" NodeNumber="28" />
+    <Parameter ID="DtmId" Value="334ec416-5c16-4925-9ab1-88c2f19d51fb" />
+    <Group ID="ChannelBlocks_ac9c813b-77a1-48ff-9722-79a7e36309a3" Description="Receive PDO1 parameter" />
+    <Group ID="IO_4aa75d45-937a-4143-8e5e-5239ec3df5d5" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_bd99a9ef-60c2-4465-b2ca-5589d312d023" Description="Receive PDO6 parameter" />
+    <Group ID="IO_10874e3a-ea7a-435e-b16d-3cfd83cd96d2" Description="2 Byte(s)" />
+    <Group ID="IO_a0da98ff-73a6-482d-a789-9eea3a9ef5ec" Description="2 Byte(s)" />
+    <Group ID="IO_a035e9e4-fedc-44f8-8d04-fa4482e8e6f6" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_c4ede1fb-b8c3-46bc-aa40-d6c07d995dd8" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_3a67936d-7775-49f5-8896-9a8e4e400f8a" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_4cda3d3d-ce84-47df-a9c8-383005e5aed1" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_f52c2df5-83ca-4265-9fb6-a04d781d80b2" Description="2 Byte(s)" />
+    <Group ID="IO_496498d8-ae6d-4630-839d-faafd4532c16" Description="2 Byte(s)" />
+    <Group ID="IO_a3e387be-6efa-4130-b18c-b95da0514b42" Description="2 Byte(s)" />
+    <Group ID="IO_b0e32a9b-b548-480f-ab2f-b0d362bbdba9" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor2" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor1" TargetConnector="CAN2" NodeNumber="12" />
+    <Parameter ID="DtmId" Value="e1ce438d-8ff1-4ad6-81a8-1a105d1b79ee" />
+    <Group ID="ChannelBlocks_303446a4-05f8-4f0b-b2b4-7c1333c2b877" Description="Receive PDO1 parameter" />
+    <Group ID="IO_edbfdedc-cf52-4617-8a63-87053fac3909" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_72fe8bc7-9e89-4c3c-9af8-bb7ce4d6a99e" Description="Receive PDO6 parameter" />
+    <Group ID="IO_7fc3c5cf-f8f6-4322-9a74-de616acc70eb" Description="2 Byte(s)" />
+    <Group ID="IO_f67c0509-47e2-4490-9eac-614590cde9d6" Description="2 Byte(s)" />
+    <Group ID="IO_987d5f71-5d59-414d-b133-eb996a41fb68" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_1b47f333-0257-4114-959e-33d260186bf4" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_6f79accf-2d80-4323-98c0-77cea77bfb60" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_efe37a9e-d3f3-48e1-a345-23b1c1da338c" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_a5a00cb8-1081-40a9-aa27-5251b345f7d4" Description="2 Byte(s)" />
+    <Group ID="IO_3161684f-0b69-4f3b-957e-df44177686f9" Description="2 Byte(s)" />
+    <Group ID="IO_430b3064-68ec-4c3e-8c05-6340c25ce5c7" Description="2 Byte(s)" />
+    <Group ID="IO_47871665-a16d-49f5-80b8-ccf6bf5cb8a7" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor3" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor2" TargetConnector="CAN2" NodeNumber="14" />
+    <Parameter ID="DtmId" Value="1e61ad36-4c2a-4e56-bdd1-0d91381fff01" />
+    <Group ID="ChannelBlocks_16131e21-e2ce-44a8-8d6c-ee170c9dd84c" Description="Receive PDO1 parameter" />
+    <Group ID="IO_233081b4-53a4-47f1-884f-f2efd1a08929" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_53a3e1b0-6088-4904-962c-d97f114e68db" Description="Receive PDO6 parameter" />
+    <Group ID="IO_e6106a2d-9b03-4786-b4da-5020b8cc5489" Description="2 Byte(s)" />
+    <Group ID="IO_0f48f256-f7be-491a-8248-9956108b6aa0" Description="2 Byte(s)" />
+    <Group ID="IO_afc01347-6de2-439e-b259-33123674c101" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_5db5365c-7f68-4bfd-af2b-a09bb430efe1" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_cfab9ccf-d03f-406c-96ae-dbf087d83766" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_e96627b7-b6f5-430a-82cb-a06f050c10a1" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_7d74f071-110e-4899-967d-10e546879826" Description="2 Byte(s)" />
+    <Group ID="IO_ff055412-aa6d-43cc-975d-a3aff2303c44" Description="2 Byte(s)" />
+    <Group ID="IO_c96c42f2-eb3c-407f-abc8-e2aec00ccd6f" Description="2 Byte(s)" />
+    <Group ID="IO_9c4becff-3ca0-4837-b00f-01cea90c8b43" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor4" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor3" TargetConnector="CAN2" NodeNumber="16" />
+    <Parameter ID="DtmId" Value="3419c233-701d-4c2b-a99c-e2e251ebd402" />
+    <Group ID="ChannelBlocks_e8b2e42e-dc9f-4e9b-afe3-218e25b141be" Description="Receive PDO1 parameter" />
+    <Group ID="IO_16dab77e-f7aa-424b-acc6-a2f3740772d1" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_3a5654fc-b013-413b-88ca-ad42da5e8159" Description="Receive PDO6 parameter" />
+    <Group ID="IO_0fc3cbd3-a556-4aa9-b6b1-565b33da217c" Description="2 Byte(s)" />
+    <Group ID="IO_f37a6bc4-d7ce-4ecd-85ac-62dd2e5de9aa" Description="2 Byte(s)" />
+    <Group ID="IO_04a94dea-b5f7-4965-bf5b-fca15ddf3456" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_fb4caf4b-a8c9-44e0-a0df-9b1c4a38039a" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_32d90893-e468-4b93-b87b-e735c85ecb31" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_84a463cb-60ca-4f79-80bc-efdcbf518684" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_af34fa9f-553d-4e33-8a4e-a96a9d17e081" Description="2 Byte(s)" />
+    <Group ID="IO_52b55ddc-0196-4b87-8ece-0689d53c35ee" Description="2 Byte(s)" />
+    <Group ID="IO_ece82347-fffd-4285-b914-98d6765bff2c" Description="2 Byte(s)" />
+    <Group ID="IO_ecb960f2-7d71-49be-b58a-71f34bd8c015" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor5" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor4" TargetConnector="CAN2" NodeNumber="18" />
+    <Parameter ID="DtmId" Value="4c32e5ad-4edb-4bc3-84fb-2c963843a420" />
+    <Group ID="ChannelBlocks_3b0e43e7-5611-43d6-8ec6-2ede2cec3a32" Description="Receive PDO1 parameter" />
+    <Group ID="IO_bb960a29-c17d-45e9-ae40-da831eee433e" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_9aa1925c-833d-4633-8e49-89084995cc3b" Description="Receive PDO6 parameter" />
+    <Group ID="IO_a9c7e03e-2a47-4cfa-95a2-7cf40ba5363c" Description="2 Byte(s)" />
+    <Group ID="IO_55832d8a-1481-4b90-82e1-34e4fb78b3e2" Description="2 Byte(s)" />
+    <Group ID="IO_e57ca11a-3f47-4da8-8504-ed0e9a8a8339" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_132f04aa-a5a6-49b1-b157-8f99cfa41fb9" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_d17d2007-b5bc-4df8-874a-5af49acdc510" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_cb051f0a-81b6-44f0-a47a-0639dce175ec" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_0ab8f150-63b8-41c9-817d-7015de8b9c0b" Description="2 Byte(s)" />
+    <Group ID="IO_fee015dc-7fc2-42a9-8830-1e4733cc798a" Description="2 Byte(s)" />
+    <Group ID="IO_6cbc9beb-0f89-432a-b861-7296453a7b1e" Description="2 Byte(s)" />
+    <Group ID="IO_2e4c1757-1ae4-40e8-a121-0788d8ac6cc6" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor6" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor5" TargetConnector="CAN2" NodeNumber="20" />
+    <Parameter ID="DtmId" Value="212c5dca-78b8-435a-aa98-aeeae71d2177" />
+    <Group ID="ChannelBlocks_36548871-ea81-46d0-ab51-c23f60eb9c43" Description="Receive PDO1 parameter" />
+    <Group ID="IO_972244c1-2427-47a5-b961-02e0ea3bca84" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_8e6d6cc0-2f64-493a-b846-8f9fde6f0b95" Description="Receive PDO6 parameter" />
+    <Group ID="IO_43c1df8f-fc75-4873-b39e-321cf2aeae78" Description="2 Byte(s)" />
+    <Group ID="IO_93ac0147-b909-4f64-8bd2-362413b76dca" Description="2 Byte(s)" />
+    <Group ID="IO_6dd5a1a6-fcdb-48f0-a691-0d50ab35e40a" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_b0830481-7508-4cb8-bd75-74145b1e5a65" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_78f69379-eb6e-4920-aad6-d2f1523e5569" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_d19e3ad9-8e69-4d25-8d92-be2b259d078d" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_df6299ac-0345-46ea-9f36-596b15d796e2" Description="2 Byte(s)" />
+    <Group ID="IO_93665609-78bd-4ea5-b921-8d6c30ac71e7" Description="2 Byte(s)" />
+    <Group ID="IO_692a70c6-2a2e-4ad9-904d-ad6ece7e714a" Description="2 Byte(s)" />
+    <Group ID="IO_0b12c3e3-a068-4783-a61b-308601e6b628" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor7" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor6" TargetConnector="CAN2" NodeNumber="22" />
+    <Parameter ID="DtmId" Value="fe6d1ec7-057d-4e3d-8429-4d9d0807c15d" />
+    <Group ID="ChannelBlocks_23640bc2-8a9b-4e0c-99a5-9585fc2825da" Description="Receive PDO1 parameter" />
+    <Group ID="IO_c5a90a3b-2ea9-45c8-8169-e1e808272f75" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_7172327e-45a5-44f5-ad87-af72047464ff" Description="Receive PDO6 parameter" />
+    <Group ID="IO_f30a1fbe-7a72-4da2-8571-4465ed769e94" Description="2 Byte(s)" />
+    <Group ID="IO_3bb66d1e-0ded-48ae-8f3a-aaeca947f466" Description="2 Byte(s)" />
+    <Group ID="IO_05489d67-538a-494e-9c37-4f3ed3ae3460" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_7646f274-a7ae-4c51-9912-41f9c3be717f" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_b8501f12-b2ac-4cca-aa30-82df59980588" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_60981db9-e146-4d25-8f47-02ae1f72b5ae" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_9564daf5-683d-42b1-a2ba-dbdcc986d03e" Description="2 Byte(s)" />
+    <Group ID="IO_1d121221-d496-428f-9b5b-e106d2b53480" Description="2 Byte(s)" />
+    <Group ID="IO_132e6c0a-0438-441f-a77f-0b8e58432b79" Description="2 Byte(s)" />
+    <Group ID="IO_fed1b959-84a4-4ae2-be07-728b9434a0fb" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor8" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor7" TargetConnector="CAN2" NodeNumber="24" />
+    <Parameter ID="DtmId" Value="d0e7570d-e994-4edf-9e81-ec8efb494bdc" />
+    <Group ID="ChannelBlocks_1c234084-f26d-4010-ae60-430dc9ea6039" Description="Receive PDO1 parameter" />
+    <Group ID="IO_f51d2d11-2100-42d4-9367-ddf86f21ba8a" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_bc9900bd-4277-4d30-ab2b-fc45edb7799e" Description="Receive PDO6 parameter" />
+    <Group ID="IO_e6a06380-dc77-42c1-8abc-946aceaaeec3" Description="2 Byte(s)" />
+    <Group ID="IO_b998704f-b9a3-4a2e-a70b-97f25279deec" Description="2 Byte(s)" />
+    <Group ID="IO_27fd5a55-6180-49bd-8ed4-b0dfe1ebd659" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_ad54a2c5-da08-4f7b-a056-b92f63750228" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_ac97c997-ad95-465a-b815-b5fc32ccf499" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_6dc4ac7d-db58-431d-9a69-65407098d216" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_621d38ea-a82c-463b-832d-9b3839800169" Description="2 Byte(s)" />
+    <Group ID="IO_0795fb83-6342-4703-bf59-004121218c89" Description="2 Byte(s)" />
+    <Group ID="IO_4a80c6ec-6f72-4231-92da-efd4b17a3a1c" Description="2 Byte(s)" />
+    <Group ID="IO_8daf75e9-a6d5-4c91-9108-ab4f8b4fc76f" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="BuMotor9" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor8" TargetConnector="CAN2" NodeNumber="26" />
+    <Parameter ID="DtmId" Value="27a4961f-41ec-4434-a3f4-61cbc6fb7192" />
+    <Group ID="ChannelBlocks_156d82cd-4cce-4b22-929c-902f2fb9b58d" Description="Receive PDO1 parameter" />
+    <Group ID="IO_8583cb26-f389-4261-951d-3ac93a53ae0b" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_af10b2dc-1205-4d97-96ea-c7d2b9fb63c2" Description="Receive PDO6 parameter" />
+    <Group ID="IO_e5a889ae-0a76-469a-b754-943b3c45a784" Description="2 Byte(s)" />
+    <Group ID="IO_43edfdd7-2d01-4208-a7b9-dc719fad88a4" Description="2 Byte(s)" />
+    <Group ID="IO_8c64ee22-0973-473c-b1a9-8b58114fd87f" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_7bc1f4a0-5bf3-43fa-882a-01fc853e14d7" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_3c1e0984-52c5-4e10-9971-b2afe92d426d" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_a95ce928-01d1-410a-a36f-9f939e55dbb5" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_83dbfe57-663e-4119-9086-e5341eb48c58" Description="2 Byte(s)" />
+    <Group ID="IO_dd747ed3-faa4-4833-823f-d91767ba62f9" Description="2 Byte(s)" />
+    <Group ID="IO_ff04d007-1200-431c-b421-f6f4c823914d" Description="2 Byte(s)" />
+    <Group ID="IO_53450f9b-88e3-4ab2-bf5f-c81ceddf348f" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="ChainMotor" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BuMotor10" TargetConnector="CAN2" NodeNumber="2" />
+    <Parameter ID="DtmId" Value="a1bf2b9b-c770-4510-aeb7-956fae696789" />
+    <Group ID="ChannelBlocks_ab51fc66-ccfe-4969-aa09-56bf748c4a12" Description="Receive PDO1 parameter" />
+    <Group ID="IO_db442f5f-1e91-4533-b5dd-19ba2275383e" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_ae38ce3c-268a-4902-ab02-c82d525d9cbb" Description="Receive PDO6 parameter" />
+    <Group ID="IO_ecf49792-71fd-4e43-b62d-26aec71b8eab" Description="2 Byte(s)" />
+    <Group ID="IO_62c798e0-2415-4177-bd7c-f597b6d9ce16" Description="2 Byte(s)" />
+    <Group ID="IO_d3603888-cc95-456b-b613-e3c0c1640d24" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_115e84f3-a25d-449a-a537-95b5558b7c26" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_9748ba3b-e319-4fcf-8e43-a2aead93d9d4" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_95271bd8-90e8-4465-a473-25a5ce2b8c1d" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_3683007d-d99b-4002-825a-f0003ae249a9" Description="2 Byte(s)" />
+    <Group ID="IO_d93fc321-8f8b-45f1-8332-7d1270e96476" Description="2 Byte(s)" />
+    <Group ID="IO_8b5f3a95-c21d-40c8-ae74-161c5e85b92d" Description="2 Byte(s)" />
+    <Group ID="IO_57e4cc6a-288c-4cc7-b99a-80fc403e645e" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="in_BU_0-1" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="in_BU_2-3" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12o" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11i" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="in_BU_4-5" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12p" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11j" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="in_BU_6-7" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12q" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11k" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="in_BU_8-9" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12r" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11l" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="in_MBU" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12i" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11g" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="in_MCU" Type="X20DI9371" Version="1.0.1.2">
+    <Connection Connector="SS1" TargetModule="X20TB12g" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11f" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="InputFilter" Value="1" />
+  </Module>
+  <Module Name="KnifeMotor" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
+    <Connection Connector="CAN1" TargetModule="BeltMotor1" TargetConnector="CAN2" NodeNumber="6" />
+    <Parameter ID="DtmId" Value="33a85843-c74d-4b86-b247-01135a679646" />
+    <Group ID="ChannelBlocks_959f5f2a-c98d-43ac-ab77-7afc3a4601f4" Description="Receive PDO1 parameter" />
+    <Group ID="IO_518f3516-227d-4baa-b2e9-9837cdbd9b05" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_e5b71d72-a2cb-487c-afa4-c76067c8cb50" Description="Receive PDO6 parameter" />
+    <Group ID="IO_fae67bf3-6369-40bc-b0b3-d34df1ae89ca" Description="2 Byte(s)" />
+    <Group ID="IO_6eee8b06-f52d-4686-a1ea-7920ca6ed831" Description="2 Byte(s)" />
+    <Group ID="IO_f2afe01e-1957-4460-af08-4c926f12efa2" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_fb08993c-509f-478c-8a17-eacbe3bef14b" Description="Transmit PDO1 parameter" />
+    <Group ID="IO_42e58779-80ce-41f3-942d-bae492baa4fc" Description="2 Byte(s)" />
+    <Group ID="ChannelBlocks_d914b564-1111-4bb5-90f7-738445a3305b" Description="Transmit PDO6 parameter" />
+    <Group ID="IO_dc6d6c3f-094b-44a2-a37e-299af11b9a90" Description="2 Byte(s)" />
+    <Group ID="IO_82bcc08e-10b1-46a3-8141-af866fd3a5d5" Description="2 Byte(s)" />
+    <Group ID="IO_10a6ed0e-5e2a-46a1-9302-e179eca58b81" Description="2 Byte(s)" />
+    <Group ID="IO_25f6a930-9e41-48f9-ae4a-248184c6394c" Description="2 Byte(s)" />
+  </Module>
+  <Module Name="MBU" Type="X20BB80" Version="1.0.0.2" />
+  <Module Name="out_BU_0-1" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12c" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11b" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_BU_2-3" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12s" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11m" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_BU_4-5" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12t" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11n" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_BU_6-7" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12u" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11o" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_BU_8-9" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12v" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11p" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_MBU" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12j" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11h" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_MCU_0" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12b" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11a" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_MCU_1" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12d" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11c" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_MCU_2" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12f" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11e" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="out_MCU_3" Type="X20DO9322" Version="1.0.2.2">
+    <Connection Connector="SS1" TargetModule="X20TB12e" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11d" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="ServoUnit1" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="KnifeMotor" TargetConnector="CAN2" NodeNumber="11" />
+    <Parameter ID="DtmId" Value="2cc01d8c-52a8-4f03-b874-cf26b4fa5fc9" />
+    <Group ID="ChannelBlocks_f65e5b16-ad22-40ee-992f-65e9134c0818" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_7413fdc9-d251-41aa-a295-413caee91bb0" Description="1 Byte(s)" />
+    <Group ID="IO_8c39c384-d077-4c2a-ac09-6e48e9cd8298" Description="1 Byte(s)" />
+    <Group ID="IO_5b4e01b4-bc10-43d6-990c-ca8cf807684f" Description="1 Byte(s)" />
+    <Group ID="IO_2912853e-21ed-466d-b4af-a4ce6ec0f99a" Description="1 Byte(s)" />
+    <Group ID="IO_54c5027d-38d4-4e0c-80b9-518f4f6d60ce" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_3cd1045e-a7fe-4c41-b716-5963c2d0f415" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_02894f07-1dcd-4eb4-970d-ac259e8bc589" Description="1 Byte(s)" />
+    <Group ID="IO_1110f2e0-e843-4e28-bbeb-fa5d8a28fd9b" Description="1 Byte(s)" />
+    <Group ID="IO_5de8c302-b593-409f-a351-0f865c6bfcd2" Description="2 Byte(s)" />
+    <Group ID="IO_f43418fd-0be3-49b4-9f0a-46c06fad4ee0" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_69007e23-4ad5-47fe-8b89-c8cf6e8d2953" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_02be1259-9179-42ca-a2b1-1ec2453c51ec" Description="1 Byte(s)" />
+    <Group ID="IO_f7942894-44d6-4bab-941f-fefb330485f5" Description="1 Byte(s)" />
+    <Group ID="IO_ffab8801-ccee-4f54-afc8-b18e81cc8d53" Description="1 Byte(s)" />
+    <Group ID="IO_230f5946-6524-4ad5-9596-a8270efa9ae4" Description="1 Byte(s)" />
+    <Group ID="IO_5e14c759-19f2-47bd-845a-76715e6b65ec" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_ac1dc8db-3e8f-49dc-9bd9-dac3f25cea3b" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_50fa45dc-06c8-4e45-86a5-632600e82df9" Description="1 Byte(s)" />
+    <Group ID="IO_dcaa8277-d514-4b77-8c9c-59ea68ad03d1" Description="1 Byte(s)" />
+    <Group ID="IO_2b895b55-3353-4bb0-9d55-88662917902a" Description="2 Byte(s)" />
+    <Group ID="IO_96caa5a3-b367-4c2d-91d3-4c9d541150a0" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit10" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit9" TargetConnector="CAN2" NodeNumber="29" />
+    <Parameter ID="DtmId" Value="a13dd3ca-1f37-4c54-a947-4a4feb01707b" />
+    <Group ID="ChannelBlocks_91fa1f26-9aaa-436b-b26e-7c56dcb6ef4f" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_15dbd178-5c5a-43b8-b447-b7434bae5630" Description="1 Byte(s)" />
+    <Group ID="IO_77cb988d-107f-444c-9931-909d67709d08" Description="1 Byte(s)" />
+    <Group ID="IO_d28c5ade-4123-4660-a144-0029614273c4" Description="1 Byte(s)" />
+    <Group ID="IO_f58dc55c-0554-491a-9586-ae74ffbb8fc9" Description="1 Byte(s)" />
+    <Group ID="IO_026e0246-a0ce-4501-8433-2dbe8596be8f" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_3b2a84f1-0910-455c-8420-ec1d931a4331" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_1fe4c255-f970-4602-8183-e29f1a37e80e" Description="1 Byte(s)" />
+    <Group ID="IO_f76117aa-0616-4747-8f25-6d89972fd06d" Description="1 Byte(s)" />
+    <Group ID="IO_0ea4ff39-a97d-438f-bc89-279a651a34be" Description="2 Byte(s)" />
+    <Group ID="IO_46463791-502b-4132-94e5-2eb45fc9a8d2" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_5d15d2f2-1d91-4b29-89c6-b4f2fd4c19d1" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_11572021-aae5-43fa-8c81-8c65f5be2937" Description="1 Byte(s)" />
+    <Group ID="IO_11e39e64-b65e-428c-b496-34dc3f2bd81c" Description="1 Byte(s)" />
+    <Group ID="IO_66e25aa8-f219-450a-90ac-30608ca14490" Description="1 Byte(s)" />
+    <Group ID="IO_2e391c4d-0d29-4e3f-a3c2-c9202e5baf27" Description="1 Byte(s)" />
+    <Group ID="IO_d42ee03d-d42d-43fb-a7d7-544e10141c9a" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_d8ea3532-8fe5-4ee2-8b30-17104c9e1a74" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_c5531c87-81bc-40a7-b94b-1ab2f47d07bc" Description="1 Byte(s)" />
+    <Group ID="IO_3b70a104-6bda-4f1d-a8d3-184dd94ae2ef" Description="1 Byte(s)" />
+    <Group ID="IO_98bb85a8-f89b-4491-b75b-36770e484671" Description="2 Byte(s)" />
+    <Group ID="IO_18603d42-bde0-44ec-b6d7-79b9682289f6" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit2" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit1" TargetConnector="CAN2" NodeNumber="13" />
+    <Parameter ID="DtmId" Value="24ca3a76-7947-4b54-a270-430f39f0e1ad" />
+    <Group ID="ChannelBlocks_f7b56e90-7f8b-4e90-815a-6c4dfc546ed7" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_9a79b520-762f-4938-959c-1673fd7573c4" Description="1 Byte(s)" />
+    <Group ID="IO_6f6dea46-2455-485a-94ad-83b3d498a592" Description="1 Byte(s)" />
+    <Group ID="IO_d006dc3e-8371-46dc-a683-50b710beabd8" Description="1 Byte(s)" />
+    <Group ID="IO_a5264c49-787e-4626-bff7-c2e1b2dd1289" Description="1 Byte(s)" />
+    <Group ID="IO_f44365d6-0f6b-46ff-a19d-db9847219f73" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_ebb1fbf3-6661-4540-a5e3-a02181bc46a2" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_962121e9-a6d3-404e-abe5-8418554ba359" Description="1 Byte(s)" />
+    <Group ID="IO_f3f4d719-e6bc-434b-8025-6ba1cef229ee" Description="1 Byte(s)" />
+    <Group ID="IO_c1ece4da-ed7e-43ed-906d-7463e9429755" Description="2 Byte(s)" />
+    <Group ID="IO_cca085f9-9daf-4881-8b8f-ebd5b0e9fb28" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_4914f731-ace5-4c21-b155-c44d73840a8b" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_1f321ee5-e18e-49c4-b575-294241130312" Description="1 Byte(s)" />
+    <Group ID="IO_c8265208-a0c3-479d-8fa1-8b9fa156e66a" Description="1 Byte(s)" />
+    <Group ID="IO_dabdac96-5299-4b3b-accd-82906df4bf36" Description="1 Byte(s)" />
+    <Group ID="IO_883d6348-0267-4918-b7f4-9aca052a30fd" Description="1 Byte(s)" />
+    <Group ID="IO_79512acd-1801-4603-8a63-02ee5758af24" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_b3aeed69-e232-4ad4-96ab-f421a44648fc" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_28dfc721-11f9-4836-ae2e-81ac5ef2e3d2" Description="1 Byte(s)" />
+    <Group ID="IO_41e0f84a-fe01-4693-8d92-b2f94cad6525" Description="1 Byte(s)" />
+    <Group ID="IO_74d0d650-8c44-4949-92d7-296ea7dfe817" Description="2 Byte(s)" />
+    <Group ID="IO_6ebc7c61-af17-4b10-bee6-1b0b4320a898" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit3" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit2" TargetConnector="CAN2" NodeNumber="15" />
+    <Parameter ID="DtmId" Value="5020f104-a1e2-44d4-acb6-69c7e17304a7" />
+    <Group ID="ChannelBlocks_d6aea6b7-799e-42d1-bb2c-abb3d7243e35" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_1edec1d8-fbb6-4ffc-8065-c09571833467" Description="1 Byte(s)" />
+    <Group ID="IO_e5602e7a-e0dc-4888-a40d-6a09cf17c6e9" Description="1 Byte(s)" />
+    <Group ID="IO_c34c2a29-a923-43e2-acfb-47e0a4efd83b" Description="1 Byte(s)" />
+    <Group ID="IO_8e27c422-e9dc-47bf-baf2-85f084dd8745" Description="1 Byte(s)" />
+    <Group ID="IO_f1eb85f8-4760-4688-933b-bf7fd4acfb4a" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_9320c7e9-ebf6-45c0-b20f-8e1fd69b625e" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_20bbcb0d-084f-4822-8bde-928b78bc5ae1" Description="1 Byte(s)" />
+    <Group ID="IO_bf499093-88d7-4265-b01b-6f61ff49811d" Description="1 Byte(s)" />
+    <Group ID="IO_eb443335-35c4-401f-9a36-f292bfe6bbc6" Description="2 Byte(s)" />
+    <Group ID="IO_2b03c0a9-5f48-4dc4-a499-eefbdb215858" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_9cb55215-4b1e-41d1-9087-a64961497188" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_d2f6c6a5-7409-4d5f-8670-b92788f7687c" Description="1 Byte(s)" />
+    <Group ID="IO_d5532c33-4188-4f86-96bd-ae91e377d53b" Description="1 Byte(s)" />
+    <Group ID="IO_ef185e02-39e8-48ef-8fe3-fc49aa2e80d4" Description="1 Byte(s)" />
+    <Group ID="IO_10fc2cac-cd2e-4f93-886f-1acdfd1cf493" Description="1 Byte(s)" />
+    <Group ID="IO_35fcde1b-5957-49e4-a7c3-1ecdff961b11" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_56541818-a82b-4211-915a-bba26b5d06a4" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_e15f9eac-15fe-4db2-ac2b-eb41a4bc5c5b" Description="1 Byte(s)" />
+    <Group ID="IO_b64a1fd3-01ba-4664-a79a-20503f8bf38d" Description="1 Byte(s)" />
+    <Group ID="IO_4b91cf88-8a66-480e-b5b0-53a6a4a3d1e4" Description="2 Byte(s)" />
+    <Group ID="IO_7567258c-5454-45d0-a62f-76e1e24bd2cc" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit4" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit3" TargetConnector="CAN2" NodeNumber="17" />
+    <Parameter ID="DtmId" Value="a34273b6-36be-4692-a4f2-d7fc8e714c63" />
+    <Group ID="ChannelBlocks_9b6b0dcd-efb0-4e01-b60d-f1a2210800ab" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_72b4bdf3-ddcf-4d59-96f4-e77b92479034" Description="1 Byte(s)" />
+    <Group ID="IO_28d6c5ea-7894-4181-a2dd-c02c71614b69" Description="1 Byte(s)" />
+    <Group ID="IO_0a0a99bd-0a54-4de3-a355-4e34f248c40c" Description="1 Byte(s)" />
+    <Group ID="IO_0c63d19d-3bbb-4c5a-b3df-69e378063569" Description="1 Byte(s)" />
+    <Group ID="IO_d72d9506-6a6d-470a-95b9-72c2be7c6b4e" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_8f802dff-d88f-4813-8999-1eadf24a71c8" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_04186658-edf4-456e-ae45-0e45d12bfb46" Description="1 Byte(s)" />
+    <Group ID="IO_51925c62-012b-4770-9bc1-e022595104c9" Description="1 Byte(s)" />
+    <Group ID="IO_394f25ff-c8b4-4b01-856b-71eccb60cd4a" Description="2 Byte(s)" />
+    <Group ID="IO_438dc71b-269e-4073-8cf1-927fb283052a" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_32db9add-1d57-4f00-abc6-0aa464bc1857" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_56facf51-be06-4162-8019-c9135e03ebd5" Description="1 Byte(s)" />
+    <Group ID="IO_c289eebf-ff75-4115-ae67-bb220dd48802" Description="1 Byte(s)" />
+    <Group ID="IO_d8c5064e-3c4b-4b83-a08c-9356c72a7307" Description="1 Byte(s)" />
+    <Group ID="IO_3c253702-47c6-475a-b5a9-f2037096e21d" Description="1 Byte(s)" />
+    <Group ID="IO_20db09f5-c500-42c7-9670-06e013c1e1a7" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_d3f68f18-3b23-4a83-8432-9608af0a8a6d" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_6d3eccf2-412e-4869-bbf7-3d5ee19acd1b" Description="1 Byte(s)" />
+    <Group ID="IO_790cfb60-51d9-4129-97dc-1306fc7ae3f2" Description="1 Byte(s)" />
+    <Group ID="IO_b3acf3a2-48d5-43e6-9414-918042759147" Description="2 Byte(s)" />
+    <Group ID="IO_3bd5798b-ff23-498c-b349-786a6d395acf" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit5" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit4" TargetConnector="CAN2" NodeNumber="19" />
+    <Parameter ID="DtmId" Value="dddd2ea4-72f4-41ff-b4f0-61cd90decc37" />
+    <Group ID="ChannelBlocks_b2a47bf8-6451-4bcc-8048-7b48c7bb103f" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_042c1306-50b9-4a2e-af5d-07a155835bcd" Description="1 Byte(s)" />
+    <Group ID="IO_f95a7d75-ca02-4e9e-816a-ea6511c469e3" Description="1 Byte(s)" />
+    <Group ID="IO_1e96aa95-6ac6-466c-8375-caaf705f7563" Description="1 Byte(s)" />
+    <Group ID="IO_aec588cb-3200-4f30-8b62-ac89dcc3257c" Description="1 Byte(s)" />
+    <Group ID="IO_58883095-a84a-422e-9e67-136805d76ca8" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_a1a16dd9-e4cc-4529-a01a-5b4485273169" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_201606b6-99f1-4817-9c48-41f53bc3413e" Description="1 Byte(s)" />
+    <Group ID="IO_2354511c-5730-4c6f-b022-568f79be2817" Description="1 Byte(s)" />
+    <Group ID="IO_c8bb1aac-b248-4641-bbd6-8c43b71ac324" Description="2 Byte(s)" />
+    <Group ID="IO_d370564a-a8fc-4719-b186-8a9189a9ffea" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_e43a4828-9791-4349-8756-650c10531e77" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_36510441-71fd-4c1f-b6c2-76242bff5ce4" Description="1 Byte(s)" />
+    <Group ID="IO_79cbc5fc-c8bb-4913-a882-52f30785010e" Description="1 Byte(s)" />
+    <Group ID="IO_b825f711-752e-49af-8167-44fb10692939" Description="1 Byte(s)" />
+    <Group ID="IO_1b5ef188-911d-4237-8649-bcb55827c28f" Description="1 Byte(s)" />
+    <Group ID="IO_271c16a8-7d34-4570-b9da-a54ad545dc98" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_4bc3a0fa-b3a3-4bfd-a8a2-920f368d3016" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_86bcbf9c-29d2-4335-9fed-c91db8038985" Description="1 Byte(s)" />
+    <Group ID="IO_57d457d1-12c3-49a6-a86f-0825d01c51a9" Description="1 Byte(s)" />
+    <Group ID="IO_20155857-eeeb-462d-bfc0-4988759b86e8" Description="2 Byte(s)" />
+    <Group ID="IO_2c2b4482-8124-4308-9cc1-4542e1d09207" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit6" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit5" TargetConnector="CAN2" NodeNumber="21" />
+    <Parameter ID="DtmId" Value="34532c5a-2d2e-4b03-9bc7-8850a67d2130" />
+    <Group ID="ChannelBlocks_014097cd-8ac2-4333-968e-92bf850f96c7" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_c267876c-3ee7-44dc-8baa-c6297e9e396c" Description="1 Byte(s)" />
+    <Group ID="IO_36021023-e771-4991-883d-6380b1a1f41a" Description="1 Byte(s)" />
+    <Group ID="IO_688c0272-c617-43a2-a663-be775dbde0f8" Description="1 Byte(s)" />
+    <Group ID="IO_226f68f9-27e0-4731-8149-1088403f2aa7" Description="1 Byte(s)" />
+    <Group ID="IO_475b073e-e09b-44ab-98ad-44bf06c853b7" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_3bdc7835-cce4-4e3c-80e4-686c9cceda84" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_f518c910-137c-4fa1-9bbd-8b61a6f4dc37" Description="1 Byte(s)" />
+    <Group ID="IO_83fec91e-204c-46c4-8cbb-fc5a6f6a1236" Description="1 Byte(s)" />
+    <Group ID="IO_3dba2bb8-d2c7-4cc6-b000-f3edc82f1d62" Description="2 Byte(s)" />
+    <Group ID="IO_abd3ffe8-6828-47eb-9432-002f410b4f4c" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_fac5cb02-686b-4465-b0f6-ed87e816fcc1" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_b8addc99-4bdf-4daf-9b2c-58a510851fe2" Description="1 Byte(s)" />
+    <Group ID="IO_983db230-7526-481f-986f-203a5a9ca751" Description="1 Byte(s)" />
+    <Group ID="IO_98bb3a7b-510b-4093-ba63-1e745c7b40f2" Description="1 Byte(s)" />
+    <Group ID="IO_e9279d78-9754-4347-8dc9-ef642c374f5c" Description="1 Byte(s)" />
+    <Group ID="IO_b0cd985d-e990-4e0b-aba7-7a18131281a8" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_df8160ba-0a2a-48d2-9cb1-1acc8398b25d" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_a8478a33-7798-4d6d-aa16-4210a747f91f" Description="1 Byte(s)" />
+    <Group ID="IO_b2251cb0-e264-414f-b404-bba09d574283" Description="1 Byte(s)" />
+    <Group ID="IO_e3a1305f-f38b-429b-af16-593b6c6e717a" Description="2 Byte(s)" />
+    <Group ID="IO_f7517dfb-5583-4d37-b2a5-136d0ab4f222" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit7" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit6" TargetConnector="CAN2" NodeNumber="23" />
+    <Parameter ID="DtmId" Value="5fc7343d-0ed6-405b-8d95-2105416229d2" />
+    <Group ID="ChannelBlocks_5eb8554f-0563-4c22-9e94-801e002a6495" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_d9adffc7-890e-4265-9bdb-82d5b69f6456" Description="1 Byte(s)" />
+    <Group ID="IO_2e912434-e4e4-4d4a-b4fa-36df2f75fcf2" Description="1 Byte(s)" />
+    <Group ID="IO_9388c441-335f-4d87-b598-0a50b2084254" Description="1 Byte(s)" />
+    <Group ID="IO_164f78f4-70d7-4b4b-bc6f-9586e17082c1" Description="1 Byte(s)" />
+    <Group ID="IO_e78b788c-81d5-4b1d-98e5-c6d7e026460a" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_3e361ac6-f3cb-4ba3-b415-3a103ca45a69" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_9cb82a6f-f4cc-462d-887a-0b28df0f1edf" Description="1 Byte(s)" />
+    <Group ID="IO_34740f43-5725-44c3-a83e-7975d3695ec9" Description="1 Byte(s)" />
+    <Group ID="IO_0528aa5b-7607-4c2d-b848-d1a5daa0e49e" Description="2 Byte(s)" />
+    <Group ID="IO_8231ce7c-6fd5-4cbb-a00a-fee86b9cdc1d" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_d60dd0ff-9d93-4d0f-bb52-2b4e21ac8004" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_7fb01a7b-c935-4f43-83d9-e868a22cc3e6" Description="1 Byte(s)" />
+    <Group ID="IO_968dbf1f-6d23-4d5d-8859-f1edde25f2cd" Description="1 Byte(s)" />
+    <Group ID="IO_a53445b8-d39c-4e80-a914-5ed1505b6e51" Description="1 Byte(s)" />
+    <Group ID="IO_3387e47b-ce9f-48f4-b2a7-57df4d28f3b6" Description="1 Byte(s)" />
+    <Group ID="IO_f90b1322-f687-48e9-96dd-69ca3767db28" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_3b12632d-dcd6-43d4-b35c-fa14bea89791" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_0b26b99f-e93e-4bcb-b486-e64ae01993d4" Description="1 Byte(s)" />
+    <Group ID="IO_3e79ad31-592d-4325-81b2-a2d015b077a7" Description="1 Byte(s)" />
+    <Group ID="IO_c8079b08-2069-4517-97c1-607e64962062" Description="2 Byte(s)" />
+    <Group ID="IO_561002b7-5777-4273-b568-5d73c2089a36" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit8" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit7" TargetConnector="CAN2" NodeNumber="25" />
+    <Parameter ID="DtmId" Value="4ec47f7c-6edc-42d7-a472-79fd813b55ba" />
+    <Group ID="ChannelBlocks_fe87a98e-0f02-4bb8-8635-11464382610f" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_fbb65677-c766-47a3-8ac3-1a8fa791d6b4" Description="1 Byte(s)" />
+    <Group ID="IO_e4962899-6911-4df9-b9a1-55919f7208f7" Description="1 Byte(s)" />
+    <Group ID="IO_2c3a640c-870f-4d1e-8044-cc15a12cc6ca" Description="1 Byte(s)" />
+    <Group ID="IO_d13546d0-3934-4e2d-879b-8538331d70bb" Description="1 Byte(s)" />
+    <Group ID="IO_c6bf2520-d47f-437d-ab21-7c0fd25d66ca" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_d67310ef-a431-4a4f-bcab-ccee4ed7fe25" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_1011048c-ae09-4a9e-9577-ef76f6e644eb" Description="1 Byte(s)" />
+    <Group ID="IO_b57aba91-06bf-44d7-8d0e-3bb4fc99e55d" Description="1 Byte(s)" />
+    <Group ID="IO_a1c9e2d8-dd8a-48e5-86e3-cae28a455347" Description="2 Byte(s)" />
+    <Group ID="IO_f6bd3884-971a-46b4-9642-246530a3e1b5" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_d7a9a873-866e-4503-8882-9bef2a1b5558" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_741aed39-42ce-401e-bec2-763fb2a9c994" Description="1 Byte(s)" />
+    <Group ID="IO_e87c71ab-78f0-45a2-a3f3-b6a76e617efc" Description="1 Byte(s)" />
+    <Group ID="IO_800b70cc-9aea-40d1-bc25-84b4df11980d" Description="1 Byte(s)" />
+    <Group ID="IO_895030f8-d70f-46ed-96b2-1facfe63d131" Description="1 Byte(s)" />
+    <Group ID="IO_e1d0605e-273c-497d-81da-54f8edf83c62" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_916496bc-f4e5-4235-8735-bf956dd8cf6a" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_ff84d874-16ff-4916-826a-b20360c3d884" Description="1 Byte(s)" />
+    <Group ID="IO_6aaf0cc2-08a4-4618-a070-07df5d000b7c" Description="1 Byte(s)" />
+    <Group ID="IO_1a7e0e65-21fc-47d8-ac29-fe06e8a3c122" Description="2 Byte(s)" />
+    <Group ID="IO_42eb6130-3075-4df7-a7f4-ff76522d1257" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="ServoUnit9" Type="FBD.Hilscher.COGenSlaveDTM.CMMS-ST (FHPP) (CMMS-ST_CAN_FHPP.eds)" Version="0.0.0.0" OrderNumber="CMMS_ST__FHPP___CMMS_ST_CAN_FHPP_eds_">
+    <Connection Connector="CAN1" TargetModule="ServoUnit8" TargetConnector="CAN2" NodeNumber="27" />
+    <Parameter ID="DtmId" Value="671d1f85-f1e9-4568-b545-12b1f0c7e482" />
+    <Group ID="ChannelBlocks_dd0a8c76-d38b-4773-995a-5e9fb78888d0" Description="receive_pdo_parameter_RPDO1" />
+    <Group ID="IO_aa9e0205-39f5-406a-a6b0-77c12f17dcb4" Description="1 Byte(s)" />
+    <Group ID="IO_ee854bcf-83f6-4455-afcc-d544571dd1de" Description="1 Byte(s)" />
+    <Group ID="IO_4d133417-e236-4804-8198-80d1e1dd82d7" Description="1 Byte(s)" />
+    <Group ID="IO_e1b26244-7bea-4eed-ae3b-03f85235d93d" Description="1 Byte(s)" />
+    <Group ID="IO_aac6794d-a446-4c43-8f5b-09daea610a2e" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_9728e1b6-f62c-4575-967e-0388b8133728" Description="receive_pdo_parameter_RPDO2" />
+    <Group ID="IO_93cf6017-a56e-4696-bf1c-3441967dc200" Description="1 Byte(s)" />
+    <Group ID="IO_e6ed09c3-5c56-4f3b-b18f-de59b491be24" Description="1 Byte(s)" />
+    <Group ID="IO_436a10a5-4a5f-4913-a60b-a38dd568ab0b" Description="2 Byte(s)" />
+    <Group ID="IO_2c1050d5-aab6-491d-92b4-a032e5286b99" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_5a5b70af-9560-4f35-be0c-1f7e75638ebb" Description="transmit_pdo_parameter_TPDO1" />
+    <Group ID="IO_c2889cc6-41fd-42a5-8e16-53288c27a8a8" Description="1 Byte(s)" />
+    <Group ID="IO_dc6f2658-764b-4710-a3b8-111945dc1cee" Description="1 Byte(s)" />
+    <Group ID="IO_d7331c01-ffe8-4a85-b933-3f75d1175aa3" Description="1 Byte(s)" />
+    <Group ID="IO_f5380f58-a010-42a6-ac55-831522e03977" Description="1 Byte(s)" />
+    <Group ID="IO_e9dff24f-4577-467f-9178-0208c2a626d8" Description="4 Byte(s)" />
+    <Group ID="ChannelBlocks_88f7015e-866a-4655-b200-07d27eb34ebc" Description="transmit_pdo_parameter_TPDO2" />
+    <Group ID="IO_2081798b-f002-47cb-94a9-62caf60cee85" Description="1 Byte(s)" />
+    <Group ID="IO_38dcf81d-0990-463e-9b03-7b23085dfe67" Description="1 Byte(s)" />
+    <Group ID="IO_23f2c857-c315-4d74-b26a-a1c481f7a1c7" Description="2 Byte(s)" />
+    <Group ID="IO_4be5187b-eac9-42d4-82d3-71e8956ff4e4" Description="4 Byte(s)" />
+  </Module>
+  <Module Name="X20BC0083" Type="X20BC0083" Version="2.1.0.0">
+    <Connection Connector="PLK1" TargetModule="X20CP1585" TargetConnector="IF3" NodeNumber="1" />
+    <Connection Connector="PLK2" TargetModule="X20BC0083b" TargetConnector="PLK1" NodeNumber="1" />
+    <Connection Connector="SL" TargetModule="BU_0-1" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BC0083a" Type="X20BC0083" Version="2.1.0.0">
+    <Connection Connector="PLK1" TargetModule="X20BC0083e" TargetConnector="PLK2" NodeNumber="6" />
+    <Connection Connector="SL" TargetModule="MBU" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BC0083b" Type="X20BC0083" Version="2.1.0.0">
+    <Connection Connector="PLK1" TargetModule="X20BC0083" TargetConnector="PLK2" NodeNumber="2" />
+    <Connection Connector="PLK2" TargetModule="X20BC0083c" TargetConnector="PLK1" NodeNumber="2" />
+    <Connection Connector="SL" TargetModule="BU_2-3" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BC0083c" Type="X20BC0083" Version="2.1.0.0">
+    <Connection Connector="PLK1" TargetModule="X20BC0083b" TargetConnector="PLK2" NodeNumber="3" />
+    <Connection Connector="PLK2" TargetModule="X20BC0083d" TargetConnector="PLK1" NodeNumber="3" />
+    <Connection Connector="SL" TargetModule="BU_4-5" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BC0083d" Type="X20BC0083" Version="2.1.0.0">
+    <Connection Connector="PLK1" TargetModule="X20BC0083c" TargetConnector="PLK2" NodeNumber="4" />
+    <Connection Connector="PLK2" TargetModule="X20BC0083e" TargetConnector="PLK1" NodeNumber="4" />
+    <Connection Connector="SL" TargetModule="BU_6-7" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BC0083e" Type="X20BC0083" Version="2.1.0.0">
+    <Connection Connector="PLK1" TargetModule="X20BC0083d" TargetConnector="PLK2" NodeNumber="5" />
+    <Connection Connector="PLK2" TargetModule="X20BC0083a" TargetConnector="PLK1" NodeNumber="5" />
+    <Connection Connector="SL" TargetModule="BU_8-9" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20BM11" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="BU_0-1" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11a" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11f" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11b" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11c" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11a" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11d" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11e" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11e" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11c" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11f" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20CP1585" TargetConnector="IF6" />
+  </Module>
+  <Module Name="X20BM11g" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="MBU" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11h" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11g" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11i" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="BU_2-3" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11j" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="BU_4-5" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11k" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="BU_6-7" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11l" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="BU_8-9" TargetConnector="IF1" />
+  </Module>
+  <Module Name="X20BM11m" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11i" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11n" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11j" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11o" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11k" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11p" Type="X20BM11" Version="1.0.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11l" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20CP1585" Type="X20CP1585" Version="1.0.4.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="EthInterfaceRedundant" Value="0" />
+      <Parameter ID="HostName" Value="if2-themagnifica_semp" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.40.155" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Group ID="Vnc1" />
+      <Parameter ID="VncVcObjectName1" Value="BU_Gui" />
+      <Parameter ID="VncKeyMappingFile1" Value="VC\PS2-Keyboard.dis" />
+      <Group ID="Vnc2" />
+      <Parameter ID="VncVcObjectName2" Value="Mobile" />
+      <Parameter ID="VncKeyMappingFile2" Value="VC\PS2-Keyboard1.dis" />
+      <Parameter ID="VncPortNumber2" Value="5901" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="EplInterfaceRedundant" Value="0" />
+      <Parameter ID="EplHostName" Value="if3-themagnifica_semp" />
+      <Parameter ID="EplEthInterfaceRedundant" Value="0" />
+      <Parameter ID="HostName" Value="if3-eth-themagnifica_semp" />
+    </Connector>
+    <Connector Name="IF6">
+      <Parameter ID="CycleTime" Value="1000" />
+      <Parameter ID="BusLength" Value="100" />
+      <Parameter ID="Stations" Value="8" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="The_Magnifica_v0157_X20" />
+    <Parameter ID="RebootReset" Value="1" />
+    <Parameter ID="TimerDeviceType" Value="SWIOTIMER" />
+    <Parameter ID="CyclicTaskClassCount" Value="5" />
+    <Parameter ID="Cyclic1Duration" Value="1000" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic1Output" Value="1" />
+    <Parameter ID="Cyclic2Duration" Value="5000" />
+    <Parameter ID="Cyclic2Tolerance" Value="0" />
+    <Parameter ID="Cyclic3Duration" Value="50000" />
+    <Parameter ID="Cyclic3Tolerance" Value="0" />
+    <Parameter ID="Cyclic4Duration" Value="100000" />
+    <Parameter ID="Cyclic4Tolerance" Value="0" />
+    <Parameter ID="Cyclic5Duration" Value="10000" />
+    <Parameter ID="Cyclic5Tolerance" Value="30000000" />
+    <Parameter ID="Cyclic6Duration" Value="500000" />
+    <Parameter ID="Cyclic6Tolerance" Value="500000" />
+    <Parameter ID="Cyclic7Duration" Value="1000000" />
+    <Parameter ID="Cyclic7Tolerance" Value="1000000" />
+    <Parameter ID="Cyclic8Duration" Value="10000" />
+    <Parameter ID="Cyclic8Tolerance" Value="30000000" />
+    <Parameter ID="TimeZone" Value="140" />
+    <Parameter ID="ActivateDaylightSavingTime" Value="1" />
+    <Parameter ID="ActivateSntp" Value="1" />
+    <Parameter ID="SntpcServAddr1" Value="time.windows.com" />
+    <Parameter ID="SntpcServAddr2" Value="time.windows.com" />
+    <Parameter ID="EthernetHostName" Value="themagnifica_semp" />
+    <Parameter ID="EthernetDefaultGateway" Value="192.168.40.1" />
+    <Parameter ID="ActivateDns" Value="1" />
+    <Parameter ID="GetDnsFromDhcp" Value="2" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="plc" />
+    <Parameter ID="FtpUserPassword1" Value="WAJG592WMMVamzkpViOP3PaAh6yYa8m5godAftJLDBo=" />
+    <Parameter ID="FtpUserSalt1" Value="mpJEyBZ7" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUaAnonymous" Value="1" />
+    <Parameter ID="OpcUaMaxSubsItemQueueSize" Value="10000" />
+  </Module>
+  <Module Name="X20IF1041_1" Type="X20IF1041-1" Version="1.1.1.1">
+    <Connection Connector="SS" TargetModule="X20CP1585" TargetConnector="SS1" />
+    <Connector Name="IF1">
+      <Parameter ID="DtmRef" Value="FBDIF.Hilscher.COMDtmNX.NETX 100 CO/COM" />
+      <Parameter ID="DtmId" Value="71bebc67-7576-41f1-883e-778b88cef510" />
+    </Connector>
+    <Parameter ID="ConfigFile" Value="X20IF1041_1.dtm" />
+    <Parameter ID="ConfigModule" Value="asnxdb2" />
+    <Parameter ID="ConfigUID" Value="1009496404" />
+  </Module>
+  <Module Name="X20PS9400" Type="X20PS9400" Version="1.0.2.1">
+    <Connection Connector="SS1" TargetModule="X20TB12a" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="BU_0-1" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20PS9400a" Type="X20PS9400" Version="1.0.2.1">
+    <Connection Connector="SS1" TargetModule="X20TB12h" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="MBU" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20PS9400b" Type="X20PS9400" Version="1.0.2.1">
+    <Connection Connector="SS1" TargetModule="X20TB12k" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="BU_2-3" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20PS9400c" Type="X20PS9400" Version="1.0.2.1">
+    <Connection Connector="SS1" TargetModule="X20TB12l" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="BU_4-5" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20PS9400d" Type="X20PS9400" Version="1.0.2.1">
+    <Connection Connector="SS1" TargetModule="X20TB12m" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="BU_6-7" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20PS9400e" Type="X20PS9400" Version="1.0.2.1">
+    <Connection Connector="SS1" TargetModule="X20TB12n" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="BU_8-9" TargetConnector="PS1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20TB12" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12a" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12b" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12c" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12d" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12e" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12f" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12g" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12h" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12i" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12j" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12k" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12l" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12m" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12n" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12o" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12p" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12q" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12r" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12s" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12t" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12u" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12v" Type="X20TB12" Version="1.0.0.0" />
+</Hardware>

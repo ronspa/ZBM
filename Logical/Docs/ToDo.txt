@@ -1,0 +1,20 @@
+In BunchUnit Ref is de aanstuur tijde van de puls aangepast van 100 -> 1000 voor test.
+
+Bij tijdelijke code van Ronald staat de aanduiding RSPA, dit moet voor de uit eindelijk versie recht gezet worden.
+
+
+Lijst van openstaande punten:
+
+- Het afvoer bit implementeren zodat de BU geleegd kan worden.
+- De timing voor de BunchBelt control in valiabele zetten
+- CAN-bus communicatie check
+- Keep alive met OPC implementeren, ter indicatie of de PC leeft (Actie bedenken indien dood)
+- Enable koppelen aan VNC GUI, zodat met minder BU's gewerkt kan worden.
+- GUI aanpassen zodat deze door de lijst van BU's kan lopen.
+- Aansturing MBU
+- Error handling
+
+
+Upzoeken.
+
+- Hoe worden de instellingen van een frequency regelaar opgeslagen? o.a adres, ACC, DEC, LSP HSP

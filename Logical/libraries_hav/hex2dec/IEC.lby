@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.1.4.402?>
+<Library Version="0.02.0" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>hex2dec.fun</File>
+    <File>dec2hex.st</File>
+    <File>hex2dec.st</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="AsString" Target="SG3" />
+    <Dependency ObjectName="AsString" Target="SG4" />
+    <Dependency ObjectName="runtime" Target="SG4" />
+    <Dependency ObjectName="standard" Target="SG4" />
+  </Dependencies>
+</Library>

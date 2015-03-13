@@ -1,0 +1,20 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: Sender
+ * File: Sender.var
+ * Author: Bernecker & Rainer
+ * Created: January 25, 2010
+ ********************************************************************
+ * Local variables of program Sender
+ ********************************************************************)
+VAR
+	Var2 : USINT := 0;
+	serial_0 : fbSerial;
+	setText_0 : fbSetText;
+	LichtkrantData : DataPackage;
+	text_old : STRING[80];
+	text1 : STRING[80];
+	txtSubChainCounter : STRING[80];
+	txtChainCounter : STRING[80];
+END_VAR

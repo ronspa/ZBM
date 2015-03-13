@@ -1,0 +1,17 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: ErrorHandling
+ * File: ErrorHandling.var
+ * Author: jorkes
+ * Created: July 21, 2014
+ ********************************************************************
+ * Local variables of program ErrorHandling
+ ********************************************************************)
+VAR
+	tonHeartBeat : TON;
+	bHeartBeat : BOOL;
+	AsArLogWrite_Failed : AsArLogWrite := (0);
+	AsArLogWrite_Restored : AsArLogWrite := (0);
+	LogMsg : STRING[80];
+END_VAR

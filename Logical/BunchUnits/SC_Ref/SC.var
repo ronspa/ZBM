@@ -1,0 +1,20 @@
+(********************************************************************
+ * COPYRIGHT --  
+ ********************************************************************
+ * Program: ServoControl
+ * File: ServoControl.var
+ * Author: jorkes
+ * Created: July 30, 2014
+ ********************************************************************
+ * Local variables of program ServoControl
+ ********************************************************************)
+VAR
+	NewServoPos : USINT;
+	tiMusecDiff : TIME;
+	tiMusecStop : TIME;
+	tiMusecStart : TIME;
+	ServoState : SERVO_Status_enum;
+	ControllerState : INT;
+	SetServo : INT;
+	i : USINT;
+END_VAR
