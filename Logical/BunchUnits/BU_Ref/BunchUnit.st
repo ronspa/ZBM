@@ -186,7 +186,7 @@ PROGRAM _CYCLIC
 //							END_IF
 						//						END_IF
 						
-						IF NOT BU[i].bAddFlower AND NOT bRun AND NOT(BU[i].typInterface.Status = BU_ST_RECEIVE_POS) THEN
+						IF NOT BU[i].bAddFlower AND NOT BU[i].GripperControl.Q AND NOT bRun AND NOT(BU[i].typInterface.Status = BU_ST_RECEIVE_POS) THEN
 							// Check if must empty
 							IF 	BU[i].typInterface.bEmptyCmd THEN
 								BU[i].typInterface.bEmptyCmd := FALSE;
@@ -225,7 +225,7 @@ PROGRAM _CYCLIC
 						END_IF
 					ELSE 
 						// Fase 2 of drop lowering Elevator
-						IF BU[i].typIN.bElevatorDown THEN
+						IF BU[i].typIN.bElevatorDown OR tonDropDelay.IN THEN
 							// Ready to drop
 							BU[i].typOUT.bReleaseGripper := TRUE;
 							bRun := TRUE;

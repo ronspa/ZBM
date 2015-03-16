@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.1.4.402?>
+<?AutomationStudio Version=4.1.5.68 SP?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
   <Module Name="BeltMotor1" Type="FBD.Hilscher.COGenSlaveDTM.ACOPOSinverter X64 (ACOPOSinverter_X64.eds)" Version="0.0.0.0" OrderNumber="ACOPOSinverter_X64__ACOPOSinverter_X64_eds_">
     <Connection Connector="CAN1" TargetModule="BeltMotor2" TargetConnector="CAN2" NodeNumber="4" />
@@ -596,7 +596,7 @@
     <Group ID="IO_4be5187b-eac9-42d4-82d3-71e8956ff4e4" Description="4 Byte(s)" />
   </Module>
   <Module Name="X20BC0083" Type="X20BC0083" Version="2.1.0.0">
-    <Connection Connector="PLK1" TargetModule="X20CP1585" TargetConnector="IF3" NodeNumber="1" />
+    <Connection Connector="PLK1" TargetModule="X20CP1586" TargetConnector="IF3" NodeNumber="1" />
     <Connection Connector="PLK2" TargetModule="X20BC0083b" TargetConnector="PLK1" NodeNumber="1" />
     <Connection Connector="SL" TargetModule="BU_0-1" TargetConnector="SL1" />
     <Parameter ID="Supervision" Value="off" />
@@ -649,7 +649,7 @@
     <Connection Connector="X2X1" TargetModule="X20BM11c" TargetConnector="X2X2" />
   </Module>
   <Module Name="X20BM11f" Type="X20BM11" Version="1.0.0.0">
-    <Connection Connector="X2X1" TargetModule="X20CP1585" TargetConnector="IF6" />
+    <Connection Connector="X2X1" TargetModule="X20CP1586" TargetConnector="IF6" />
   </Module>
   <Module Name="X20BM11g" Type="X20BM11" Version="1.0.0.0">
     <Connection Connector="X2X1" TargetModule="MBU" TargetConnector="IF1" />
@@ -681,7 +681,7 @@
   <Module Name="X20BM11p" Type="X20BM11" Version="1.0.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11l" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20CP1585" Type="X20CP1585" Version="1.0.4.0">
+  <Module Name="X20CP1586" Type="X20CP1586" Version="1.0.5.0">
     <Connector Name="IF2">
       <Parameter ID="ActivateDevice" Value="1" />
       <Parameter ID="EthInterfaceRedundant" Value="0" />
@@ -708,7 +708,7 @@
       <Parameter ID="BusLength" Value="100" />
       <Parameter ID="Stations" Value="8" />
     </Connector>
-    <Parameter ID="ConfigurationID" Value="The_Magnifica_v0157_X20" />
+    <Parameter ID="ConfigurationID" Value="ZBM_X20" />
     <Parameter ID="RebootReset" Value="1" />
     <Parameter ID="TimerDeviceType" Value="SWIOTIMER" />
     <Parameter ID="CyclicTaskClassCount" Value="5" />
@@ -748,14 +748,13 @@
     <Parameter ID="OpcUaMaxSubsItemQueueSize" Value="10000" />
   </Module>
   <Module Name="X20IF1041_1" Type="X20IF1041-1" Version="1.1.1.1">
-    <Connection Connector="SS" TargetModule="X20CP1585" TargetConnector="SS1" />
+    <Connection Connector="SS" TargetModule="X20CP1586" TargetConnector="SS1" />
     <Connector Name="IF1">
       <Parameter ID="DtmRef" Value="FBDIF.Hilscher.COMDtmNX.NETX 100 CO/COM" />
       <Parameter ID="DtmId" Value="71bebc67-7576-41f1-883e-778b88cef510" />
     </Connector>
     <Parameter ID="ConfigFile" Value="X20IF1041_1.dtm" />
     <Parameter ID="ConfigModule" Value="asnxdb2" />
-    <Parameter ID="ConfigUID" Value="1009496404" />
   </Module>
   <Module Name="X20PS9400" Type="X20PS9400" Version="1.0.2.1">
     <Connection Connector="SS1" TargetModule="X20TB12a" TargetConnector="SS" />
