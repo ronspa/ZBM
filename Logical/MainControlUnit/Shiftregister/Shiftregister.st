@@ -82,6 +82,26 @@ PROGRAM _CYCLIC
 			tiCheck1[idx_Diff1] := tiActual1 - tiStart1;
 			//Controleer of de tweede puls van dezelfde grijper is en niet van de volgende.
 			IF NOT(tiCheck1[idx_Diff1] > T#300ms) THEN
+				//Als de volgende trigger binnen de 300ms valt dan is het dezelfde grijper.
+				//IF EDGEPOS(MCU.typIN.bEncPuls1) THEN
+				//	bStartEnc := TRUE;
+				//END_IF
+				//Controleer de trigger op de afgaande flank en sla de tijd op.				
+//				IF EDGENEG(MCU.typIN.bEncPuls1) THEN
+//					tiStop1 := clock_ms();
+//					tiDiff1 := tiStop1 - tiStart1;
+//					//Als de tijd tussen opgaande en de afgaande flank groter is dan (100ms) genereer een puls met dubbele tijd.
+//					IF tiDiff1 > T#100ms THEN
+//						//Dubbele puls tijd.
+//						//tpPulsEnc1.PT := T#10ms;
+//						//Activeer puls.
+//						//tpPulsEnc1.IN := TRUE;
+//						//Wacht weer op een volgende trigger. -> #1
+//						bEncActive1 := FALSE;
+//						//Start de chaincounter bij de lange puls! -> #1			
+//						SHFTREG.typCounters.bStartChainCntr := TRUE;
+//						//SHFTREG.typCounters.usChainCounter := 0;
+//					END_IF
 				IF EDGEPOS(MCU.typIN.bEncPuls1) THEN
 					tiStop1 := clock_ms();
 					tiDiff1 := tiStop1 - tiStart1;
@@ -150,6 +170,44 @@ PROGRAM _CYCLIC
 	//Sla actuele tijd op.
 	tiActual2 := clock_ms();
 	
+	//#4
+	IF bEncActive2 THEN
+		tiCheck2 := tiActual2 - tiStart2;
+		//Controleer of de tweede puls van dezelfde grijper is en niet van de volgende.
+		IF NOT(tiCheck2 > T#300ms) THEN
+			//Als de volgende trigger binnen de 300ms valt dan is het dezelfde grijper.
+			//Controleer de trigger op de afgaande flank en sla de tijd op.				
+			IF EDGENEG(MCU.typIN.bEncPuls2) THEN
+				tiStop2 := clock_ms();
+				tiDiff2 := tiStop2 - tiStart2;
+				//Als de tijd tussen opgaande en de afgaande flank groter is dan (150ms) genereer een puls met dubbele tijd.
+				IF tiDiff2 > T#100ms THEN
+					//Dubbele puls tijd.
+					tpPulsEnc2.PT := T#200ms;
+					//Activeer puls.
+					tpPulsEnc2.IN := TRUE;
+					//Wacht weer op een volgende trigger. -> #3
+					bEncActive2 := FALSE;
+				END_IF
+			ELSIF EDGEPOS(MCU.typIN.bEncPuls2) THEN
+				tiStop2 := clock_ms();
+				tiDiff2 := tiStop2 - tiStart2;
+				//Als de tijd tussen de twee triggerpulsen groter is dan (50ms) genereer een puls van 100ms.
+				IF tiDiff2 > T#50ms THEN
+					//Dubbele puls tijd.
+					tpPulsEnc2.PT := T#100ms;
+					//Activeer puls.
+					tpPulsEnc2.IN := TRUE;
+					//Wacht weer op een volgende trigger. -> #3
+					bEncActive2 := FALSE;
+				END_IF						
+		END_IF		ELSE
+			//Wacht weer op een volgende trigger. -> #3
+			bEncActive2 := FALSE;	
+		END_IF
+	END_IF
+
+	
 	PulsGenerator_0(tInit := bEncPuls1, enable := bGblSimulation OR MCU.typChain.status.bSetSpeedReached, sysTim := systemTime, tiHigh := T#1ms, tiLow := tiMusecSub);	
 	
 	IF bEncPuls1 THEN
@@ -164,6 +222,10 @@ PROGRAM _CYCLIC
 	END_IF
 	
 	//4 x cam & light triggers
+	//	CamTrig_0(CamPos := 5, reset := MCU.typIN.bEncPuls1, trigger := EDGENEG(PulsGenerator_0.bOutput), tiPuls := T#30ms, tiDelay := T#15ms); //tiDelay = zie excel berekening Beschrijving software.xlsx
+	//	CamTrig_1(CamPos := 10, reset := MCU.typIN.bEncPuls1, trigger := EDGENEG(PulsGenerator_0.bOutput), tiPuls := T#30ms, tiDelay := T#7ms);
+	//	CamTrig_2(CamPos := 12, reset := MCU.typIN.bEncPuls1, trigger := EDGENEG(PulsGenerator_0.bOutput), tiPuls := T#30ms, tiDelay := T#11ms);
+	//	CamTrig_3(CamPos := 2, reset := MCU.typIN.bEncPuls1, trigger := EDGENEG(PulsGenerator_0.bOutput), tiPuls := T#30ms, tiDelay := T#26ms);
 	CamTrig_0(CamPos := Settings.CamPosition1, reset := bEncPuls1, trigger := EDGENEG(PulsGenerator_0.bOutput), tiPuls := INT_TO_TIME(Settings.CamPulseLength), tiDelay := INT_TO_TIME(Settings.CamDelay1), tiExtraLight := INT_TO_TIME(Settings.FlitsBefore)); //tiDelay = zie excel berekening Beschrijving software.xlsx
 	CamTrig_1(CamPos := Settings.CamPosition2, reset := bEncPuls1, trigger := EDGENEG(PulsGenerator_0.bOutput), tiPuls := INT_TO_TIME(Settings.CamPulseLength), tiDelay := INT_TO_TIME(Settings.CamDelay2), tiExtraLight := INT_TO_TIME(Settings.FlitsBefore));
 	CamTrig_2(CamPos := Settings.CamPosition3, reset := bEncPuls1, trigger := EDGENEG(PulsGenerator_0.bOutput), tiPuls := INT_TO_TIME(Settings.CamPulseLength), tiDelay := INT_TO_TIME(Settings.CamDelay3), tiExtraLight := INT_TO_TIME(Settings.FlitsBefore));
@@ -178,6 +240,92 @@ PROGRAM _CYCLIC
 	MCU.typOUT.bCamTrigger3 := CamTrig_2.outCam;
 	MCU.typOUT.bLightTrigger4 := CamTrig_3.outLight;
 	MCU.typOUT.bCamTrigger4 := CamTrig_3.outCam;
+
+	
+	//===============================
+	//Software met kettingplaatjes
+	//===============================
+	//bEncPuls1 := MCU.typIN.bEncPuls1
+	
+	//Afhandelen van encodertrigger 1
+//	IF EDGEPOS(bEncPuls1) AND NOT bFall_1 THEN
+//		tiMusecStart4 := clock_ms();
+//		IF toggle THEN
+//			toggle := FALSE;
+//			tiMusecStop3 := clock_ms();
+//			tiMusecDiff3 := tiMusecStop3 - tiMusecStart1;
+//			tiMusecSub := tiMusecDiff3 / 16;
+//		END_IF		
+//		
+//		//get number of elapsed microseconds in current tick
+//		tiMusecStart1 := clock_ms();   	 	
+//		
+//		//Wait for first gripper (double length sensor puls)
+//		IF SHFTREG.typCounters.bStartChainCntr THEN
+//			//ringcounter 0-75
+//			SHFTREG.typCounters.usChainCounter := (SHFTREG.typCounters.usChainCounter + 1) MOD (SHFTREG.uiGripperCnt);
+//		ELSE
+//			//startup counter. Only for completing average sensor measuring
+//			SHFTREG.typCounters.usStartUpCntr := (SHFTREG.typCounters.usStartUpCntr + 1) MOD 255;
+//		END_IF
+//		
+//		//Variable prevends that falling edge is triggered first
+//		bFall_1 := TRUE; 				 
+//	END_IF
+//	
+//	IF EDGENEG(bEncPuls1) AND bFall_1 THEN
+//		toggle := TRUE;
+//		
+//		//get number of elapsed microseconds in current tick
+//		tiMusecStop1 := clock_ms();   									
+//		tiMusecDiff1 := tiMusecStop1 - tiMusecStart1;
+//		
+//		AverageSens_0(index := SHFTREG.typCounters.usChainCounter, tiMeasure := tiMusecDiff1);
+//
+//		//First counter that takes care of detecting first gripper
+//		IF SHFTREG.typCounters.usStartUpCntr > 9 THEN
+//			AverageSens_0(enable := TRUE);
+//			//Check if there was a 1.5 times of length of average sensor puls
+//			//IF tiMusecDiff1 > ( (AverageSens_0.tiAverage * 3)/2) THEN
+//			IF tiMusecDiff1 > ( (tiMusecDiff2 * 3)/2) THEN
+//				tiMusecBetweenEncStart := clock_ms();
+//				SHFTREG.typCounters.bStartChainCntr := TRUE;
+//				SHFTREG.typCounters.usChainCounter := 0;
+//			END_IF
+//		END_IF
+//						
+//		bFall_1 := FALSE;
+//	END_IF
+//	
+//	//Afhandelen van encodertrigger 2
+//	IF EDGEPOS(bEncPuls2) AND NOT bFall_2 THEN
+//		tiMusecStart2 := clock_ms();   	
+//		bFall_2 := TRUE;  				
+//	END_IF
+//	
+//	IF EDGENEG(bEncPuls2) AND bFall_2 THEN
+//		tiMusecStop2 := clock_ms(); 
+//		tiMusecDiff2 := tiMusecStop2 - tiMusecStart2;
+//		
+//		AverageSens_1(index := SHFTREG.typCounters.usChainCounter, tiMeasure := tiMusecDiff2);
+//
+//		//First counter that takes care of detecting first gripper
+//		IF SHFTREG.typCounters.usStartUpCntr > 9 THEN
+//			AverageSens_1(enable := TRUE);
+//			//Check if there was a 1.5 times of length of average sensor puls
+//			IF tiMusecDiff2 > ( (AverageSens_1.tiAverage * 3)/2) THEN
+//				//Check if first sensor detected first gripper already
+//				
+//				IF SHFTREG.typCounters.bStartChainCntr THEN
+//					tiMusecBetweenEncStop := clock_ms();
+//					//calculate time between encoder sensor, by measuring first grippper
+//					tiMusecBetweenEncDiff[usCntr] := tiMusecBetweenEncStop - tiMusecBetweenEncStart;
+//					usCntr := (usCntr + 1) MOD 100;
+//				END_IF								
+//			END_IF
+//		END_IF
+//		bFall_2 := FALSE;
+//	END_IF	
 	
 	IF MCU.typInterface.State <> RUN THEN
 		// Blink
@@ -212,7 +360,7 @@ PROGRAM _CYCLIC
 	FOR i := 0 TO 9 DO
 
 		//JORKES
-		usGripperIndex := (SHFTREG.typCounters.usChainCounter + SHFTREG.uiGripperCnt - BU[i].usChainPos) MOD  SHFTREG.uiGripperCnt;
+		usGripperIndex := ( SHFTREG.typCounters.usChainCounter + SHFTREG.uiGripperCnt - BU[i].usChainPos) MOD  SHFTREG.uiGripperCnt;
 		
 		IF NOT BU[i].typInterface.bEmptyCmd THEN
 			BU[i].typInterface.bEmptyCmd := SHFTREG.typGripper[usGripperIndex].siEmptyBU = i;
@@ -252,12 +400,12 @@ PROGRAM _CYCLIC
 				END_IF
 			END_IF
 		ELSE IF NOT BU[i].bBusyDrop THEN
-				//JORKES
-				//IF EDGEPOS(BU[i].rsActivateGripper.Q1) THEN
-				IF EDGEPOS(BU[i].typSettings.usTimingBU16 = (SHFTREG.typCounters.uiChainCnt16x16 MOD 16) ) AND (i = SHFTREG.typGripper[usGripperIndex].usSetTarget) THEN
-					fbResetGripper( ThisGripper := SHFTREG.typGripper[usGripperIndex]);
-					BU[i].GripperControl.IN := TRUE;
-					BU[i].bAddFlower := FALSE;
+			//JORKES
+			//IF EDGEPOS(BU[i].rsActivateGripper.Q1) THEN
+			IF EDGEPOS(BU[i].typSettings.usTimingBU16 = (SHFTREG.typCounters.uiChainCnt16x16 MOD 16) ) AND (i = SHFTREG.typGripper[usGripperIndex].usSetTarget) THEN
+				fbResetGripper( ThisGripper := SHFTREG.typGripper[usGripperIndex]);
+				BU[i].GripperControl.IN := TRUE;
+				BU[i].bAddFlower := FALSE;
 				END_IF
 			END_IF
 			

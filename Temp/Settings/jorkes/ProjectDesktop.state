@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<?AutomationStudio Version=3.0?>
+<Project xmlns="http://br-automation.co.at/AS/Project"><Active ID="0"/><Configuration Name="X20"/><ConfigurationFiles ConfigurationName="X20"><ConfigurationFile Placement="\Logical\MainBeltUnit\BeltControl\BeltControl.st,MainBeltUnit.BeltControl,2,44,0,1,-1,-1,-1,-1,2,30,1492,806"/></ConfigurationFiles></Project>
