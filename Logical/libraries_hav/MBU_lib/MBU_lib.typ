@@ -37,15 +37,15 @@ TYPE
 		uiBeltShiftReg2 : UDINT;
 		usBunchPositions : USINT := 39;
 		usAflegPos : USINT := 37;
-		usBindPos2 : USINT := 33;
 		usBindPos1 : USINT := 31;
+		usBindPos2 : USINT := 33;
 		usKnifePos : USINT := 27;
 		tiSensPuls : TIME := T#20ms;
 		tiBindPuls : TIME := T#100ms;
-		tiBindDelay2 : TIME := T#50ms;
 		tiBindDelay1 : TIME := T#50ms;
-		tiSensDelay2 : TIME := T#70ms; (*Vakkenband*)
-		tiSensDelay1 : TIME := T#420ms; (*Sponsband*)
+		tiBindDelay2 : TIME := T#50ms;
+		tiSensDelay1 : TIME := T#70ms; (*Vakkenband*)
+		tiSensDelay2 : TIME := T#420ms; (*Sponsband*)
 		usMovePositions : USINT := 0;
 		bReadyToReceive : BOOL := FALSE;
 		bToggleBelt : BOOL := FALSE;
