@@ -1,55 +1,102 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Shiftregis 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index=14 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index=53 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                      MCU                          MainControlUnit    0 "                                                               *"    0   24    1    0    0    1         
+                            typInterface                             InterfaceMCU    0 "                                                               *"    1   24    1    0    0    1         
+                                bEnabled                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                  bReset                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  bEmpty                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                bIsEmpty                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                    bRun                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 bToggle                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                             bSimulation                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 bBuzzer                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          bCamTrigManual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                   State                                     DINT    0 "                                                               2"    2    4    1   10    0    0 e,0,RUN;
+
+                               iJogSpeed                                      INT    0 "                                                             300"    2    3    1   10    0    0         
+                            iNormalSpeed                                      INT    0 "                                                            1500"    2    3    1   10    0    0         
+                              iRegisters                                 Register    0 "                                                               *"    2   24    1    0    0    0         
+                                    reg0                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg1                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg2                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg3                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg4                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg5                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg6                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg7                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg8                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                    reg9                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg10                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg11                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg12                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg13                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg14                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg15                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg16                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg17                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg18                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                                   reg19                                      INT    0 "                                                               0"    3    3    1   10    0    0         
+                               bTriggers                                  Trigger    0 "                                                               *"    2   24    1    0    0    0         
+                                   Coil0                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil1                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil2                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil3                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil4                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil5                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil6                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil7                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil8                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Coil9                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                          iBUEnabledMask                                      INT    0 "                                                             511"    2    3    1   10    0    0         
                                 typChain                          AcpInverter_typ    0 "                                                               *"    1   24    1    0    0    1         
                                   status                   AcpInverter_status_typ    0 "                                                               *"    2   24    1    0    0    1         
                         bSetSpeedReached                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                              tiMusecSub                                     TIME    0 "                                                         T#038ms"    0   12    1    1    1    0         
+                              tiMusecSub                                     TIME    0 "                                                         T#030ms"    0   12    1    1    1    0         
                                  idxCntr                                    USINT    0 "                                                              10"    0    5    1   10    1    0         
-                               idx_Diff3                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
+                               idx_Diff3                                    USINT    0 "                                                               3"    0    5    1   10    1    0         
                                bStartEnc                                     BOOL    0 "                                                               *"    0    1    1    2    1    0         
                               tpPulsEnc1                                       TP    0 "                                                               *"    0   24    1    0    1    0         
                                  SHFTREG                            Shiftregister    0 "                                                               *"    0   24    1    0    0    1         
                              typCounters                                   _cntrs    0 "                                                               *"    1   24    1    0    0    1         
-                          usChainCounter                                    USINT    0 "                                                              19"    2    5    1   10    0    0         
-                         uiChainCnt16x16                                     UINT    0 "                                                              49"    2    6    1   10    0    0         
-                           usChainOffset                                    USINT    0 "                                                              16"    2    5    1   10    0    0         
+                          usChainCounter                                    USINT    0 "                                                               1"    2    5    1   10    0    0         
+                         uiChainCnt16x16                                     UINT    0 "                                                             176"    2    6    1   10    0    0         
+                           usChainOffset                                    USINT    0 "                                                               1"    2    5    1   10    0    0         
                          bStartChainCntr                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
                            usStartUpCntr                                    USINT    0 "                                                               0"    2    5    1   10    0    0         
                                  tiDiff3                               TIME[0..9]    0 "                                                               *"    0   12   10    0    1    1         
-                              tiDiff3[0]                                     TIME    0 "                                                         T#612ms"    1   12    1    1    1    0         
-                              tiDiff3[1]                                     TIME    0 "                                                         T#607ms"    1   12    1    1    1    0         
-                              tiDiff3[2]                                     TIME    0 "                                                         T#612ms"    1   12    1    1    1    0         
-                              tiDiff3[3]                                     TIME    0 "                                                         T#610ms"    1   12    1    1    1    0         
-                              tiDiff3[4]                                     TIME    0 "                                                         T#610ms"    1   12    1    1    1    0         
-                              tiDiff3[5]                                     TIME    0 "                                                         T#610ms"    1   12    1    1    1    0         
-                              tiDiff3[6]                                     TIME    0 "                                                         T#610ms"    1   12    1    1    1    0         
-                              tiDiff3[7]                                     TIME    0 "                                                         T#610ms"    1   12    1    1    1    0         
-                              tiDiff3[8]                                     TIME    0 "                                                         T#613ms"    1   12    1    1    1    0         
-                              tiDiff3[9]                                     TIME    0 "                                                         T#613ms"    1   12    1    1    1    0         
-                            tiDiff3Total                                     TIME    0 "                                                         T#610ms"    0   12    1    1    1    0         
+                              tiDiff3[0]                                     TIME    0 "                                                         T#492ms"    1   12    1    1    1    0         
+                              tiDiff3[1]                                     TIME    0 "                                                         T#495ms"    1   12    1    1    1    0         
+                              tiDiff3[2]                                     TIME    0 "                                                         T#495ms"    1   12    1    1    1    0         
+                              tiDiff3[3]                                     TIME    0 "                                                         T#496ms"    1   12    1    1    1    0         
+                              tiDiff3[4]                                     TIME    0 "                                                         T#499ms"    1   12    1    1    1    0         
+                              tiDiff3[5]                                     TIME    0 "                                                         T#492ms"    1   12    1    1    1    0         
+                              tiDiff3[6]                                     TIME    0 "                                                         T#493ms"    1   12    1    1    1    0         
+                              tiDiff3[7]                                     TIME    0 "                                                         T#485ms"    1   12    1    1    1    0         
+                              tiDiff3[8]                                     TIME    0 "                                                         T#488ms"    1   12    1    1    1    0         
+                              tiDiff3[9]                                     TIME    0 "                                                         T#492ms"    1   12    1    1    1    0         
+                            tiDiff3Total                                     TIME    0 "                                                         T#490ms"    0   12    1    1    1    0         
                                 tiCheck1                              TIME[0..74]    0 "                                                               *"    0   12   75    0    1    1         
-                             tiCheck1[0]                                     TIME    0 "                                                         T#102ms"    1   12    1    1    1    0         
-                             tiCheck1[1]                                     TIME    0 "                                                         T#102ms"    1   12    1    1    1    0         
-                             tiCheck1[2]                                     TIME    0 "                                                         T#101ms"    1   12    1    1    1    0         
-                             tiCheck1[3]                                     TIME    0 "                                                         T#101ms"    1   12    1    1    1    0         
-                             tiCheck1[4]                                     TIME    0 "                                                         T#102ms"    1   12    1    1    1    0         
-                             tiCheck1[5]                                     TIME    0 "                                                         T#101ms"    1   12    1    1    1    0         
-                             tiCheck1[6]                                     TIME    0 "                                                         T#102ms"    1   12    1    1    1    0         
-                             tiCheck1[7]                                     TIME    0 "                                                         T#100ms"    1   12    1    1    1    0         
-                             tiCheck1[8]                                     TIME    0 "                                                         T#101ms"    1   12    1    1    1    0         
-                             tiCheck1[9]                                     TIME    0 "                                                         T#101ms"    1   12    1    1    1    0         
-                            tiCheck1[10]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[11]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[12]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[13]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[14]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[15]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[16]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[17]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[18]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[19]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
+                             tiCheck1[0]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[1]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[2]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[3]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[4]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[5]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[6]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[7]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[8]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                             tiCheck1[9]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[10]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[11]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[12]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[13]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[14]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[15]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[16]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[17]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[18]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[19]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
                             tiCheck1[20]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
                             tiCheck1[21]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
                             tiCheck1[22]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
@@ -68,40 +115,40 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=150 Type=0 Scope=0 Force=0 Index
                             tiCheck1[35]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
                             tiCheck1[36]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
                             tiCheck1[37]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[38]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[39]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[40]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[41]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[42]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[43]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[44]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[45]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[46]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[47]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[48]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[49]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[50]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[51]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[52]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[53]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[54]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[55]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[56]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[57]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[58]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[59]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[60]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[61]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[62]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[63]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[64]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[65]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[66]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[67]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[68]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[69]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[70]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[71]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[72]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[73]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
-                            tiCheck1[74]                                     TIME    0 "                                                           T#0ms"    1   12    1    1    1    0         
+                            tiCheck1[38]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[39]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[40]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[41]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[42]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[43]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[44]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[45]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[46]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[47]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[48]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[49]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[50]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[51]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[52]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[53]                                     TIME    0 "                                                         T#092ms"    1   12    1    1    1    0         
+                            tiCheck1[54]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[55]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[56]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[57]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[58]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[59]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[60]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[61]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[62]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[63]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[64]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[65]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[66]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[67]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[68]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[69]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[70]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[71]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[72]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[73]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         
+                            tiCheck1[74]                                     TIME    0 "                                                         T#119ms"    1   12    1    1    1    0         

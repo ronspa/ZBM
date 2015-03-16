@@ -49,7 +49,7 @@ PROGRAM _CYCLIC
 	//		//UserLogEvent := TRUE;
 	//	END_IF	
 	
-	IF MBU.typInterface.bEnable AND NOT MBU.typInterface.bSimulate THEN
+	IF MBU.typInterface.bEnable AND NOT MBU.typInterface.bSimulate AND NOT MBU.typInterface.bReset THEN
 		CASE MBU.typInterface.Command OF			
 			//======================================
 			MBU_CMD_INIT:	
@@ -76,9 +76,11 @@ PROGRAM _CYCLIC
 				bRunReverse4 := FALSE;
 								
 				//Clear shiftregister bunchbelt
-				FOR idx := 0 TO BeltSize - 1 DO
-					fbSetFlowersOnIndex(MBU, idx, FALSE);  //		MBU.typInterface.bBeltShiftReg[idx] := FALSE;					
-				END_FOR
+				IF NOT MBU.typInterface.bReset THEN
+					FOR idx := 0 TO BeltSize - 1 DO
+						fbSetFlowersOnIndex(MBU, idx, FALSE);  //		MBU.typInterface.bBeltShiftReg[idx] := FALSE;					
+					END_FOR
+				END_IF
 			
 				//Check if frequency drive is Ready		
 				IF NOT( (MBU.motBelt1.InverterState_ = INV_ST_READY) OR (MBU.motBelt2.InverterState_ = INV_ST_READY) ) THEN// OR (MBU.motKnifeUnit.InverterState_ = INV_ST_READY) OR (MBU.motBufferBelt.InverterState_ = INV_ST_READY) )THEN		

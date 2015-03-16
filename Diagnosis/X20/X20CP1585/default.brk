@@ -1,2 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<breakpoints />
+<breakpoints>
+  <breakpoint>
+    <status>Y</status>
+    <file>Logical/libraries_hav/MBU_lib/MBU_lib.st</file>
+    <position>18</position>
+    <condition></condition>
+    <instance></instance>
+    <program>MBU_lib</program>
+  </breakpoint>
+  <breakpoint>
+    <status>Y</status>
+    <file>Logical/libraries_hav/MBU_lib/MBU_lib.st</file>
+    <position>34</position>
+    <condition></condition>
+    <instance></instance>
+    <program>MBU_lib</program>
+  </breakpoint>
+  <breakpoint>
+    <status>Y</status>
+    <file>Logical/libraries_hav/MBU_lib/MBU_lib.st</file>
+    <position>44</position>
+    <condition></condition>
+    <instance></instance>
+    <program>MBU_lib</program>
+  </breakpoint>
+  <breakpoint>
+    <status>Y</status>
+    <file>Logical/libraries_hav/MBU_lib/MBU_lib.st</file>
+    <position>88</position>
+    <condition></condition>
+    <instance></instance>
+    <program>MBU_lib</program>
+  </breakpoint>
+</breakpoints>
