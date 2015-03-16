@@ -111,7 +111,7 @@ PROGRAM _CYCLIC
 					//------------------------------------------------------
 					CMD_MOVE:  //Move belt x positions
 						//------------------------------------------------------
-						IF (MBU.typInterface.usMovePositions < 1) THEN
+						IF (MBU.typInterface.usMovePositions > 1) THEN
 							
 							//Vakkenband
 							IF EDGEPOS(SensControl_0.Q) THEN
