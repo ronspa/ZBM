@@ -364,9 +364,13 @@ PROGRAM _CYCLIC
 		
 		IF NOT BU[i].typInterface.bEmptyCmd THEN
 			BU[i].typInterface.bEmptyCmd := SHFTREG.typGripper[usGripperIndex].siEmptyBU = i;
-			SHFTREG.typGripper[usGripperIndex].siEmptyBU := -1;
+			IF BU[i].typInterface.bEmptyCmd THEN
+				SHFTREG.typGripper[usGripperIndex].siEmptyBU := -1;
+//				itoa(i, ADR(strNum));
+//				strLogAdr := strcat(  ADR('Empty command received '), ADR(strNum));
+			END_IF
 //			IF BU[i].typInterface.bEmptyCmd THEN
-				AsArLogWrite_EmptyCmd(enable :=  BU[i].typInterface.bEmptyCmd, ident := arlogBASE_USER_LOG_IDENT, logLevel := 1, errornr := 50003, mem := ADR(i), len := SIZEOF(i), asciiString :=  ADR('Empty command received'));	
+//				AsArLogWrite_EmptyCmd(enable :=  BU[i].typInterface.bEmptyCmd, ident := arlogBASE_USER_LOG_IDENT, logLevel := 1, errornr := 50003, mem := ADR(i), len := SIZEOF(i), asciiString :=  strLogAdr);	
 //			END_IF
 		END_IF
 		

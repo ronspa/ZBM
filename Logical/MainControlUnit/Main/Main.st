@@ -56,10 +56,10 @@ PROGRAM _CYCLIC
 			IF MCU.typInterface.iBUEnabledMask <> iBUEnabledMask THEN
 				iBUEnabledMask := MCU.typInterface.iBUEnabledMask;
 				FOR i := 0 TO 9 BY 1 DO
-					//
-					iOut := SHL(iMask, i);
-					BU[i].typInterface.bEnable :=  (iMask AND iBUEnabledMask) = 0;
-					//BU[i].typInterface.bEnable :=  (SHL(1, i) AND iBUEnabledMask) = 0;
+					// iOut <-> iMask
+					//iMask := SHL(iMask, i);
+					//BU[i].typInterface.bEnable :=  (iMask AND iBUEnabledMask) = 0;
+					BU[i].typInterface.bEnable :=  (SHL(1, i) AND iBUEnabledMask) = 0;
 				END_FOR
 					
 			END_IF

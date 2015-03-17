@@ -88,5 +88,7 @@ END_VAR
 (*BunchUnits*)
 VAR
 	i : USINT;
+	strLogAdr : UDINT;
+	strNum : STRING[80];
 	usGripperIndex : USINT;
 END_VAR

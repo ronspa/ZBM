@@ -28,7 +28,6 @@ PROGRAM _INIT
 	
 	i := 0;
 	BU[i].typSettings.usTimingBU16 := 10; // Pos=12
-	BU[i].typSettings.usBunchBeltPosition := 0;
 END_PROGRAM
 
  

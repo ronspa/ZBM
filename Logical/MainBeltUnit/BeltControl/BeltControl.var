@@ -41,6 +41,7 @@ END_VAR
 VAR
 	InverterCommand : enumINV_CMD;
 	InverterState : enumINV_ST;
+	bResetFault : BOOL := FALSE;
 END_VAR
 (*Beltmotor1 - Vakkenband*)
 VAR

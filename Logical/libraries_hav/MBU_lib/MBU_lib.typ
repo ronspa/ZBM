@@ -22,7 +22,7 @@ TYPE
 		(
 		MBU_ST_INIT,
 		MBU_ST_RUN,
-		MBU_ST_HOLD,
+		MBU_ST_HOLD_DROP,
 		MBU_ST_READY,
 		MBU_ST_DISABLED,
 		MBU_ST_MANUAL,
@@ -32,14 +32,14 @@ TYPE
 	MBU_Interface : 	STRUCT 
 		bEnable : BOOL;
 		bReset : BOOL;
-		bBeltShiftReg : ARRAY[0..39]OF BOOL;
+		bBeltShiftReg_ : ARRAY[0..39]OF BOOL;
 		uiBeltShiftReg1 : UDINT;
 		uiBeltShiftReg2 : UDINT;
 		usBunchPositions : USINT := 39;
-		usAflegPos : USINT := 37;
-		usBindPos1 : USINT := 31;
-		usBindPos2 : USINT := 33;
-		usKnifePos : USINT := 27;
+		usAflegPos : USINT := 38;
+		usBindPos1 : USINT := 33;
+		usBindPos2 : USINT := 35;
+		usKnifePos : USINT := 28;
 		tiSensPuls : TIME := T#20ms;
 		tiBindPuls : TIME := T#100ms;
 		tiBindDelay1 : TIME := T#50ms;
@@ -54,7 +54,7 @@ TYPE
 		bSimulate : BOOL := FALSE; (*Set high for simulation*)
 		bFault : BOOL := FALSE; (*MBU Fault state*)
 		Command : enumMBU_CMD := MBU_CMD_STOP;
-		State : enumMBU_ST := MBU_ST_HOLD;
+		State : enumMBU_ST := MBU_ST_DISABLED;
 		tiKnifePuls : TIME;
 		tiBufferPuls : TIME;
 		tiBufferDelay : TIME;

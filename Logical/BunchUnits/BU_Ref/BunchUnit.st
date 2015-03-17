@@ -97,7 +97,7 @@ PROGRAM _CYCLIC
 						BU[i].typInterface.iReceivePos := Settings.iBUIdealReceivePosition;
 						ServoMovePosition(BU[i],  BU[i].typInterface.iReceivePos, BU[i].typInterface.usServoSpeed); //  BU[i].typeSettings.iReceivePos +
 						//Bunchbelt release
-						BU[i].typInterface.bReadyForDrop := FALSE;
+						BU[i].typInterface.bDroppingActive := FALSE;
 						bRun := FALSE;
 					END_IF
 					
@@ -203,8 +203,8 @@ PROGRAM _CYCLIC
 				BU_CMD_Drop: // 4
 				//==================================
 					//Bunchbelt lock	
-					BU[i].typInterface.bReadyForDrop := TRUE;	
-					MBU.typInterface.bReadyToReceive := TRUE;  // TEST SHOULD BE FROM MCU!!!!!!!!!
+					// BU[i].typInterface.bDroppingActive := TRUE;  // Pas doen als de Drop Active is
+					// MBU.typInterface.bReadyToReceive := TRUE;  // TEST SHOULD BE FROM MCU!!!!!!!!!
 					BU[i].typInterface.usStemCount := 0;
 
 					tonDropDelay.PT := BU[i].typSettings.tiDropDelay;					
@@ -217,6 +217,7 @@ PROGRAM _CYCLIC
 							BU[i].typInterface.Status := BU_ST_WAIT_MCU;
 							IF  MBU.typInterface.bReadyToReceive OR  BU[i].typInterface.bSimulation THEN
 								//Check for current position. When safe, activate elevator down. Check bunchbelt is ready to receive bunch.
+								BU[i].typInterface.bDroppingActive := TRUE;
 								Elevator(BU[i], BU_ELEVATOR_DOWN);
 								BU[i].typOUT.bBunchGripper := TRUE;
 								BU[i].typInterface.Status := BU_ST_MOVE_ELEVATOR_DOWN;

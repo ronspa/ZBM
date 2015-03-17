@@ -10,12 +10,14 @@
  ********************************************************************)
 
 PROGRAM _INIT
-	BeltSize := SIZEOF(	MBU.typInterface.bBeltShiftReg)/SIZEOF(	MBU.typInterface.bBeltShiftReg[idx]);
+	BeltSize := 39; //SIZEOF(	MBU.typInterface.bBeltShiftReg)/SIZEOF(	MBU.typInterface.bBeltShiftReg[idx]);
 	MBU.typInterface.Command := MBU_CMD_INIT;
 END_PROGRAM
 
 
 PROGRAM _CYCLIC	
+	bResetFault := FALSE;
+	
 	//Shift bunchbelt after beltsensor puls
 	fbShiftBelt(MBU, EDGEPOS(SensControl_0.Q));	
 	
@@ -83,7 +85,7 @@ PROGRAM _CYCLIC
 				END_IF
 			
 				//Check if frequency drive is Ready		
-				IF NOT( (MBU.motBelt1.InverterState_ = INV_ST_READY) OR (MBU.motBelt2.InverterState_ = INV_ST_READY) ) THEN// OR (MBU.motKnifeUnit.InverterState_ = INV_ST_READY) OR (MBU.motBufferBelt.InverterState_ = INV_ST_READY) )THEN		
+				IF NOT( (MBU.motBelt1.InverterState_ = INV_ST_READY) OR NOT(MBU.motBelt2.InverterState_ = INV_ST_READY) ) THEN// OR (MBU.motKnifeUnit.InverterState_ = INV_ST_READY) OR (MBU.motBufferBelt.InverterState_ = INV_ST_READY) )THEN		
 					MBU.typInterface.Command := MBU_CMD_STOP;
 				ELSE
 					MBU.typInterface.Command := MBU_CMD_RUN;					
@@ -98,17 +100,23 @@ PROGRAM _CYCLIC
 					//------------------------------------------------------
 					CMD_WAIT:	//Check usMovePositions, if not NULL then move belt.
 						//------------------------------------------------------
-						IF (MBU.typInterface.usMovePositions <> 0) AND NOT(fbCheckBUReadyForDrop(BU, BUCount)) THEN
-							MBU.typInterface.State := MBU_ST_RUN;
-							MBU.typInterface.bReadyToReceive := FALSE;
+						IF  NOT(fbCheckBUReadyForDrop(BU, BUCount)) THEN
+							IF (MBU.typInterface.usMovePositions <> 0) THEN
+								MBU.typInterface.State := MBU_ST_RUN;
+								MBU.typInterface.bReadyToReceive := FALSE;
 							
-							bRun1 := TRUE;	//Vakkenband					
-							bRun2 := TRUE;  //Sponsband
+								bRun1 := TRUE;	//Vakkenband					
+								bRun2 := TRUE;  //Sponsband
 							
-							//Sla tijd op zodra de bosband(en) start(en). 
-							tiStart1 := clock_ms();
-							tiStart2 := tiStart1;
-							ST_BELT := CMD_MOVE;							
+								//Sla tijd op zodra de bosband(en) start(en). 
+								tiStart1 := clock_ms();
+								tiStart2 := tiStart1;
+								ST_BELT := CMD_MOVE;
+							ELSE
+								MBU.typInterface.State := MBU_ST_READY;
+							END_IF
+						ELSE
+							MBU.typInterface.State := MBU_ST_HOLD_DROP;
 						END_IF		
 					//------------------------------------------------------
 					CMD_MOVE:  //Move belt x positions
@@ -179,7 +187,7 @@ PROGRAM _CYCLIC
 			//======================================
 			MBU_CMD_STOP:
 			//======================================
-	
+				MBU.typInterface.State := MBU_ST_ERROR;
 			//======================================
 			MBU_CMD_MANUAL:
 			//======================================
@@ -195,6 +203,7 @@ PROGRAM _CYCLIC
 				
 	ELSIF MBU.typInterface.bReset THEN
 		//freq. regelaaars
+		bResetFault := TRUE;
 		MBU.typInterface.bReset := FALSE;
 		MBU.typInterface.Command := MBU_CMD_RUN; // Init gooit de buffers leeg.
 		
@@ -231,7 +240,7 @@ PROGRAM _CYCLIC
 	//======================================
 	MBU.motBelt1.bRun := bRun1 OR MBU.typInterface.bToggleBelt;
 	MBU.motBelt1.bRunReverse := FALSE;
-	MBU.motBelt1.bResetFault := MBU.typInterface.bReset;
+	MBU.motBelt1.bResetFault := bResetFault;
 	MBU.motBelt1.iSpeed := iSpeed1;
 	MBU.motBelt1(MotorStruc := MBU.typBeltMotor1);	
 	
@@ -241,7 +250,7 @@ PROGRAM _CYCLIC
 	//======================================
 	MBU.motBelt2.bRun := bRun2 OR MBU.typInterface.bToggleBelt;
 	MBU.motBelt2.bRunReverse := FALSE;
-	MBU.motBelt2.bResetFault := MBU.typInterface.bReset;
+	MBU.motBelt2.bResetFault := bResetFault;
 	MBU.motBelt2.iSpeed := iSpeed2;
 	MBU.motBelt2(MotorStruc := MBU.typBeltMotor2);
 	
@@ -250,7 +259,7 @@ PROGRAM _CYCLIC
 	//======================================
 	MBU.motKnifeUnit.bRun := bRun3 OR MBU.typInterface.bToggleKnife OR MBU.typInterface.bToggleBelt; //bToggleBelt just for test JORKES
 	MBU.motKnifeUnit.bRunReverse := FALSE;
-	MBU.motKnifeUnit.bResetFault := MBU.typInterface.bReset;
+	MBU.motKnifeUnit.bResetFault := bResetFault;
 	MBU.motKnifeUnit.iSpeed := iSpeed3;
 	MBU.motKnifeUnit(MotorStruc := MBU.typKnifeUnit);
 	
@@ -259,7 +268,7 @@ PROGRAM _CYCLIC
 	//======================================
 	MBU.motBufferBelt.bRun := bRun4 OR MBU.typInterface.bToggleBuffer OR MBU.typInterface.bToggleBelt; //bToggleBelt just for test JORKES
 	MBU.motBufferBelt.bRunReverse := FALSE;
-	MBU.motBufferBelt.bResetFault := MBU.typInterface.bReset;
+	MBU.motBufferBelt.bResetFault := bResetFault;
 	MBU.motBufferBelt.iSpeed := iSpeed4;
 	MBU.motBufferBelt(MotorStruc := MBU.typBufferMotor);	
 	

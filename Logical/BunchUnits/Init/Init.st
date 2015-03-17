@@ -34,6 +34,8 @@ PROGRAM _INIT
 		//Set init _parameters bunchbelts
 		BU[i].typBunchBelts.command.iSetSpeed := BU[i].typInterface.iSpeedBunchbelt;
 		BU[i].typBunchBelts.command.bEnabledStop := TRUE;
+		BU[i].typSettings.usBunchBeltPosition := 1 + 2 * i;
+
 	END_FOR
 	
 END_PROGRAM

@@ -102,7 +102,7 @@ TYPE
 		iSpeedBunchbelt : INT := 2700; (*90Hz*)
 		tiDelayActivateBunchBelts : TIME := T#2150ms; (*150*)
 		tiDelayActiveGripper : TIME := T#500ms; (*150*)
-		bReadyForDrop : BOOL := FALSE;
+		bDroppingActive : BOOL := FALSE;
 		bSimulation : BOOL := FALSE;
 		bToggleBunchBelt : BOOL := FALSE; (*Draai even de Bunch belt*)
 		bManualGripperCmd : BOOL := FALSE; (*Aktiveer alle grippers*)
