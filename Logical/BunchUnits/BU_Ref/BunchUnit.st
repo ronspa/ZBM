@@ -3,7 +3,7 @@ PROGRAM _CYCLIC
 	//=========================================Program=====================================================
 	//Always check if BunchUnit is enabled, daarna controleren of de bosunit is geïnitialiseerd. 
 	//Zo ja, dan mag het de 'run' cyclus beginnen, zo niet dan wordt eerst het initialisatie proces gestart. 
-	BU[i].typOUT.bEnableServo := BU[i].typOUT.bStopServo AND BU[i].typInterface.bEnable AND NOT BU[i].typInterface.bReset;
+	BU[i].typOUT.bEnableServo := BU[i].typOUT.bStopServo AND BU[i].typInterface.bEnable AND NOT BU[i].typInterface.bReset AND BU[i].typIN.bElevatorUp;
 	BU[i].typOUT.bStopServo := BU[i].typInterface.bEnable;
 	BU[i].typOUT.bEndStageServo := BU[i].typInterface.bEnable;
 	

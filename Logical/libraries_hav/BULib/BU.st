@@ -18,6 +18,9 @@ FUNCTION Elevator
 		ThisBU.typOUT.bElevator := DINT_TO_BOOL(bElevator);
 		Elevator := TRUE;
 	ELSE
+		IF NOT DINT_TO_BOOL(bElevator) THEN
+			ThisBU.typOUT.bElevator := FALSE;
+		ELSE
 		// Move Servo to save position
 		// There should be a LOG here, this can not happen!!!!!!!!
 		IF ThisBU.typInterface.iReleasePos < ThisBU.typSettings.iSafeElevatorPosStart THEN
@@ -35,7 +38,8 @@ FUNCTION Elevator
 				END_IF
 			END_IF
 		END_IF
-		ServoMovePosition(ThisBU, ThisBU.typInterface.iReleasePos, 45);
+			ServoMovePosition(ThisBU, ThisBU.typInterface.iReleasePos, 45);
+		END_IF
 	END_IF
 END_FUNCTION
 

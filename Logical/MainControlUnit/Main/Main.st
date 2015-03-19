@@ -38,6 +38,7 @@ PROGRAM _CYCLIC
 			//
 			BU[i].typInterface.bEnable := FALSE;
 		END_FOR
+		MBU.typInterface.bEnable := FALSE;
 
 		IF  MCU.typChain.status.bFault THEN
 			// Reset drive
@@ -50,6 +51,7 @@ PROGRAM _CYCLIC
 		MBU.motKnifeUnit.bResetFault := TRUE;
 		MCU.typInterface.bReset := FALSE;
 		MCU.typInterface.bRun := FALSE;
+		MCU.typInterface.bFault := FALSE;
 	ELSE
 		IF  MCU.typInterface.bRun  THEN
 			// 
@@ -61,7 +63,9 @@ PROGRAM _CYCLIC
 					//BU[i].typInterface.bEnable :=  (iMask AND iBUEnabledMask) = 0;
 					BU[i].typInterface.bEnable :=  (SHL(1, i) AND iBUEnabledMask) = 0;
 				END_FOR
-					
+			END_IF
+			IF EDGEPOS( MCU.typInterface.bRun) THEN
+				MBU.typInterface.bEnable := TRUE;
 			END_IF
 			IF MCU.typInterface.bEmpty THEN
 				// Start empty machine
@@ -92,6 +96,7 @@ PROGRAM _CYCLIC
 	CASE MCU.typInterface.State OF
 		RUN: // Start main motor
 			IF MCU.typChain.status.bFault = TRUE OR NOT MCU.typInterface.bRun THEN
+				MCU.typInterface.bFault := TRUE;
 				MCU.typInterface.State := STOP;
 			ELSE
 				MCU.typChain.command.bPower := TRUE;
@@ -100,7 +105,8 @@ PROGRAM _CYCLIC
 					MCU.typInterface.State := RUN;
 				END_IF
 			END_IF
-		STOP:
+		
+		STOP: // Stop machine
 			bRunRequest := FALSE;
 			bGblSimulation := FALSE;
 			IF 	MCU.typInterface.bRun THEN
@@ -110,14 +116,19 @@ PROGRAM _CYCLIC
 					MCU.typInterface.State := SIMULATION;
 				END_IF
 			END_IF
-		EMPTY:
 			IF MCU.typChain.status.bFault = TRUE THEN
+				MCU.typInterface.bFault := TRUE;
+			END_IF
+		
+		EMPTY:// Empty machine and stop
+			IF MCU.typChain.status.bFault = TRUE THEN
+				MCU.typInterface.bFault := TRUE;
 				MCU.typInterface.State := STOP;
 			ELSE
 				MCU.typInterface.State := EMPTY;
 			END_IF
 		
-		SIMULATION:
+		SIMULATION: // Simulation just for testing
 			bGblSimulation := MCU.typInterface.bEnabled AND  MCU.typInterface.bSimulation;
 			IF NOT MCU.typInterface.bRun THEN
 				MCU.typInterface.State := STOP;

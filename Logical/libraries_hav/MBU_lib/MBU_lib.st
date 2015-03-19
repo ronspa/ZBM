@@ -17,15 +17,15 @@ FUNCTION fbShiftBelt
 //	END_IF
 
 	IF enable THEN
-		IF(		ThisMBU.typInterface.uiBeltShiftReg1 AND 16#80000000) <> 0 THEN
+		IF (ThisMBU.typInterface.uiBeltShiftReg1 AND 16#80000000) <> 0 THEN
 			overflow := 1;
 		ELSE
 			overflow := 0;
 		END_IF
 
-		ThisMBU.typInterface.uiBeltShiftReg1 := SHL(ThisMBU.typInterface.uiBeltShiftReg1,1);
+		ThisMBU.typInterface.uiBeltShiftReg1 := SHL(ThisMBU.typInterface.uiBeltShiftReg1,1) AND NOT 1;
 		ThisMBU.typInterface.uiBeltShiftReg2 := SHL(ThisMBU.typInterface.uiBeltShiftReg2,1);
-		ThisMBU.typInterface.uiBeltShiftReg2 := ((ThisMBU.typInterface.uiBeltShiftReg2 + overflow) AND 16#00FF); // 32 + 8 postities
+		ThisMBU.typInterface.uiBeltShiftReg2 := ((ThisMBU.typInterface.uiBeltShiftReg2 + overflow) AND 16#000000FF); // 32 + 8 postities
 		fbShiftBelt := TRUE;
 	END_IF
 END_FUNCTION
@@ -98,13 +98,21 @@ FUNCTION fbSetFlowersOnIndex
 		uiMask := 1;
 		uiMask := SHL(uiMask, idx);
 
-		ThisMBU.typInterface.uiBeltShiftReg1 := ThisMBU.typInterface.uiBeltShiftReg1 OR uiMask;
+		IF bHasFlower THEN
+			ThisMBU.typInterface.uiBeltShiftReg1 := ThisMBU.typInterface.uiBeltShiftReg1 OR uiMask;
+		ELSE
+			ThisMBU.typInterface.uiBeltShiftReg1 := ThisMBU.typInterface.uiBeltShiftReg1 AND NOT uiMask;
+		END_IF
 		
 	ELSE
 		uiMask := 1;
 		uiMask := SHL(uiMask, idx - 32);
 		
-		ThisMBU.typInterface.uiBeltShiftReg2 := ThisMBU.typInterface.uiBeltShiftReg2 OR uiMask;
+		IF bHasFlower THEN
+			ThisMBU.typInterface.uiBeltShiftReg2 := ThisMBU.typInterface.uiBeltShiftReg2 OR uiMask;
+		ELSE
+			ThisMBU.typInterface.uiBeltShiftReg2 := ThisMBU.typInterface.uiBeltShiftReg2 AND NOT uiMask;
+		END_IF
 	END_IF
 
 END_FUNCTION

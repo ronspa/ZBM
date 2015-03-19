@@ -27,7 +27,9 @@ TYPE
 		MBU_ST_DISABLED,
 		MBU_ST_MANUAL,
 		MBU_ST_ERROR,
-		MBU_ST_SIMULATED
+		MBU_ST_SIMULATED,
+		MBU_ST_VAK_SENS_ERROR,
+		MBU_ST_SPONS_SENS_ERROR
 		);
 	MBU_Interface : 	STRUCT 
 		bEnable : BOOL;
@@ -58,6 +60,8 @@ TYPE
 		tiKnifePuls : TIME;
 		tiBufferPuls : TIME;
 		tiBufferDelay : TIME;
+		uiStepCount_0 : UINT := 0;
+		uiStepCount_1 : UINT := 0;
 	END_STRUCT;
 	MainbeltUnit : 	STRUCT  (*Verzameling parameters bosband*)
 		in_bMainBeltSensor1 : BOOL := FALSE;

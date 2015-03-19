@@ -33,12 +33,12 @@ PROGRAM _CYCLIC
 		ErrorState := EMERGENCYSTOP;
 	ELSIF MCU.typIN.bDoorOpen THEN
 		ErrorState := DOOROPEN;
-	ELSIF MCU.typIN.bServiceMode THEN
-		ErrorState := SERVICEMODE;
-	ELSIF MCU.typIN.bAirpressure THEN
+	ELSIF NOT MCU.typIN.bAirpressure THEN
 		ErrorState := AIRPRESSURE;
 	ELSIF MCU.typIN.bBinder THEN
 		ErrorState := BINDER;
+	ELSIF MCU.typIN.bServiceMode THEN
+		ErrorState := SERVICEMODE;
 	ELSE
 		ErrorState := OK;
 	END_IF

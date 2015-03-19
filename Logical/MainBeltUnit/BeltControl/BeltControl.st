@@ -37,7 +37,9 @@ PROGRAM _CYCLIC
 	KnifeControl.IN := fbHasFlowersOnIndex(MBU,MBU.typInterface.usKnifePos) AND EDGEPOS(SensControl_0.Q); //MBU.typInterface.bBeltShiftReg[MBU.typInterface.usKnifePos];
 	
 	IF EDGEPOS(MBU.typInterface.bEnable) AND MBU.typInterface.bEnable THEN
-		MBU.typInterface.Command := MBU_CMD_INIT;		
+		MBU.typInterface.Command := MBU_CMD_INIT;
+		MBU.typInterface.uiStepCount_0 := 0;
+		MBU.typInterface.uiStepCount_1 := 0;
 	END_IF
 	
 	// Log test van RONSPA	
@@ -58,6 +60,7 @@ PROGRAM _CYCLIC
 				//======================================
 				//MBU state
 				MBU.typInterface.State := MBU_ST_INIT;
+				MBU.typInterface.bFault := FALSE;
 				
 				//Inverter Motor 1 
 				//Vakkenband
@@ -78,14 +81,15 @@ PROGRAM _CYCLIC
 				bRunReverse4 := FALSE;
 								
 				//Clear shiftregister bunchbelt
-				IF NOT MBU.typInterface.bReset THEN
+				IF NOT MBU.typInterface.bReset THEN //AND FALSE THEN
 					FOR idx := 0 TO BeltSize - 1 DO
 						fbSetFlowersOnIndex(MBU, idx, FALSE);  //		MBU.typInterface.bBeltShiftReg[idx] := FALSE;					
 					END_FOR
 				END_IF
 			
 				//Check if frequency drive is Ready		
-				IF NOT( (MBU.motBelt1.InverterState_ = INV_ST_READY) OR NOT(MBU.motBelt2.InverterState_ = INV_ST_READY) ) THEN// OR (MBU.motKnifeUnit.InverterState_ = INV_ST_READY) OR (MBU.motBufferBelt.InverterState_ = INV_ST_READY) )THEN		
+				IF NOT( (MBU.motBelt1.InverterState_ = INV_ST_READY) OR NOT(MBU.motBelt2.InverterState_ = INV_ST_READY) ) THEN// OR (MBU.motKnifeUnit.InverterState_ = INV_ST_READY) OR (MBU.motBufferBelt.InverterState_ = INV_ST_READY) )THEN
+					MBU.typInterface.bFault := TRUE;
 					MBU.typInterface.Command := MBU_CMD_STOP;
 				ELSE
 					MBU.typInterface.Command := MBU_CMD_RUN;					
@@ -120,47 +124,16 @@ PROGRAM _CYCLIC
 						END_IF		
 					//------------------------------------------------------
 					CMD_MOVE:  //Move belt x positions
-						//------------------------------------------------------
-						IF (MBU.typInterface.usMovePositions > 1) THEN
-							bRun1 := TRUE;	//Vakkenband					
-							bRun2 := TRUE;  //Sponsband
-
-							//Vakkenband
-							IF EDGEPOS(SensControl_0.Q) THEN
-								IF bSensCheck0 THEN
-									MBU.typInterface.Command := MBU_CMD_FAULT;
-								END_IF
-								bSensCheck0 := TRUE;
-								tiStop1 := clock_ms();
-								tiDiff1[idx_Diff1] := tiStop1 - tiStart1;
-								idx_Diff1 := (idx_Diff1 + 1) MOD 10;
-							END_IF
-							
-							//Sponsband
-							IF EDGEPOS(SensControl_1.Q) THEN
-								IF bSensCheck1 THEN
-									MBU.typInterface.Command := MBU_CMD_FAULT;
-								END_IF
-								bSensCheck1 := TRUE;
-								tiStop2 := clock_ms();
-								tiDiff2[idx_Diff2] := tiStop2 - tiStart2;
-								idx_Diff2 := (idx_Diff2 + 1) MOD 10;
-							END_IF				
-							
-							IF bSensCheck0 AND bSensCheck1 THEN
-								MBU.typInterface.usMovePositions := MBU.typInterface.usMovePositions - 1;
-								bSensCheck0 := FALSE;
-								bSensCheck1 := FALSE;							
-							END_IF
-						ELSE							
-							ST_BELT := CMD_STOP;
-						END_IF
 					//------------------------------------------------------
-					CMD_STOP:	//Wait for belt triggers
-						//------------------------------------------------------
-						
+
 						//Vakkenband
 						IF EDGEPOS(SensControl_0.Q) THEN
+							IF bSensCheck0 THEN
+								MBU.typInterface.State := MBU_ST_VAK_SENS_ERROR;
+								MBU.typInterface.Command := MBU_CMD_FAULT;
+							END_IF
+							MBU.typInterface.uiStepCount_0 := MBU.typInterface.uiStepCount_0 + 1;
+							bSensCheck0 := TRUE;
 							bRun1 := FALSE;
 							tiStop1 := clock_ms();
 							tiDiff1[idx_Diff1] := tiStop1 - tiStart1;
@@ -169,24 +142,39 @@ PROGRAM _CYCLIC
 						
 						//Sponsband
 						IF EDGEPOS(SensControl_1.Q) THEN
-							bRun2 := FALSE;		
+							IF bSensCheck1 THEN
+								MBU.typInterface.State := MBU_ST_SPONS_SENS_ERROR;
+								MBU.typInterface.Command := MBU_CMD_FAULT;
+							END_IF
+							MBU.typInterface.uiStepCount_1 := MBU.typInterface.uiStepCount_1 + 1;
+							bSensCheck1 := TRUE;
+							bRun2 := FALSE;
 							tiStop2 := clock_ms();
 							tiDiff2[idx_Diff2] := tiStop2 - tiStart2;
 							idx_Diff2 := (idx_Diff2 + 1) MOD 10;
-						END_IF
-							
-						//Wacht totdat motoren uitstaan en ga dan weer naar READY state.
-						IF NOT(bRun1) AND NOT(bRun2) THEN
-							MBU.typInterface.bReadyToReceive := TRUE;
-							MBU.typInterface.State := MBU_ST_READY;
+						END_IF				
+						
+						IF bSensCheck0 AND bSensCheck1 THEN
 							MBU.typInterface.usMovePositions := MBU.typInterface.usMovePositions - 1;
-							ST_BELT := CMD_WAIT;			
-						END_IF										
+							bSensCheck0 := FALSE;
+							bSensCheck1 := FALSE;
+							IF (MBU.typInterface.usMovePositions > 1) THEN
+								bRun1 := TRUE;	//Vakkenband					
+								bRun2 := TRUE;  //Sponsband
+							ELSE							
+								bRun1 := FALSE;	//Vakkenband					
+								bRun2 := FALSE;  //Sponsband
+								MBU.typInterface.bReadyToReceive := TRUE;
+								MBU.typInterface.State := MBU_ST_READY;
+								ST_BELT := CMD_WAIT;			
+							END_IF
+						END_IF
+					//------------------------------------------------------
 				END_CASE
 			
 			//======================================
 			MBU_CMD_STOP:
-			//======================================
+				//======================================
 				MBU.typInterface.State := MBU_ST_ERROR;
 			//======================================
 			MBU_CMD_MANUAL:
@@ -198,7 +186,8 @@ PROGRAM _CYCLIC
 				MBU.typInterface.bFault := TRUE;
 				bRun1 := FALSE;
 				bRun2 := FALSE;
-				MBU.typInterface.State := MBU_ST_ERROR;
+				bSensCheck0 := FALSE;
+				bSensCheck1 := FALSE;
 		END_CASE
 				
 	ELSIF MBU.typInterface.bReset THEN

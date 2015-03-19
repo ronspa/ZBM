@@ -403,7 +403,11 @@ FUNCTION_BLOCK ACPinverter
 				MotorStruc.status.strErrorInfo := 'Run';
 			ELSE
 				IF MotorStruc.status.bDriveReady THEN
-					MotorStruc.status.strErrorInfo := 'Ready';
+					IF InverterState_ = INV_ST_READY THEN
+						MotorStruc.status.strErrorInfo := 'Ready';
+					ELSE
+						MotorStruc.status.strErrorInfo := 'Timeout (reset)';
+					END_IF
 				ELSE
 					MotorStruc.status.strErrorInfo := '';
 				END_IF

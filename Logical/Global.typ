@@ -109,6 +109,7 @@ TYPE
 		bSimulation : BOOL := FALSE; (*Should be false on system*)
 		bBuzzer : BOOL := FALSE; (*Buzzer by user*)
 		bCamTrigManual : BOOL := FALSE; (*Manual camtrigger*)
+		bFault : BOOL := FALSE; (*MCU in Fault*)
 		State : enumState := STOP;
 		iJogSpeed : INT := 300; (*20Hz*)
 		iNormalSpeed : INT := 1500; (*50Hz*)
